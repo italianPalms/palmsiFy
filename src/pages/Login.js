@@ -1,5 +1,12 @@
+import Header from "../components/Header";
+
 export default function Login() {
     return (
+        <>
+        <div>
+            <Header />
+        </div>
+        
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
         <h1 className="text-4xl font-semibold mb-3">Login</h1>
 
@@ -26,5 +33,7 @@ export default function Login() {
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
         </div>
+
+        </>
     )
 }

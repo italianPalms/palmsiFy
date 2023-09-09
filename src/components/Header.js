@@ -1,6 +1,6 @@
 
 export default function Header() {
     return (
-        <h1>Welcome to your one stop streaming service</h1>
+        <h1> <a href="/home">Welcome to the home page</a></h1>
     )
 }
