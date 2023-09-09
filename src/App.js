@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import NoPage from "./pages/NoPage";
+import Profile from "./pages/Profile";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path ="/home" element={<Home />} />
           <Route path ="/login" element= { <Login />} />
           <Route path ="/signup" element= { <Signup />} />
+          <Route path ="/profile" element={ <Profile />} />
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
