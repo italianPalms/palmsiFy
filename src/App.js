@@ -8,7 +8,7 @@ import NoPage from "./pages/NoPage";
 function App() {
 
   return (
-    <div>
+    <div className="text-white">
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />

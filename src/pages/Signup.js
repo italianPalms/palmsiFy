@@ -1,8 +1,8 @@
 
 export default function Signup() {
     return (
-        <>
-        <h1>Signup</h1>
-        </>
+        <div className="">
+        <h1 className="text-3xl">Signup</h1>
+        </div>
     )
 }
