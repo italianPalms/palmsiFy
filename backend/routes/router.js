@@ -17,7 +17,6 @@ router.post('/signup', async (req, res) => {
             
         }
 
-
         //add logic to hash password
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash
@@ -41,24 +40,3 @@ router.post('/signup', async (req, res) => {
 });
 
 module.exports = router;
-
-// module.exports = async function POST(req, res) {
-//     try {
-//         const reqBody = await req.json()
-//         const {username, email, password} = req.Body
-
-//         console.log(req.Body)
-
-//         const newUser = new User({
-//             username, 
-//             email, 
-//             password,
-//         })
-
-//         const savedUser = await newUser.save()
-//         console.log(savedUser)
-//     } catch (error) {
-//         console.log("Signup failed" + error)
-        
-//     }
-// }
