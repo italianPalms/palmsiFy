@@ -11,6 +11,12 @@ router.post('/signup', async (req, res) => {
         console.log(req.body);
 
         //add logic to check if user exist
+        const user = await User.findOne({email})
+        if (user) {
+            return console.log('User already exist. Please login');
+            
+        }
+
 
         //add logic to hash password
         const salt = await bcryptjs.genSalt(10)
