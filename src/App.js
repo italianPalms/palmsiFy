@@ -9,7 +9,7 @@ import Profile from "./pages/Profile";
 function App() {
 
   return (
-    <div className="text-white">
+    <div className="text-white bg-black">
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />

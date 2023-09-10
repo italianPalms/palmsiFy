@@ -4,7 +4,7 @@ import Header from "../components/Header";
 export default function Signup() {
     return (
         <>
-        <div>
+        <div className="mt-2">
             <Header />
         </div>
 
