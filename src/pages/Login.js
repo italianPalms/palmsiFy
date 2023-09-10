@@ -24,7 +24,7 @@ export default function Login() {
         type="password"
         placeholder="Enter your password"></input>
 
-        <button className="border-2 mt-8 p-2 w-48 bg-sky-400"
+        <button className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
         onClick={() => {
             console.log("Login button clicked")
         }}
