@@ -13,8 +13,8 @@ router.post('/signup', async (req, res) => {
         //add logic to check if user exist
         const user = await User.findOne({email})
         if (user) {
-            return console.log('User already exist. Please login');
-            
+            res.status(400).json({})
+            return console.log("User already exist. Please login");
         }
 
         //add logic to hash password
@@ -38,5 +38,14 @@ router.post('/signup', async (req, res) => {
         res.status(500).json({message: 'Signup failed'});
     }
 });
+
+router.post('/login', async (req, res) => {
+    try {
+        
+    } catch (error) {
+        console.log("Login failed" + error);
+        res.status(500).json({message: "Login failed"});
+    }
+})
 
 module.exports = router;
