@@ -1,6 +1,34 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function Login() {
+
+    const [user, setUser] = useState({
+        email: "", 
+        password: "",
+    })
+
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const onLogin = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.post('http://localhost:4000/login', user);
+            console.log("Login successful", response.data);
+            
+            navigate('/profile');
+
+        } catch (error) {
+            console.log("Login failed" + error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+
     return (
         <>
         <div className="mt-2">
@@ -15,6 +43,8 @@ export default function Login() {
         className="p-2 mt-2 text-black rounded"
         id="email"
         type="email"
+        value={user.email}
+        onChange={(e) => setUser({... user, email: e.target.value})}
         placeholder="Enter your email"></input>
 
         <label className="text-xl font-medium mt-3">Password</label>
@@ -22,12 +52,12 @@ export default function Login() {
         className="p-2 mt-2 text-black rounded"
         id="password"
         type="password"
+        value={user.password}
+        onChange={(e) => setUser({... user, password: e.target.value})}
         placeholder="Enter your password"></input>
 
         <button className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
-        onClick={() => {
-            console.log("Login button clicked")
-        }}
+        onClick={onLogin}
         >Login</button>
 
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>

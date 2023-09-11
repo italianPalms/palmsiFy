@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
-
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 router.post('/signup', async (req, res) => {
     try {
@@ -39,13 +40,57 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+
+
 router.post('/login', async (req, res) => {
     try {
+        const {email, password} = req.body;
+        console.log(req.body);
+
+        //check if user exist
+        const user = await User.findOne({email})
+        if (!user) {
+            res.status(400).json({message: "User doesn't exist. Please signup"});
+            return console.log("User doesn't exist. Please signup")
+        }
+
+        //check if password is valid
+        const validPassword = await bcryptjs.compare
+        (password, user.password)
+        console.log("Stored hashed password", user.password)            
+        console.log("Password to compare", password)
+
+        if (!validPassword) {
+            res.status(400).json({message: "Invalid password"});
+            return console.log("Invalid password. Try again") 
+        }
+
+        const tokenData = {
+            id: user._id, 
+            username: user.username, 
+            email: user.email, 
+        }
+
+        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+
+        const response = res.status(201).json({
+            message: "Login successful", 
+            success: true,
+        })
+        
+        response.cookie.set("token", token, {
+            httpOnly: true,
+            maxAge: 86400000
+        });
+
+        return response;
+
         
     } catch (error) {
         console.log("Login failed" + error);
         res.status(500).json({message: "Login failed"});
-    }
+     } 
+
 })
 
 module.exports = router;

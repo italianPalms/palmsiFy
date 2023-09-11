@@ -24,7 +24,7 @@ export default function Signup() {
             navigate("/login");
 
         } catch (error) {
-            console.log("Signup failed", error.message)
+            console.log("Signup failed" + error)
         } finally {
             setLoading(false);
         }
