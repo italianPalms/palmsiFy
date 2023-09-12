@@ -95,6 +95,23 @@ router.post('/login', async (req, res) => {
         res.status(500).json({message: "Login failed"});
      } 
 
-})
+});
+
+
+router.get('/logout', async (req, res) => {
+    try {
+
+        return res.status(201).json({
+            message: "Logout successful", 
+            access_token: "", 
+            success: true,
+        })
+
+    } catch (error) {
+        res.status(500).json({message: "Logout failed"});
+    }
+} )
+
+
 
 module.exports = router;
