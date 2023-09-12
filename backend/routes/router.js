@@ -65,25 +65,26 @@ router.post('/login', async (req, res) => {
             return console.log("Invalid password. Try again") 
         }
 
+        //create token data
         const tokenData = {
             id: user._id, 
             username: user.username, 
             email: user.email, 
         }
 
-        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+        //create token
+        const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"})
 
-        const response = res.status(201).json({
-            message: "Login successful", 
-            success: true,
-        })
         
-        response.cookie.set("token", token, {
+        res.cookie("token", token, {
             httpOnly: true,
             maxAge: 86400000
         });
 
-        return response;
+        return res.status(201).json({
+            message: "Login successful", 
+            success: true, 
+        })
 
         
     } catch (error) {
