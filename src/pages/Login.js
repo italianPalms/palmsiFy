@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import React, { useState } from "react";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 export default function Login() {
 
@@ -12,12 +13,17 @@ export default function Login() {
 
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const [, setCookie] = useCookies();
 
     const onLogin = async () => {
         try {
             setLoading(true);
             const response = await axios.post('http://localhost:4000/login', user);
             console.log("Login successful", response.data);
+
+            const accessToken = response.data.access_token;
+            // console.log("Access token", accessToken);
+            setCookie("access_token", accessToken, {path: "/"}); 
             
             navigate('/profile');
 
@@ -27,7 +33,6 @@ export default function Login() {
             setLoading(false);
         }
     }
-
 
     return (
         <>

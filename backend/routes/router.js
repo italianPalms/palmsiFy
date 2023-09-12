@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken')
-const cookieParser = require('cookie-parser')
+const { useCookies } = require('react-cookie');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -57,8 +57,8 @@ router.post('/login', async (req, res) => {
         //check if password is valid
         const validPassword = await bcryptjs.compare
         (password, user.password)
-        console.log("Stored hashed password", user.password)            
-        console.log("Password to compare", password)
+        // console.log("Stored hashed password", user.password)            
+        // console.log("Password to compare", password)
 
         if (!validPassword) {
             res.status(400).json({message: "Invalid password"});
@@ -75,16 +75,19 @@ router.post('/login', async (req, res) => {
         //create token
         const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: "1d"})
 
-        
-        res.cookie("token", token, {
-            httpOnly: true,
-            maxAge: 86400000
+        //set cookie
+        res.cookie("access_token", token, {
+            httpOnly: true, 
+            maxAge: 24 * 60 * 60 * 1000, 
         });
 
+        // console.log("Cookie set successful");
+
         return res.status(201).json({
-            message: "Login successful", 
+            message: "Login successful",
+            access_token: token, 
             success: true, 
-        })
+        });
 
         
     } catch (error) {
