@@ -68,7 +68,6 @@ export default function Login() {
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
         </div>
-
         </>
     )
 }
