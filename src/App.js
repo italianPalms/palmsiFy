@@ -5,6 +5,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import NoPage from "./pages/NoPage";
 import Profile from "./pages/Profile";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path ="/login" element= { <Login />} />
           <Route path ="/signup" element= { <Signup />} />
           <Route path ="/profile" element={ <Profile />} />
+          <Route path = "/forgotPassword" element={ <ForgotPassword />} /> 
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
