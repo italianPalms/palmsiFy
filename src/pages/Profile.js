@@ -25,13 +25,16 @@ import { useCookies } from "react-cookie";
 
         return (
             <>
-            <div className="mt-2">
-                <Header />
-            </div>
             <div className="flex flex-col items-center justify-center mt-40 ">
                 <h1 className="text-4xl font-semibold">Welcome to your profile</h1>
+
+
+                <button className="boder-2 mt-12 p-2 w-48 bg-orange-700 hover:bg-orange-900" onClick={() => {
+                    console.log("User details button clicked");
+                }}>Get user details</button>
+
                 <button
-                className="border-2 mt-8 p  -2 w-48 bg-sky-400 hover:bg-sky-500"
+                className="border-2 mt-6 p-2 w-48 bg-sky-400 hover:bg-sky-500"
                 onClick={logout}
                 >Logout</button>
             </div>
