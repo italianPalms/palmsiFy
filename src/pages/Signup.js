@@ -38,7 +38,7 @@ export default function Signup() {
 
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
 
-        <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Signup"}</h1>
+        <h1 className="text-4xl font-semibold">{loading ? "Processing" : "Signup"}</h1>
 
         <label className="text-xl font-medium mt-3">Username</label>
         <input
