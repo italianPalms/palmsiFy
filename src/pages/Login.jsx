@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 
 export default function Login() {
 
+
     const [user, setUser] = useState({
         email: "", 
         password: "",
@@ -14,6 +15,16 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [, setCookie] = useCookies();
+    const [cookies] = useCookies(["access_token"]);
+
+    // redicrect to profile page
+    // if user try to enter the login page when logged in
+    React.useEffect(() => {
+        if (cookies.access_token) {
+            navigate("/profile");
+        }    
+    }, [cookies.access_token, navigate]);
+    
 
     const onLogin = async () => {
         try {
@@ -33,6 +44,8 @@ export default function Login() {
             setLoading(false);
         }
     }
+
+    
 
     return (
         <>

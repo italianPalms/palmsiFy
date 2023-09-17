@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 export default function Signup() {
 
@@ -13,6 +14,15 @@ export default function Signup() {
 
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const [cookies] = useCookies(["access_token"]);
+
+    // redicrect to profile page
+    // if user try to enter the signup page when logged in 
+    React.useEffect(() => {
+        if (cookies.access_token) {
+            navigate("/profile");
+        }    
+    }, [cookies.access_token, navigate]);
     
 
     const onSignup = async () => {
