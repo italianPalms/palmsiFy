@@ -6,13 +6,12 @@ import Login from "./pages/Login";
 import NoPage from "./pages/NoPage";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
+import Protected from "./components/Protected";
 
 function App() {
 
   return (
     <div className="text-white bg-black">
-  
-    
 
       <BrowserRouter>
         <Routes>
@@ -21,7 +20,12 @@ function App() {
           <Route path ="/login" element= { <Login />} />
           <Route path ="/signup" element= { <Signup />} />
           <Route path = "/forgotPassword" element={ <ForgotPassword />} />
-          <Route path ="/profile" element= { <Profile />} />
+
+          <Route path ="/profile" element= {
+            <Protected Login={Login}>
+            <Profile />
+            </Protected>
+            }/>
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
