@@ -45,8 +45,6 @@ export default function Login() {
         }
     }
 
-    
-
     return (
         <>
         <div className="mt-2">
@@ -54,7 +52,7 @@ export default function Login() {
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-4xl font-semibold mb-3">Login</h1>
+        <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
 
         <label className="text-xl font-medium mt-3">Email</label>
         <input
