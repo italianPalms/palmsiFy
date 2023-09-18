@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 
@@ -16,6 +16,7 @@ export default function Login() {
     const navigate = useNavigate();
     const [, setCookie] = useCookies();
     const [cookies] = useCookies(["access_token"]);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     // redicrect to profile page
     // if user try to enter the login page when logged in
@@ -44,6 +45,14 @@ export default function Login() {
             setLoading(false);
         }
     }
+
+    useEffect(() => {
+        if(user.email.length > 0 && user.password.length > 0) {
+            setButtonDisabled(false);
+        } else {
+            setButtonDisabled(true);
+        }
+    })
 
     return (
         <>
@@ -74,7 +83,7 @@ export default function Login() {
 
         <button className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
         onClick={onLogin}
-        >Login</button>
+        >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 

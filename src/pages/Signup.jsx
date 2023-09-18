@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -15,6 +15,8 @@ export default function Signup() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [cookies] = useCookies(["access_token"]);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+
 
     // redicrect to profile page
     // if user try to enter the signup page when logged in 
@@ -39,6 +41,14 @@ export default function Signup() {
             setLoading(false);
         }
     }
+
+    React.useEffect(() => {
+        if(user.username.length > 0 && user.email.length > 0 && user.password.length > 0) {
+            setButtonDisabled(false);
+        } else {
+            setButtonDisabled(true);
+        }
+    }, [user]);
 
     return (
         <>
@@ -78,9 +88,9 @@ export default function Signup() {
         onChange={(e) => setUser({...user, password: e.target.value})}
         placeholder="Enter your password"></input>
 
-        <button className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
+        <button className="border-2 mt-8 p-2 min-w-fit w-48 bg-sky-400 hover:bg-sky-500"
         onClick={onSignup}
-        >Signup</button>
+        >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 
         <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
 

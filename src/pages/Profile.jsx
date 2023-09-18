@@ -29,7 +29,7 @@ import { useCookies } from "react-cookie";
 
         return (
             <>
-            <div className="flex flex-col items-center justify-center mt-40 ">
+            <div className="flex flex-col items-center justify-center min-h-screen py-2 ">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
                 <h4 className="font-semibold rounded bg-purple-500 p-1 mt-8">See user details here</h4>
 
