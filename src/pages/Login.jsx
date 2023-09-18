@@ -5,8 +5,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 
 export default function Login() {
-
-
+''
     const [user, setUser] = useState({
         email: "", 
         password: "",
@@ -26,7 +25,6 @@ export default function Login() {
         }    
     }, [cookies.access_token, navigate]);
     
-
     const onLogin = async () => {
         try {
             setLoading(true);
@@ -36,9 +34,8 @@ export default function Login() {
             const accessToken = response.data.access_token;
             // console.log("Access token", accessToken);
             setCookie("access_token", accessToken, {path: "/"}); 
-            
             navigate('/profile');
-
+            
         } catch (error) {
             console.log("Login failed" + error);
         } finally {
