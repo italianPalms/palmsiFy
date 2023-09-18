@@ -42,7 +42,13 @@ export default function Signup() {
         }
     }
 
-    React.useEffect(() => {
+    const onSingupKeypress = e => {
+        if (e.keyCode === 13) {
+            onSignup();
+        }
+    }
+
+    useEffect(() => {
         if(user.username.length > 0 && user.email.length > 0 && user.password.length > 0) {
             setButtonDisabled(false);
         } else {
@@ -86,6 +92,7 @@ export default function Signup() {
         type="password"
         value={user.password}
         onChange={(e) => setUser({...user, password: e.target.value})}
+        onKeyDown={onSingupKeypress}
         placeholder="Enter your password"></input>
 
         <button className="border-2 mt-8 p-2 min-w-fit w-48 bg-sky-400 hover:bg-sky-500"

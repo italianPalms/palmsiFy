@@ -46,6 +46,12 @@ export default function Login() {
         }
     }
 
+    const onLoginKeypress = e => {
+        if (e.keyCode === 13) {
+            onLogin();
+        }
+    };
+
     useEffect(() => {
         if(user.email.length > 0 && user.password.length > 0) {
             setButtonDisabled(false);
@@ -79,9 +85,10 @@ export default function Login() {
         type="password"
         value={user.password}
         onChange={(e) => setUser({... user, password: e.target.value})}
+        onKeyDown={onLoginKeypress}
         placeholder="Enter your password"></input>
 
-        <button className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
+        <button type="submit" className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
         onClick={onLogin}
         >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 
