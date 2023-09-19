@@ -114,8 +114,8 @@ router.get('/logout', async (req, res) => {
 //getDataFromToken
 const getDataFromToken = (req, res) => {
     try {
-        const token = req.cookies.get("access_token")?.value || '';
-        const decodedToken = jwt.verify(token.process.env.TOKEN_SECRET);
+        const token = req.cookies.access_token || '';
+        const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
 
         return decodedToken.id;
     } catch (error) {
