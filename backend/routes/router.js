@@ -97,7 +97,6 @@ router.post('/login', async (req, res) => {
 
 });
 
-
 router.get('/logout', async (req, res) => {
     try {
 
@@ -110,8 +109,34 @@ router.get('/logout', async (req, res) => {
     } catch (error) {
         res.status(500).json({message: "Logout failed"});
     }
-} )
+} );
 
+//getDataFromToken
+const getDataFromToken = (req, res) => {
+    try {
+        const token = req.cookies.get("access_token")?.value || '';
+        const decodedToken = jwt.verify(token.process.env.TOKEN_SECRET);
+
+        return decodedToken.id;
+    } catch (error) {
+        throw new Error(error.message);
+        
+    }
+};
+
+router.get('/profile', async (req, res) => {
+    try {
+        const userID = await getDataFromToken(req);
+        const user = await User.findOne({_id: userID}).select("-password");
+
+        return res.json({
+            message: "User found", 
+            data: user
+        })
+    } catch (error) {
+        res.status(400).json({error: error.message}); 
+    }
+})
 
 
 module.exports = router;
