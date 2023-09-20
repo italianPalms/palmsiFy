@@ -31,7 +31,9 @@ export default function Login() {
             const response = await axios.post('http://localhost:4000/login', user);
             console.log("Login successful", response.data);
 
+            
             const accessToken = response.data.access_token;
+            localStorage.setItem("access_token", response.data.access_token);
             // console.log("Access token", accessToken);
             setCookie("access_token", accessToken, {path: "/"}); 
             navigate('/profile');

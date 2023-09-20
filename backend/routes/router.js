@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 const { useCookies } = require('react-cookie');
 
 router.post('/signup', async (req, res) => {
@@ -115,28 +115,39 @@ router.get('/logout', async (req, res) => {
 const getDataFromToken = (req, res) => {
     try {
         const token = req.cookies.access_token || '';
+        console.log(token);
+        if(!token) {
+            throw new Error("No token provided");
+        }
+
         const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
 
+        console.log("Decoded token:", decodedToken);
         return decodedToken.id;
     } catch (error) {
-        throw new Error(error.message);
-        
+        console.error("Error in getDataFromToken:", error);
+        // res.status(500).json({message: "getDataFromToken failed"});
     }
 };
+
 
 router.get('/profile', async (req, res) => {
     try {
         const userID = await getDataFromToken(req);
         const user = await User.findOne({_id: userID}).select("-password");
 
-        return res.json({
+        if (!user) {
+            return res.status(404).json({error: "User not found"});
+        }
+
+        return res.status(200).json({
             message: "User found", 
             data: user
-        })
+        });
     } catch (error) {
-        res.status(400).json({error: error.message}); 
+        console.error("Error in /profile route", error);
+        return res.status(500).json({error: "Internal server error"}); 
     }
-})
-
+});
 
 module.exports = router;
