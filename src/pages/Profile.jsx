@@ -19,7 +19,7 @@ import { useEffect } from "react";
         const config = {
             headers: {
                 Authorization: `Bearer ${accessToken}`, 
-            }, 
+            },
         };
 
         console.log("Calling getUserDetails");
