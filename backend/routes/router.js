@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { useCookies } = require('react-cookie');
+const cookieParser = require('cookie-parser');
+const sendEmail = require('../../src/components/Mailer');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -33,14 +34,15 @@ router.post('/signup', async (req, res) => {
         const savedUser = await newUser.save();
         console.log(savedUser);
 
+        //send verification email
+        await sendEmail({email, emailType: 'VERIFY', userId: savedUser._id});
+
         res.status(201).json({message: 'User created successfully'});
     } catch (error) {
         console.log("Signup failed" + error);
         res.status(500).json({message: 'Signup failed'});
     }
 });
-
-
 
 router.post('/login', async (req, res) => {
     try {
@@ -111,10 +113,12 @@ router.get('/logout', async (req, res) => {
     }
 } );
 
+router.use(cookieParser());
+
 //getDataFromToken
-const getDataFromToken = (req, res) => {
+const getDataFromToken = (req) => {
     try {
-        const token = req.cookies.access_token || '';
+        const token = req.cookies.access_token;
         console.log(token);
         if(!token) {
             throw new Error("No token provided");
@@ -135,10 +139,10 @@ router.get('/profile', async (req, res) => {
     try {
         const userID = await getDataFromToken(req);
         const user = await User.findOne({_id: userID}).select("-password");
-
         if (!user) {
             return res.status(404).json({error: "User not found"});
         }
+       
 
         return res.status(200).json({
             message: "User found", 
