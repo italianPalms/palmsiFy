@@ -1,4 +1,4 @@
-//getDataFromToken
+// // getDataFromToken
 // const getDataFromToken = (req) => {
 //     try {
 //         const token = req.cookies.access_token;

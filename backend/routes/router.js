@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const sendEmail = require('../../src/components/Mailer');
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
+const getDataFromToken = require('../../src/components/GetDataFromToken');
 
 
 
@@ -176,7 +177,7 @@ router.post('/verifyEmail', async (req, res) => {
 })
 
 
-router.use(cookieParser());
+// router.use(cookieParser());
 
 
 // router.get('/profile', async (req, res) => {
@@ -186,7 +187,7 @@ router.use(cookieParser());
 //         if (!user) {
 //             return res.status(404).json({error: "User not found"});
 //         }
-       
+//         const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
 
 //         return res.status(200).json({
 //             message: "User found", 
