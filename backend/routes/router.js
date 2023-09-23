@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { useCookies } = require('react-cookie');
 require('dotenv').config();
 
 router.post('/signup', async (req, res) => {
