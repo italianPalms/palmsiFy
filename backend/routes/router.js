@@ -4,6 +4,7 @@ const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { useCookies } = require('react-cookie');
+require('dotenv').config();
 
 router.post('/signup', async (req, res) => {
     try {
@@ -82,7 +83,7 @@ router.post('/login', async (req, res) => {
         });
 
         // console.log("Cookie set successful");
-
+        console.log("Login successful");
         return res.status(201).json({
             message: "Login successful",
             access_token: token, 
@@ -99,7 +100,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/logout', async (req, res) => {
     try {
-
+        console.log("Logout successful");
         return res.status(201).json({
             message: "Logout successful", 
             access_token: "", 
@@ -109,45 +110,37 @@ router.get('/logout', async (req, res) => {
     } catch (error) {
         res.status(500).json({message: "Logout failed"});
     }
-} );
+});
 
-//getDataFromToken
-const getDataFromToken = (req, res) => {
+//get user details
+router.get('/getUserDetails', async (req, res) => {
     try {
-        const token = req.cookies.access_token || '';
-        console.log(token);
-        if(!token) {
-            throw new Error("No token provided");
+        const accessToken = req.headers.authorization
+        // console.log(accessToken)
+        if(!accessToken) {
+            return res.status(401).json({message: "Unauthorized"}); 
         }
 
+        const token = accessToken.split(" ")[1];
         const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
+        const userId = decodedToken.id;
+        
+        const user = await User.findById(userId).select("-password");
 
-        console.log("Decoded token:", decodedToken);
-        return decodedToken.id;
-    } catch (error) {
-        console.error("Error in getDataFromToken:", error);
-        // res.status(500).json({message: "getDataFromToken failed"});
-    }
-};
-
-
-router.get('/profile', async (req, res) => {
-    try {
-        const userID = await getDataFromToken(req);
-        const user = await User.findOne({_id: userID}).select("-password");
-
-        if (!user) {
-            return res.status(404).json({error: "User not found"});
+        if(!user) {
+            console.log("User not found");
+            return res.status(404).json({message: "User not found"});
         }
 
-        return res.status(200).json({
-            message: "User found", 
-            data: user
-        });
+        res.json(user);
+        console.log("User details fetched successfully");
     } catch (error) {
-        console.error("Error in /profile route", error);
-        return res.status(500).json({error: "Internal server error"}); 
+        console.log("Failed to fetch user details", error);
+        res.status(500).json({message: "Failed to fetch user details"});
     }
+    // User.find()
+    // .then(users => res.json(users))
+    // .catch(err => res.json(err))
 });
 
 module.exports = router;

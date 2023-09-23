@@ -1,42 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
     export default function Profile() {
 
         const navigate = useNavigate();
         const [, setCookie] = useCookies();
         const [loading, setLoading] = useState(false);
-        const [data, setData] = useState("nothing");
+        const [user, setUser] = useState(null);
+        const [cookies ] = useCookies(["access_token"]);
+        const [showUserDetails, setShowUserDetails] = useState(false);
+        const [buttonText, setButtonText] = useState("Show user details");
 
-
-        const accessToken = localStorage.getItem("access_token");
-        console.log("Access token", accessToken)
-
-        const config = {
-            headers: {
-                Authorization: `Bearer ${accessToken}`, 
-            },
-        };
-
-        console.log("Calling getUserDetails");
-
-        const getUserDetails = async () => {
-            try {
-                console.log(config);
-
-                const response = await axios.get('http://localhost:4000/profile', config);
-
-                console.log("Response data:", response.data);
-                setData(response.data.data._id);    
-            } catch (error) {
-                console.log("Failed to get user details", error)
-            }
-            
-        }
 
         const logout = async () => {
             try {
@@ -55,24 +31,61 @@ import { useEffect } from "react";
             } finally {
                 setLoading(false);
             }
-        }
+        } 
 
-        useEffect(() => {
-            // Call getUserDetails here
-            getUserDetails();
-          }, []); // Empty dependency array means it runs once after the initial render
-          
+        const toggleUserDetails = () => {
+            if (showUserDetails) {
+                setShowUserDetails(false); 
+                setButtonText("Show user details");
+            } else {
+                axios.get('http://localhost:4000/getUserDetails', {
+                    headers: {
+                        Authorization: `Bearer ${cookies.access_token}`
+                    },
+                })
+                .then(response => {
+                    setUser(response.data);
+                    setShowUserDetails(true);
+                    setButtonText("Hide user details");
+
+                    console.log("User details", response.data);
+                })
+                .catch(err => console.log("Failed to fetch user details", err)); 
+                }
+            }
 
         return (
             <>
             <div className="flex flex-col items-center justify-center min-h-screen py-2 ">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
-                <h4 className="font-semibold rounded bg-purple-500 p-1 mt-8">{data === "nothing" ? "Nothing" : <Link to={`/user/${data}`}>{data}</Link>}</h4>
 
+                <div className="w-100 text-xl mt-8">
+                    {showUserDetails && user ? (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className="p-2">Username</th>
+                                <th className="p-2">Email</th>
+                                <th className="p-2">ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="p-2">{user.username}</td>
+                                <td className="p-2">{user.email}</td>
+                                <td className="p-2">{user._id}</td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                    ) : (
+                        <p className="mt-4">Click to see user details 😎</p>
+                    )}
+                </div>
+                {/* <h4 className="font-semibold rounded bg-purple-500 p-1 mt-8">{data === "nothing" ? "Nothing" : <Link to={`/user/${data}`}>{data}</Link>}</h4> */}
 
                 <button className="boder-2 mt-8 p-2 w-48 bg-orange-700 hover:bg-orange-900 rounded" 
-                onClick={getUserDetails}
-                >Get user details</button>
+                onClick={toggleUserDetails}
+                >{buttonText}</button>
 
                 <button
                 className="border-2 mt-6 p-2 w-48 bg-sky-400 hover:bg-sky-500 rounded"
