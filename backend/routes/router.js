@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const sendEmail = require('../../src/components/Mailer');
+const hashedToken = require('../../src/components/Mailer');
 require('dotenv').config();
 
 router.post('/signup', async (req, res) => {
@@ -33,6 +35,10 @@ router.post('/signup', async (req, res) => {
         const savedUser = await newUser.save();
         console.log(savedUser);
 
+        //verification email 
+        await sendEmail({email, emailType: 'VERIFY', userId: savedUser._id})
+
+        console.log("Signup successful");
         res.status(201).json({message: 'User created successfully'});
     } catch (error) {
         console.log("Signup failed" + error);
@@ -141,5 +147,36 @@ router.get('/getUserDetails', async (req, res) => {
     // .then(users => res.json(users))
     // .catch(err => res.json(err))
 });
+
+router.post('/verifyEmail', async (req, res) => {
+    try {
+        const verifyToken = req.headers.authorization
+        console.log(verifyToken);
+
+        if(!verifyToken) {
+            return res.status(401).json({message: "Unauthorized"});
+        }
+
+        const token = verifyToken.split(" ")[1];
+        const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
+        const userId = decodedToken.id;
+
+        const user = await User.findById(userId);
+
+        if(!user) {
+            console.log("User not found");
+            return res.status(404).json({message: "User not found"});
+        }
+        
+        user.isVerified = true;
+        await user.save();
+
+        console.log("Email verification successful");
+
+    } catch (error) {
+        console.log("Email verification failed", error);
+        res.status(500).json({message: "Email verification failed"});
+    }
+})
 
 module.exports = router;

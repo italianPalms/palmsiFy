@@ -9,7 +9,11 @@ export default function VerifyEmailPage() {
 
     const verifyUserEmail = async () => {
         try {
-            await axios.post('http://localhost:4000/verifyEmail', {token});
+            await axios.post('http://localhost:4000/verifyEmail', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+            });
             setVerified(true);
             console.log(token);
 
