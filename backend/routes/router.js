@@ -148,35 +148,35 @@ router.get('/getUserDetails', async (req, res) => {
     // .catch(err => res.json(err))
 });
 
-router.post('/verifyEmail', async (req, res) => {
-    try {
-        const verifyToken = req.headers.authorization
-        console.log(verifyToken);
+// router.post('/verifyEmail', async (req, res) => {
+//     try {
+//         const emailToken = user.verifyToken;
+//         console.log(emailToken);
 
-        if(!verifyToken) {
-            return res.status(401).json({message: "Unauthorized"});
-        }
+//         if(!emailToken) {
+//             return res.status(401).json({message: "Unauthorized"});
+//         }
 
-        const token = verifyToken.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
-        const userId = decodedToken.id;
+//         const token = verifyToken.split(" ")[1];
+//         const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
+//         const userId = decodedToken.id;
 
-        const user = await User.findById(userId);
+//         const user = await User.findById(userId);
 
-        if(!user) {
-            console.log("User not found");
-            return res.status(404).json({message: "User not found"});
-        }
+//         if(!user) {
+//             console.log("User not found");
+//             return res.status(404).json({message: "User not found"});
+//         }
         
-        user.isVerified = true;
-        await user.save();
+//         user.isVerified = true;
+//         await user.save();
 
-        console.log("Email verification successful");
+//         console.log("Email verification successful");
 
-    } catch (error) {
-        console.log("Email verification failed", error);
-        res.status(500).json({message: "Email verification failed"});
-    }
-})
+//     } catch (error) {
+//         console.log("Email verification failed", error);
+//         res.status(500).json({message: "Email verification failed"});
+//     }
+// })
 
 module.exports = router;

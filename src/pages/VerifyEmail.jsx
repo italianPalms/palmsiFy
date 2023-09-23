@@ -9,24 +9,22 @@ export default function VerifyEmailPage() {
 
     const verifyUserEmail = async () => {
         try {
-            await axios.post('http://localhost:4000/verifyEmail', {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                },
-            });
+            await axios.post('http://localhost:4000/verifyEmail', {token});
             setVerified(true);
             console.log(token);
+            if (!token) {
+                console.log("No token");
+            }
 
 
         } catch (error) {
+            console.log("Verify email failed", error);
             setError(true);
-            console.log("Verify email failed" + error);
         }
     }
 
     useEffect(() => {
-        const urlToken = window.location.search.split("=")
-        [1];
+        const urlToken = window.location.search.split("=")[1];
         setToken(urlToken || "");
     }, []);
 
