@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 require('dotenv/config');
 const cookieParser = require('cookie-parser');
 
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -20,10 +19,7 @@ const corsOption = {
     optionSuccessStatus: 200
 }
 
-app.use(cors({
-    origin: 'http://localhost:3000', 
-    credentials: true,
-}));
+app.use(cors());
 
 app.use(cors(corsOption))
 app.use('/', router)
