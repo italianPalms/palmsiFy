@@ -7,6 +7,7 @@ import NoPage from "./pages/NoPage";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import Protected from "./components/Protected";
+import VerifyEmail from "./pages/VerifyEmail";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path ="/login" element= { <Login />} />
           <Route path ="/signup" element= { <Signup />} />
           <Route path = "/forgotPassword" element={ <ForgotPassword />} />
+          <Route path = "/verifyEmail" element = {<VerifyEmail />} />
 
           <Route path ="/profile" element= {
             <Protected Login={Login}>

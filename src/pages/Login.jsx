@@ -87,7 +87,7 @@ export default function Login() {
         onKeyDown={onLoginKeypress}
         placeholder="Enter your password"></input>
 
-        <button type="submit" className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
+        <button type="submit" className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500 rounded"
         onClick={onLogin}
         >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 
