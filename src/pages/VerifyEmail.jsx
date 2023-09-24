@@ -9,13 +9,12 @@ export default function VerifyEmailPage() {
 
     const verifyUserEmail = async () => {
         try {
-            await axios.post('http://localhost:4000/verifyEmail', {token});
+            await axios.post('http://localhost:4000/verifyEmail', {token: token});
+                console.log(token);
             setVerified(true);
-            console.log(token);
             if (!token) {
                 console.log("No token");
             }
-
 
         } catch (error) {
             console.log("Verify email failed", error);

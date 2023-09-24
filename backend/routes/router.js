@@ -4,7 +4,6 @@ const User = require('../models/userModel')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const sendEmail = require('../../src/components/Mailer');
-const hashedToken = require('../../src/components/Mailer');
 require('dotenv').config();
 
 router.post('/signup', async (req, res) => {
@@ -148,35 +147,29 @@ router.get('/getUserDetails', async (req, res) => {
     // .catch(err => res.json(err))
 });
 
-// router.post('/verifyEmail', async (req, res) => {
-//     try {
-//         const emailToken = user.verifyToken;
-//         console.log(emailToken);
+router.post('/verifyEmail', async (req, res) => {
+    try {
+        const {token} = req.body
+        console.log(token);
 
-//         if(!emailToken) {
-//             return res.status(401).json({message: "Unauthorized"});
-//         }
+        const user = await User.findOne({verifyToken: token, 
+        verifyTokenExpiry: {$gt: Date.now()}}); 
 
-//         const token = verifyToken.split(" ")[1];
-//         const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
-//         const userId = decodedToken.id;
-
-//         const user = await User.findById(userId);
-
-//         if(!user) {
-//             console.log("User not found");
-//             return res.status(404).json({message: "User not found"});
-//         }
+        if(!user) {
+            return res.status(401).json({message: "Invalid token"});
+        }
+        console.log(user);
         
-//         user.isVerified = true;
-//         await user.save();
+        user.isVerified = true;
+        await user.save();
 
-//         console.log("Email verification successful");
+        console.log("Email verification successful");
+        res.status(200).json({message: "Email verified successfully"});
 
-//     } catch (error) {
-//         console.log("Email verification failed", error);
-//         res.status(500).json({message: "Email verification failed"});
-//     }
-// })
+    } catch (error) {
+        console.log("Email verification failed", error);
+        res.status(500).json({message: "Email verification failed"});
+    }
+})
 
 module.exports = router;

@@ -9,7 +9,7 @@ const sendEmail = async({email, emailType, userId}) => {
         if (emailType === 'VERIFY') {
             await User.findByIdAndUpdate(userId, {
                 verifyToken: hashedToken, 
-                verifyTokenExpires: Date.now() + 3600000
+                verifyTokenExpiry: Date.now() + 3600000
             })
         }
 
