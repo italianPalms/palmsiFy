@@ -38,18 +38,20 @@ export default function VerifyEmailPage() {
         <div className='items-center justify-center flex flex-col min-h-screen p-2'>
 
         <h1 className='text-4xl font-semibold'>Verify Email</h1>
-        <h2 className='font-semibold text-2xl mt-8'>{token ? `${token}` : "no token"}</h2>
+        {/* <h2 className='font-semibold text-2xl mt-8'>{token ? `${token}` : "no token"}</h2> */}
 
         {verified && (
             <div>
-                <h2 className='text-2xl bg-green-400 text-black p-2'>Email verified</h2>
-                <a href='/login' className='font-medium text-base mt-4'>Go to login page</a>
+                <h2 className='text-2xl bg-green-400 text-black p-2 mt-8 items-center justify-center flex w-66'>Email verified</h2>
+                <a href='/login' className='font-medium text-base mt-8 items-center justify-center flex flex-col'>Click here to go to the login page</a>
             </div>
+            
         )}    
 
         {error && (
             <div>
-                <h2 className='text-3xl bg-red-400 text-black p-2 mt-8'>Error</h2>
+                <h2 className='text-3xl bg-red-400 text-black p-2 mt-8 w-66 items-center justify-center flex'>Error</h2>
+                <p className='font-medium mt-4 flex items-center justify-center'>Something went wrong.Please try again!</p>
             </div>
         )}
         </div>
