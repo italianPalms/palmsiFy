@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import backgroundImage from "../picture-bg.jpeg";
+import Header from "../components/Header";
 
 export default function Home() {
     const navigate = useNavigate();
@@ -14,13 +15,13 @@ export default function Home() {
         navigate("/login")
     };
 
-    const forgotPassword = () => {
-        console.log("Forgot password clicked")
-        navigate("/ForgotPassword")
-    };
+  
 
     return (
         <>
+        <div>
+            <Header />
+        </div>
         <div
         style={{
             // backgroundImage: `url(${backgroundImage})`, 
@@ -42,16 +43,6 @@ export default function Home() {
         <button className="p-2 border-2 ml-3 w-48 bg-sky-400 hover:bg-sky-500"
             onClick={login}>Login</button>
         </div>
-        </div>
-
-        <div 
-        style={{
-            position: 'absolute', 
-            top: '20px', 
-            right: '20px', 
-        }}>
-        <button className="p-2 border-2 w-48 bg-orange-700 hover:bg-orange-900"
-        onClick={forgotPassword}>Forgot Password</button>
         </div>
         </>
     )
