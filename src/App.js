@@ -8,6 +8,8 @@ import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import Protected from "./components/Protected";
 import VerifyEmail from "./pages/VerifyEmail";
+import About from "./pages/About";
+import Investors from "./pages/Investors";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
           <Route path ="/signup" element= { <Signup />} />
           <Route path = "/forgotPassword" element={ <ForgotPassword />} />
           <Route path = "/verifyEmail" element= { <VerifyEmail />} />
+          <Route path = "/about" element = { <About /> } />
+          <Route path = "/investors" element = { <Investors /> } />
 
           <Route path ="/profile" element= {
             <Protected Login={Login}>
