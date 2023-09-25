@@ -27,21 +27,20 @@ export default function Header() {
     return (
         <>
         <div className="flex justify-between ">
-            <button className="p-2 m-4"
+            <button className="p-1 m-3 ml-4"
             onClick={homePage}
             >Got to home page</button>
-        {/* <h1> <a href="/home">Welcome to the home page</a></h1> */}
         <div className="">
         
-        <button className="p-2 m-4"
+        <button className="p-1 m-3"
         onClick={about}
         >About</button>
         
-        <button className="p-2 m-4"
+        <button className="p-1 m-3"
         onClick={investors}
         >Investors</button>
         
-        <button className="p-2 m-4"
+        <button className="p-1 m-3 mr-4"
         onClick={forgotPassword}
         >Forgot password</button>
         </div>
