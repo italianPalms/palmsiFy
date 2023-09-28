@@ -30,6 +30,7 @@ export default function Header() {
             <button className="p-1 m-3 ml-4"
             onClick={homePage}
             >Got to home page</button>
+            
         <div className="">
         
         <button className="p-1 m-3"

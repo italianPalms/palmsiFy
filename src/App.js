@@ -10,6 +10,7 @@ import Protected from "./components/Protected";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Investors from "./pages/Investors";
+import Movies from "./pages/Movies";
 
 function App() {
 
@@ -32,6 +33,11 @@ function App() {
             <Profile />
             </Protected>
             }/>
+          <Route path = "/movies" element = {
+            <Protected Login={Login}>
+              <Movies />
+            </Protected>
+          } />
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
