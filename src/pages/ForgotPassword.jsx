@@ -13,7 +13,7 @@ export default function ForgotPassword () {
 
     return (
         <>
-        <div className="mt-2">
+        <div>
             <Header />
         </div>
 
