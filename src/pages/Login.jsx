@@ -65,7 +65,7 @@ export default function Login() {
             <Header />
         </div>
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+        <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-56">
         <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
 
         <label className="text-xl font-medium mt-3">Email</label>

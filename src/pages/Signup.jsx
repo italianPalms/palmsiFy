@@ -62,7 +62,7 @@ export default function Signup() {
             <Header />
         </div>
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+        <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-56">
 
         <h1 className="text-4xl font-semibold">{loading ? "Processing" : "Signup"}</h1>
 

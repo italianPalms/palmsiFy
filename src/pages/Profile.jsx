@@ -56,7 +56,7 @@ import { useCookies } from "react-cookie";
 
         return (
             <>
-            <div className="flex flex-col items-center justify-center min-h-screen py-2 ">
+            <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-28">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
 
                 <div className="w-100 text-xl mt-8">

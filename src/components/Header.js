@@ -40,7 +40,7 @@ export default function Header() {
         onClick={investors}
         >Investors</button>
         
-        <button className="p-1 m-3 mr-4 text-red-200"
+        <button className="p-1 m-3 mr-4"
         onClick={forgotPassword}
         >Forgot password</button>
         </div>
