@@ -20,20 +20,20 @@ export default function Home() {
         <div>
             <Header />
         </div>
-        <div className="flex items-center justify-center">
-            <img src={Quote} alt="Quote: It's like i have ESPN or something." className="w-96 mt-72" />
-        </div>
 
-        <div className="flex items-center justify-center">
-        <h1 className=" text-5xl font-bold mr-4 text-zinc-50">Home page</h1>
-        
-        <button className="p-2 border-2 mr-3 w-48 bg-sky-400 hover:bg-sky-500"
-            onClick={signup}>Signup</button>
+        <div className="flex flex-col items-center justify-center h-screen pb-80">
+            <img src={Quote} alt="Quote: It's like i have ESPN or something." className="w-96" />
 
-        <button className="p-2 border-2 ml-3 w-48 bg-sky-400 hover:bg-sky-500"
-            onClick={login}>Login</button>
+            <div className="flex items-center">
+            <h1 className=" text-5xl font-bold mr-4 text-zinc-50">Home page</h1>
+
+            <button className="p-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
+                onClick={login}>Login</button>
+            
+            <button className="p-2 border-2 ml-3 mr-3 w-48 bg-sky-400 hover:bg-sky-500"
+                onClick={signup}>Signup</button>
+            </div>
         </div>
-       
         </>
     )
 }
