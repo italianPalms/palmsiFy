@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { LoggedInHeader } from "../components/LoggedInHeader";
@@ -55,16 +55,10 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
                 }
             }
 
-            const movies = () => {
-                navigate('/movies');
-            }
 
         return (
             <>
             <div className="flex">
-                <button className="p-1 m-3 ml-4"
-                onClick={movies}
-                >Movies</button>
                 <LoggedInHeader />
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-28">
