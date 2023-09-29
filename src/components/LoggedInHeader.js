@@ -5,9 +5,9 @@ export function LoggedInHeader () {
     const navigate = useNavigate();
 
    
-    const logout = () => {
-        navigate('/home');
-    }
+    // const logout = () => {
+    //     navigate('/home');
+    // }
 
     const profile = () => {
         navigate('/profile');

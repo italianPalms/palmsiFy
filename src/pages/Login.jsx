@@ -57,7 +57,7 @@ export default function Login() {
         } else {
             setButtonDisabled(true);
         }
-    })
+    }, [user.email.length, user.password.length]);
 
     return (
         <>
@@ -74,7 +74,7 @@ export default function Login() {
         id="email"
         type="email"
         value={user.email}
-        onChange={(e) => setUser({... user, email: e.target.value})}
+        onChange={(e) => setUser({...user, email: e.target.value})}
         placeholder="Enter your email"></input>
 
         <label className="text-xl font-medium mt-3">Password</label>
@@ -83,7 +83,7 @@ export default function Login() {
         id="password"
         type="password"
         value={user.password}
-        onChange={(e) => setUser({... user, password: e.target.value})}
+        onChange={(e) => setUser({...user, password: e.target.value})}
         onKeyDown={onLoginKeypress}
         placeholder="Enter your password"></input>
 
