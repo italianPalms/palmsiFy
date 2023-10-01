@@ -183,7 +183,7 @@ router.post('/resetPassword', async (req, res) => {
         console.log('User found', user);
         if(!user) {
             console.log('User not found');
-            res.status(400).json({message: 'User not found'});
+            return res.status(400).json({message: 'User not found'});
         }
         
         // reset password
@@ -194,7 +194,7 @@ router.post('/resetPassword', async (req, res) => {
             user.password = hashedPassword;
             await user.save();
                         
-            res.status(200).json({message: 'Password reset successfully'});
+            return res.status(200).json({message: 'Password reset successfully'});
         
     } catch (error) {
         console.log('Reset password failed' + error)
