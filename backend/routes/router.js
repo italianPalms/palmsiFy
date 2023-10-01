@@ -172,4 +172,36 @@ router.post('/verifyEmail', async (req, res) => {
     }
 })
 
+router.post('/resetPassword', async (req, res) => {
+    try {
+        const {email, password} = req.body;
+
+        console.log(req.body);
+        
+        // check if user exist
+        const user = await User.findOne({email})
+        console.log('User found', user);
+        if(!user) {
+            console.log('User not found');
+            res.status(400).json({message: 'User not found'});
+        }
+        
+        // reset password
+        // const resetPassword = await User.updateOne({password})
+            const salt = await bcryptjs.genSalt(10)
+            const hashedPassword = await bcryptjs.hash (password,salt)
+
+            user.password = hashedPassword;
+            await user.save();
+                        
+            res.status(200).json({message: 'Password reset successfully'});
+        
+    } catch (error) {
+        console.log('Reset password failed' + error)
+        res.status(500).json({message: 'Reset password failed'});
+        }
+});
+
+
+
 module.exports = router;
