@@ -15,7 +15,7 @@ export default function Login() {
     const navigate = useNavigate();
     const [, setCookie] = useCookies();
     const [cookies] = useCookies(["access_token"]);
-    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(true);
 
     // redicrect to profile page
     // if user try to enter the login page when logged in
@@ -46,7 +46,7 @@ export default function Login() {
     }
 
     const onLoginKeypress = e => {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && !buttonDisabled) {
             onLogin();
         }
     };
@@ -58,6 +58,8 @@ export default function Login() {
             setButtonDisabled(true);
         }
     }, [user.email.length, user.password.length]);
+
+    const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
 
     return (
         <>
@@ -87,7 +89,7 @@ export default function Login() {
         onKeyDown={onLoginKeypress}
         placeholder="Enter your password"></input>
 
-        <button type="submit" className="border-2 mt-8 p-2 w-48 bg-sky-400 hover:bg-sky-500"
+        <button type="submit" className={`border-2 mt-8 p-2 w-48 ${buttonColor}`}
         onClick={onLogin}
         >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 

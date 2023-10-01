@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword () {
 
-    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(true);
     const navigate = useNavigate();
     const [user, setUser] = useState({
         email: "", 
@@ -24,7 +24,7 @@ export default function ForgotPassword () {
     }
 
     const onResetKeyPress = e => {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && !buttonDisabled) {
             resetPassword();
         }
     }
@@ -37,6 +37,7 @@ export default function ForgotPassword () {
         }
     }, [user.email.length, user.password.length]);
 
+    const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
 
     return (
         <>
@@ -57,10 +58,6 @@ export default function ForgotPassword () {
         required>
         </input>
 
-        {/* <button className="border-2 p-2 w-48 mt-2 bg-sky-400 hover:bg-sky-500"
-        onClick={verifyEmail}
-        >Verify email</button> */}
-
         <label className="mb-2 mt-4 font-semibold">New password</label>
         <input className="p-2 mb-2 text-black rounded"
         id="password"
@@ -72,7 +69,7 @@ export default function ForgotPassword () {
         required>
         </input>
 
-        <button className="border-2 p-2 w-48 mt-2 mb-3 bg-orange-700 hover:bg-orange-900"
+        <button className={`border-2 p-2 w-48 mt-2 mb-3 ${buttonColor}`}
         onClick={resetPassword}
         >{buttonDisabled ? "Fill out required fields": "Reset password"}</button>
 

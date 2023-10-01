@@ -15,7 +15,7 @@ export default function Signup() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [cookies] = useCookies(["access_token"]);
-    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(true);
 
 
     // redicrect to profile page
@@ -43,7 +43,7 @@ export default function Signup() {
     }
 
     const onSingupKeypress = e => {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && !buttonDisabled) {
             onSignup();
         }
     }
@@ -55,6 +55,8 @@ export default function Signup() {
             setButtonDisabled(true);
         }
     }, [user]);
+
+    const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
 
     return (
         <>
@@ -95,7 +97,7 @@ export default function Signup() {
         onKeyDown={onSingupKeypress}
         placeholder="Enter your password"></input>
 
-        <button className="border-2 mt-8 p-2 min-w-fit w-48 bg-sky-400 hover:bg-sky-500"
+        <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
         onClick={onSignup}
         >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 
