@@ -27,6 +27,7 @@ export function LoggedInHeader () {
             <button className="p-1 m-3"
             onClick={movies}
             >Movies</button>
+            <button className="p-1 m-3">Groceries</button>
         </div>
         <div className=" fixed top-0 right-0 flex justify-between items-start">
             <button className="p-1 m-3 mr-4"

@@ -180,10 +180,12 @@ router.post('/resetPassword', async (req, res) => {
         
         // check if user exist
         const user = await User.findOne({email})
-        console.log('User found', user);
+        // console.log('User found', user);
         if(!user) {
             console.log('User not found');
             return res.status(400).json({message: 'User not found'});
+        } else {
+            console.log("User found", user);
         }
         
         // reset password
