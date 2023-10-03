@@ -26,12 +26,14 @@ export default function Header() {
 
     return (
         <>
+        <div className="fixed">
         <div className="flex justify-between ">
             <button className="p-1 m-3 ml-4"
             onClick={homePage}
             >Got to home page</button>
+        </div>
             
-        <div className="">
+        <div className="fixed top-0 right-0 flex justify-between items-start">
         
         <button className="p-1 m-3"
         onClick={about}

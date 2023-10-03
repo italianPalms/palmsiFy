@@ -44,7 +44,7 @@ export function LoggedInHeader () {
 
     return (
         <>
-        <div>
+        <div className="fixed">
             <button className="p-1 m-3 ml-4"
             onClick={profile}
             >Go to profile page</button>
