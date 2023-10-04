@@ -6,8 +6,10 @@ import React, {useState, useEffect} from "react";
 export function LoggedInHeader () {
 
     const navigate = useNavigate();
-    const [ cookies ] = useCookies(["access_token"]);
     const [userId, setUserId] = useState();
+    const [loading, setLoading] = useState(false)
+    const [cookies ] = useCookies(["access_token"]);
+    const [, setCookie] = useCookies();
 
     useEffect(() => {
         const fetchUsername = async () => {
@@ -27,11 +29,24 @@ export function LoggedInHeader () {
         fetchUsername();
     }, [])
 
-  
-   
-    // const logout = () => {
-    //     navigate('/home');
-    // }
+    const logout = async () => {
+        try {
+            setLoading(true);
+            await axios.get('http://localhost:4000/logout');
+            console.log("Logout successful");
+
+            setCookie("access_token", "", {expires: new Date(0)});
+            localStorage.removeItem("access_token");            
+
+            navigate('/home');
+
+        } catch (error) {
+            console.log("Logout failed" + error)
+        } finally {
+            setLoading(false);
+        }
+        
+    }
 
     const profile = () => {
         navigate('/profile');
@@ -58,6 +73,7 @@ export function LoggedInHeader () {
             <p className="p-1 m-3 font-semibold">Logged in as: {userId} </p>
             
             <button className="p-1 m-3 mr-4"
+            onClick={logout}
             >Logout</button>
         </div>
         </>

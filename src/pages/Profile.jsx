@@ -15,25 +15,6 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
         const [buttonText, setButtonText] = useState("Show user details");
 
 
-        const logout = async () => {
-            try {
-                setLoading(true);
-                await axios.get('http://localhost:4000/logout'); 
-                console.log("Logout successful");
-
-
-                setCookie("access_token", "", {expires: new Date(0)});
-                localStorage.removeItem("access_token");
-
-                navigate("/home")
-                
-            } catch (error) {
-                console.log("Logout failed" + error);
-            } finally {
-                setLoading(false);
-            }
-        } 
-
         const toggleUserDetails = () => {
             if (showUserDetails) {
                 setShowUserDetails(false); 
@@ -92,10 +73,6 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
                 onClick={toggleUserDetails}
                 >{buttonText}</button>
 
-                <button
-                className="border-2 mt-6 p-2 w-48 bg-sky-400 hover:bg-sky-500 rounded"
-                onClick={logout}
-                >Logout</button>
             </div>
             </>
         )
