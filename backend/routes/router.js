@@ -195,8 +195,12 @@ router.post('/resetPassword', async (req, res) => {
 
             user.password = hashedPassword;
             await user.save();
-                        
+
+            // send reset password verification
+            await sendEmail({email, emailType: 'RESET', userId: user._id});
+
             return res.status(200).json({message: 'Password reset successfully'});
+
         
     } catch (error) {
         console.log('Reset password failed' + error)

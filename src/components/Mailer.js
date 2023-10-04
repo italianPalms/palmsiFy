@@ -11,6 +11,11 @@ const sendEmail = async({email, emailType, userId}) => {
                 verifyToken: hashedToken, 
                 verifyTokenExpiry: Date.now() + 3600000
             })
+        } else if (emailType === 'RESET') {
+            await User.findByIdAndUpdate(userId, {
+                forgotPasswordToken: hashedToken,
+                forgotPasswordTokenExpiry: Date.now() + 3600000
+            })
         }
 
         var transport = nodemailer.createTransport({
@@ -25,8 +30,9 @@ const sendEmail = async({email, emailType, userId}) => {
           const mailOptions = {
               from: 'palms@gmail.com', 
               to: email, 
-              subject: emailType === 'VERIFY' ? 'Verify your email' : 'Reset your password', 
-              html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to verify your email, or copy and paste this link into your browser: <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+              subject: emailType === 'VERIFY' ? 'Verify your email' : 'Your password is reset', 
+              html: emailType === 'VERIFY' ? `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to verify your email, or copy and paste this link into your browser: <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+              : '<p>Your password has been reset successfully. If you did not request a passowrd reset please change it immediately.</p>',
               
             }; 
 
