@@ -1,17 +1,17 @@
 // import { useNavigate } from "react-router-dom";
-
 export function MovieHeader () {
 
     // const navigate = useNavigate();
 
     return (
         <>
-        <div>
+        <div className="">
             <button className="p-1 m-3">Series</button>
             <button className="p-1 m-3">Films</button>
             </div>
+
             <div>
-            <button className="p-1 m-3 mt-4 fixed top-0 right-20"
+            <button className="p-1 m-3 mt-4 top-0"
             onClick={() => {
                 console.log("Search icon clicked");
             }}

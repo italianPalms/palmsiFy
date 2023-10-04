@@ -17,9 +17,8 @@ export function LoggedInHeader () {
                 }
             })
             .then((response) => {
-                const username = response.data.username;
                 setUserId(response.data.username);
-                // console.log(username);
+                // console.log(response.data.username);
             })
             .catch(err => {
                 console.log("Failed to fetch userId", err);
@@ -44,17 +43,18 @@ export function LoggedInHeader () {
 
     return (
         <>
-        <div className="fixed">
+        <div className="top-0 left-0 flex justify-between">
             <button className="p-1 m-3 ml-4"
             onClick={profile}
             >Go to profile page</button>
-
+            
             <button className="p-1 m-3"
             onClick={movies}
             >Movies</button>
+
             <button className="p-1 m-3">Groceries</button>
         </div>
-        <div className=" fixed top-0 right-0 flex justify-between items-start">
+        <div className="absolute top-0 right-0 flex justify-end items-end">
             <p className="p-1 m-3 font-semibold">Logged in as: {userId} </p>
             
             <button className="p-1 m-3 mr-4"
