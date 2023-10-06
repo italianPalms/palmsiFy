@@ -19,10 +19,18 @@ router.post('/signup', async (req, res) => {
             return console.log("User already exist. Please login");
         }
 
+        // check if password is 7 or more characters
+        const passwordRequirement = password.length < 8
+        if (passwordRequirement) {
+            res.status(400).json({})
+            return console.log("Please create a longer password");
+        }
+ 
         //add logic to hash password
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash
         (password, salt)
+        
 
         const newUser = new User ({
             username, 
