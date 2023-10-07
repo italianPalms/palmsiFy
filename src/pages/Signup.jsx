@@ -16,7 +16,10 @@ export default function Signup() {
     const navigate = useNavigate();
     const [cookies] = useCookies(["access_token"]);
     const [buttonDisabled, setButtonDisabled] = useState(true);
-
+    const [passwordBorderColor, setPasswordBorderColor] = useState(false);
+    const [emailBorderColor, setEmailBorderColor] = useState(false);
+    const [usernameBorderColor, setUsernameBorderColor] = useState(false);
+    const [signupAttempted, setSignupAttempted] = useState(false);
 
     // redicrect to profile page
     // if user try to enter the signup page when logged in 
@@ -26,19 +29,19 @@ export default function Signup() {
         }    
     }, [cookies.access_token, navigate]);
     
-
     const onSignup = async () => {
         try {
             setLoading(true);
             const response = await axios.post("http://localhost:4000/signup", user);
             console.log("Signup successful", response.data);
-
             navigate("/login");
 
         } catch (error) {
             console.log("Signup failed" + error)
+            
         } finally {
             setLoading(false);
+            setSignupAttempted(true);
         }
     }
 
@@ -54,9 +57,16 @@ export default function Signup() {
         } else {
             setButtonDisabled(true);
         }
-    }, [user]);
+
+        setPasswordBorderColor(signupAttempted && user.password.length === 0)
+        setEmailBorderColor(signupAttempted && user.email.length === 0)
+        setUsernameBorderColor(signupAttempted && user.username.length === 0)
+    }, [user, signupAttempted]);
 
     const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
+    const passwordColor = passwordBorderColor ? "border-red-500" : "";
+    const emailColor = emailBorderColor ? "border-red-500" : "";
+    const usernameColor = usernameBorderColor ? "border-red-500" : "";
 
     return (
         <>
@@ -70,7 +80,7 @@ export default function Signup() {
 
         <label className="text-xl font-medium mt-3">Username</label>
         <input
-        className="p-2 mt-2 text-black rounded"
+        className={`p-2 mt-2 text-black rounded border-2 ${usernameColor}`}
         id="username"
         type="username"
         value={user.username}
@@ -79,7 +89,7 @@ export default function Signup() {
 
         <label className="text-xl font-medium mt-3">Email</label>
         <input
-        className="p-2 mt-2 text-black rounded"
+        className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
         id="email"
         type="email"
         value={user.email}
@@ -89,13 +99,14 @@ export default function Signup() {
 
         <label className="text-xl font-medium mt-3">Password</label>
         <input
-        className="p-2 mt-2 text-black rounded"
+        className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
         id="password"
         type="password"
         value={user.password}
         onChange={(e) => setUser({...user, password: e.target.value})}
         onKeyDown={onSingupKeypress}
-        placeholder="Enter your password"></input>
+        placeholder="Enter your password"
+        ></input>
 
         <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
         onClick={onSignup}
@@ -105,6 +116,5 @@ export default function Signup() {
 
         </div>
         </>
-
     )
 }
