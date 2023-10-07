@@ -42,8 +42,16 @@ function App() {
           <Route path="*" element= {<NoPage />} />
         </Routes>
       </BrowserRouter>
+      <div>
+        <style>
+          {`
+          ::selection {
+            background-color: #FF00FF;
+          }
+          `}
+        </style>
+      </div>
     </div>
-    
   );
 }
 
