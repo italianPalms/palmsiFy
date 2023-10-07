@@ -19,12 +19,21 @@ router.post('/signup', async (req, res) => {
             return console.log("User already exist. Please login");
         }
 
-        // check if password is 7 or more characters
-        const passwordRequirement = password.length < 8
-        if (passwordRequirement) {
+        //check if password include special characters, it is not the same as the username, and it is 8 or more characters in total
+        const passwordRequirement = password;
+        const passwordLength = password.length
+        const specialCharacterPassword = /\W/.test(password);
+        if(!specialCharacterPassword) {
             res.status(400).json({})
-            return console.log("Please create a longer password");
-        }
+            return console.log("Make sure the password include at least one special character")
+        } else if (passwordRequirement === username) {
+            res.status(400).json({})
+            return console.log("Password and username can't be the same")
+         } 
+        //else if (passwordLength < 8) {
+        //     res.status(400).json({})
+        //     return console.log("Password must be longer")
+        // }
  
         //add logic to hash password
         const salt = await bcryptjs.genSalt(10)
