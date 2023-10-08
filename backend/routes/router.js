@@ -61,8 +61,6 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-
-
 router.post('/login', async (req, res) => {
     try {
         const {email, password} = req.body;
@@ -223,13 +221,10 @@ router.post('/resetPassword', async (req, res) => {
 
             return res.status(200).json({message: 'Password reset successfully'});
 
-        
     } catch (error) {
         console.log('Reset password failed' + error)
         res.status(500).json({message: 'Reset password failed'});
         }
 });
-
-
 
 module.exports = router;
