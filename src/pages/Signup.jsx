@@ -85,7 +85,10 @@ export default function Signup() {
         type="username"
         value={user.username}
         onChange={(e) => setUser({...user, username: e.target.value})}
-        placeholder="Enter your username"></input>
+        placeholder="Enter your username"
+        required>
+        </input>
+        {signupAttempted && usernameBorderColor && <p className="text-red-500">Username is required</p>}
 
         <label className="text-xl font-medium mt-3">Email</label>
         <input
@@ -94,8 +97,10 @@ export default function Signup() {
         type="email"
         value={user.email}
         onChange={(e) => setUser({...user, email: e.target.value})}
-        placeholder="Enter your email">
+        placeholder="Enter your email"
+        required>
         </input>
+        {signupAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
 
         <label className="text-xl font-medium mt-3">Password</label>
         <input
@@ -106,7 +111,9 @@ export default function Signup() {
         onChange={(e) => setUser({...user, password: e.target.value})}
         onKeyDown={onSingupKeypress}
         placeholder="Enter your password"
-        ></input>
+        required>
+        </input>
+        {signupAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
 
         <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
         onClick={onSignup}

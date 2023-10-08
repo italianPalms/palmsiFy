@@ -70,7 +70,7 @@ export function LoggedInHeader () {
             <button className="p-1 m-3">Groceries</button>
         </div>
         <div className="absolute top-0 right-0 flex justify-end items-end">
-            <p className="p-1 m-3 font-semibold">Logged in as: {userId} </p>
+            <p className="p-1 m-3 font-semibold">Logged in as: <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>
             
             <button className="p-1 m-3 mr-4"
             onClick={logout}
