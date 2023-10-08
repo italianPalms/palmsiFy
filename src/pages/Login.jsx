@@ -16,6 +16,9 @@ export default function Login() {
     const [, setCookie] = useCookies();
     const [cookies] = useCookies(["access_token"]);
     const [buttonDisabled, setButtonDisabled] = useState(true);
+    const [emailBorderColor, setEmailBorderColor] = useState(false);
+    const [passwordBorderColor, setPasswordBorderColor] = useState(false);
+    const [loginAttempted, setLoginAttempted] = useState(false);
 
     // redicrect to profile page
     // if user try to enter the login page when logged in
@@ -42,6 +45,7 @@ export default function Login() {
             console.log("Login failed" + error);
         } finally {
             setLoading(false);
+            setLoginAttempted(true);
         }
     }
 
@@ -57,9 +61,16 @@ export default function Login() {
         } else {
             setButtonDisabled(true);
         }
-    }, [user.email.length, user.password.length]);
+
+        setEmailBorderColor( loginAttempted && user.email.length === 0)
+        setPasswordBorderColor(loginAttempted && user.password.length === 0)
+
+    }, [user.email.length, user.password.length, loginAttempted]);
 
     const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
+
+    const emailColor = emailBorderColor ? "border-red-500" : ""; 
+    const passwordColor = passwordBorderColor ? "border-red-500" : "";
 
     return (
         <>
@@ -72,22 +83,28 @@ export default function Login() {
 
         <label className="text-xl font-medium mt-3">Email</label>
         <input
-        className="p-2 mt-2 text-black rounded"
+        className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
         id="email"
         type="email"
         value={user.email}
         onChange={(e) => setUser({...user, email: e.target.value})}
-        placeholder="Enter your email"></input>
+        placeholder="Enter your email"
+        required>
+        </input>
+        {loginAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
 
         <label className="text-xl font-medium mt-3">Password</label>
         <input
-        className="p-2 mt-2 text-black rounded"
+        className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
         id="password"
         type="password"
         value={user.password}
         onChange={(e) => setUser({...user, password: e.target.value})}
         onKeyDown={onLoginKeypress}
-        placeholder="Enter your password"></input>
+        placeholder="Enter your password"
+        required>
+        </input>
+        {loginAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
 
         <button type="submit" className={`border-2 mt-8 p-2 w-48 ${buttonColor}`}
         onClick={onLogin}
