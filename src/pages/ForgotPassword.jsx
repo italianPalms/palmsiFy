@@ -11,8 +11,21 @@ export default function ForgotPassword () {
         email: "", 
         password: "",
     })
+
+    const [emailBorderColor, setEmailBorderColor] = useState(false);
+    const [passwordBorderColor, setPasswordBorderColor] = useState(false);
+    const [resetPasswordAttempted, setResetPasswordAttempted] = useState(false);
+
     const resetPassword = async () => {
         try {
+            if (user.email.length === 0) {
+                console.log("Please enter a email")
+                return;
+            } else if (user.password.length === 0) {
+                console.log("Pleas enter a new password")
+                return; 
+            }
+            
             const response = await axios.post('http://localhost:4000/resetPassword', user);
             console.log('Password reset successful', response.data);
             
@@ -20,7 +33,9 @@ export default function ForgotPassword () {
 
         } catch (error) {
             console.log("Password reset failed" + error);
-        }     
+        } finally {
+            setResetPasswordAttempted(true);
+        }
     }
 
     const onResetKeyPress = e => {
@@ -35,9 +50,15 @@ export default function ForgotPassword () {
         } else {
             setButtonDisabled(true);
         }
-    }, [user.email.length, user.password.length]);
+
+        setEmailBorderColor(resetPasswordAttempted && user.email.length === 0);
+        setPasswordBorderColor(resetPasswordAttempted && user.password.length === 0);
+
+    }, [user.email.length, user.password.length, resetPasswordAttempted]);
 
     const buttonColor = buttonDisabled ? 'bg-orange-700 hover:bg-orange-900' : 'bg-sky-400 hover:bg-sky-500';
+    const emailColor = emailBorderColor ? "border-red-500" : "";
+    const passwordColor = passwordBorderColor ? "border-red-500" : "";
 
     return (
         <>
@@ -49,7 +70,7 @@ export default function ForgotPassword () {
         <h1 className="text-4xl font-semibold mb-3">Enter your email to reset your password</h1>
 
         <label className="mb-2 mt-2 font-semibold">Email</label>
-        <input className="p-2 mb-2 text-black rounded"
+        <input className={`p-2 text-black rounded border-2 ${emailColor}`}
         id="email" 
         type="email" 
         value={user.email}
@@ -57,9 +78,10 @@ export default function ForgotPassword () {
         placeholder="Enter your email"
         required>
         </input>
+        {resetPasswordAttempted && emailBorderColor ? <p className="text-red-500">Email is required</p> : ""}
 
         <label className="mb-2 mt-4 font-semibold">New password</label>
-        <input className="p-2 mb-2 text-black rounded"
+        <input className={`p-2 text-black rounded border-2 ${passwordColor}`}
         id="password"
         type="password"
         value={user.password}
@@ -68,12 +90,16 @@ export default function ForgotPassword () {
         placeholder="Enter new password"
         required>
         </input>
+        {resetPasswordAttempted && passwordBorderColor ? <p className="text-red-500">New password is required</p> : ""}
 
-        <button className={`border-2 p-2 w-48 mt-2 mb-3 ${buttonColor}`}
+        <button className={`border-2 p-2 w-48 mt-6 mb-3 ${buttonColor}`}
         onClick={resetPassword}
         >{buttonDisabled ? "Fill out required fields": "Reset password"}</button>
 
         <a href="/login" className="p-2 font-medium text-base">Back to login</a>
+
+        {resetPasswordAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl">Please fill out all required fields</h2> : ""}
+
         </div>
         </>
     )
