@@ -21,7 +21,6 @@ router.post('/signup', async (req, res) => {
 
         //check if password include special characters, it is not the same as the username, and it is 8 or more characters in total
         const passwordRequirement = password;
-        const passwordLength = password.length
         const specialCharacterPassword = /\W/.test(password);
         if(!specialCharacterPassword) {
             res.status(400).json({})
@@ -205,6 +204,12 @@ router.post('/resetPassword', async (req, res) => {
             console.log("User found", user);
         }
         
+        const specialCharacterPassword = /\W/.test(password);
+        if(!specialCharacterPassword) {
+            res.status(400).json({})
+            return console.log("Make sure the password include at least one special character")
+        }
+
         // reset password
         // const resetPassword = await User.updateOne({password})
             const salt = await bcryptjs.genSalt(10)
