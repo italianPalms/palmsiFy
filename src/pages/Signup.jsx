@@ -76,7 +76,9 @@ export default function Signup() {
 
         <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-56">
 
-        <h1 className="text-4xl font-semibold">{loading ? "Processing" : "Signup"}</h1>
+        <h1 className="text-4xl font-semibold">
+            {loading ? "Processing" : "Signup"}
+            </h1>
 
         <label className="text-xl font-medium mt-3">Username</label>
         <input
@@ -120,6 +122,8 @@ export default function Signup() {
         >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 
         <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
+
+        {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
 
         </div>
         </>

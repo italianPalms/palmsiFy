@@ -112,6 +112,8 @@ export default function Login() {
 
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
+        {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
+
         </div>
         </>
     )
