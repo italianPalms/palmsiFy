@@ -31,6 +31,17 @@ export default function Signup() {
     
     const onSignup = async () => {
         try {
+            if (user.username.length === 0) {
+                console.log("Enter a username")
+                return;
+            } else if (user.email.length === 0) {
+                console.log("Enter a email")
+                return;
+            } else if (user.password.length === 0) {
+                console.log("Enter a password")
+                return
+            }
+            
             setLoading(true);
             const response = await axios.post("http://localhost:4000/signup", user);
             console.log("Signup successful", response.data);

@@ -30,6 +30,13 @@ export default function Login() {
     
     const onLogin = async () => {
         try {
+            if (user.email.length === 0) {
+                console.log("Enter a email")
+                return
+            } else if (user.password.length === 0) {
+                console.log("Enter your password")
+                return
+            }
             setLoading(true);
             const response = await axios.post('http://localhost:4000/login', user);
             console.log("Login successful", response.data);
