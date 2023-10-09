@@ -38,7 +38,6 @@ router.post('/signup', async (req, res) => {
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash
         (password, salt)
-        
 
         const newUser = new User ({
             username, 
@@ -107,13 +106,11 @@ router.post('/login', async (req, res) => {
             access_token: token, 
             success: true, 
         });
-
         
     } catch (error) {
         console.log("Login failed" + error);
         res.status(500).json({message: "Login failed"});
      } 
-
 });
 
 router.get('/logout', async (req, res) => {
