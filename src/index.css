@@ -15,3 +15,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thump {
+  background: #FF00FF !important;
+  border-radius: 4px !important;
+  border: 3px solid #f1f1f1 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
