@@ -21,7 +21,7 @@ export default function Movies() {
                 const data = await response.json();
                 //Extract the results array from the API reponse
                 const movieList = data.results || [];
-                console.log(movieList);
+                // console.log(movieList);
                 setMovies(movieList);
             } catch (error) {
                 console.log(error);

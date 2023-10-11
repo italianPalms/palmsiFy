@@ -148,7 +148,7 @@ router.get('/getUserDetails', async (req, res) => {
         }
 
         res.json(user);
-        console.log("User details fetched successfully");
+        // console.log("User details fetched successfully");
     } catch (error) {
         console.log("Failed to fetch user details", error);
         res.status(500).json({message: "Failed to fetch user details"});
@@ -223,5 +223,16 @@ router.post('/resetPassword', async (req, res) => {
         res.status(500).json({message: 'Reset password failed'});
         }
 });
+
+
+router.get('/getAllUsers', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        console.log("Failed to fetch users", error);
+        res.status(500).json({message: "Failed to fetch users"});
+    }
+})
 
 module.exports = router;
