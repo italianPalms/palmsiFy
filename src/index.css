@@ -30,3 +30,25 @@ code {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.container {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.cell {
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
