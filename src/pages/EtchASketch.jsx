@@ -14,22 +14,22 @@ const EtchASketch = () => {
         const container = document.getElementById("container");
         if(container) {
             const { clientWidth, clientHeight } = container;
-            const cellWidth = clientWidth / 10;
-            const cellHeight = clientHeight / 10;
+            const cellWidth = clientWidth / 15;
+            const cellHeight = clientHeight / 15;
 
             setGridSize({ width: clientWidth, height: clientHeight });
             setCellSize({ width: cellWidth, height: cellHeight });
         }
     }, []);
 
-    const grid = new Array(10).fill().map(() => new Array(10).fill(0));
+    const grid = new Array(15).fill().map(() => new Array(15).fill(0));
 
     return (
         <>
         <div className="flex">
             <LoggedInHeader />
         </div>
-
+        
         <div className="flex flex-col justify-center items-center mt-10">
             <h1 className="text-3xl font-medium pb-4">Etch-a-sketch</h1>
                 <div className="main">

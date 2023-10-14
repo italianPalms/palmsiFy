@@ -31,18 +31,19 @@ code {
   background: transparent;
 }
 
-.container {
-  background-color: black;
-  height: 100vh;
+#container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 200px;
+  height: 200px
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(15, 40px);
+  grid-template-rows: repeat(15, 40px);
+  
 }
 
 .cell {
