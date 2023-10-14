@@ -56,6 +56,14 @@ export function LoggedInHeader () {
         navigate('/movies');
     }
 
+    const etchASketch = () => {
+        navigate('/etchASketch');
+    }
+
+    const groceries = () => {
+        navigate('/groceries');
+    }
+
     return (
         <>
         <div className="top-0 left-0 flex justify-between">
@@ -67,7 +75,14 @@ export function LoggedInHeader () {
             onClick={movies}
             >Movies</button>
 
-            <button className="p-1 m-3">Groceries</button>
+            <button className="p-1 m-3"
+            onClick={groceries}
+            >Groceries</button>
+
+            <button className="p-1 m-3" 
+            onClick={etchASketch}
+            >Etch-a-Sketch</button>
+
         </div>
         <div className="absolute top-0 right-0 flex justify-end items-end">
             <p className="p-1 m-3 font-semibold">Welcome <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>

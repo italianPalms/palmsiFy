@@ -11,6 +11,8 @@ import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Investors from "./pages/Investors";
 import Movies from "./pages/Movies";
+import EtchASketch from "./pages/EtchASketch";
+import Groceries from "./pages/Groceries";
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
           <Route path = "/verifyEmail" element= { <VerifyEmail />} />
           <Route path = "/about" element = { <About /> } />
           <Route path = "/investors" element = { <Investors /> } />
+          <Route path = "/groceries" element = { <Groceries /> } />
+          <Route path = "/etchASketch" element = { <EtchASketch /> } />
 
           <Route path ="/profile" element= {
             <Protected Login={Login}>
