@@ -3,6 +3,10 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
 
 const EtchASketch = () => {
 
+    const onClick = () => {
+        console.log("Clicked");
+    }
+
     return (
         <>
         <div className="flex">
@@ -12,11 +16,22 @@ const EtchASketch = () => {
             <h1 className="text-3xl font-medium pb-4">Etch-a-sketch</h1>
                 <div className="main">
                     <div className="btns p-2 font-medium">
-                        <button className="clear-grid p-2">Clear</button>
                         <button className="grid-size p-2"
+                        onClick={onClick}
                         >Create Grid</button>
-                        <button className="pink p-2">Pink Color</button>
-                        <button className="rainbow p-2">Rainbow Color</button>
+
+                        <button className="clear-grid p-2"
+                        onClick={onClick}
+                        >Clear</button>
+
+                        <button className="pink p-2"
+                        onClick={onClick}
+                        >Pink Color</button>
+
+                        <button className="rainbow p-2"
+                        onClick={onClick}
+                        >Rainbow Color</button>
+                        
                     </div>
                     <div id="container" className="color-white">  
                     </div>
@@ -25,4 +40,4 @@ const EtchASketch = () => {
         </>
     )}
 
-    export default EtchASketch();
+    export default EtchASketch;
