@@ -41,8 +41,8 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(15, 40px);
-  grid-template-rows: repeat(15, 40px);
+  grid-template-columns: repeat(20, 2fr);
+  grid-template-rows: repeat(20, 2fr);
 }
 
 .cell {
