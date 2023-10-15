@@ -29,11 +29,11 @@ const EtchASketch = () => {
         <div className="flex">
             <LoggedInHeader />
         </div>
-        
-        <div className="flex flex-col justify-center items-center mt-10">
-            <h1 className="text-3xl font-medium pb-4">Etch-a-sketch</h1>
+
+        <div className="flex flex-col justify-center items-center">
+            <h1 className="text-3xl font-medium pb-4 mt-10">Etch-a-sketch</h1>
                 <div className="main">
-                    <div className="btns p-2 pb-6 font-medium">
+                    <div className="btns pt-2 font-medium flex justify-center">
                         <button className="grid-size p-2"
                         onClick={onClick}
                         >Create Grid</button>
@@ -50,12 +50,13 @@ const EtchASketch = () => {
                         onClick={onClick}
                         >Rainbow Color</button>
                     </div>
-                    <div id="container" className="container">
-                        <div className="grid" style={{width: gridSize.width, height: gridSize.height}}>
+                    <div id="container" className="container flex justify-center items-center flex-col min-h-screen pb-96">
+                        <div className="grid">
                             {grid.map((row, rowIndex) => (
                                 <div key={rowIndex} className="row">
                                     {row.map((cell, colIndex) => (
-                                        <div key={colIndex} className="cell">
+                                        <div key={colIndex} 
+                                        className="cell">
                                         </div>
                                     ))}
                                 </div>
