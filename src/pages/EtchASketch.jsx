@@ -3,51 +3,53 @@ import React, { useEffect, useState } from 'react';
 
 
 function EtchASketch() {
-    const [gridSize, setGridSize] = useState({rows: 20, cols: 20});
-    console.log("gridSize", gridSize);
 
-    const initialGrid = Array.from({ length: gridSize.rows }, () => Array.from({ length: gridSize.cols }, () => ({
-        width: 1, 
-        height: 1,
-    }))
-    );
-
-    const [grid, setGrid] = useState(initialGrid);
+    const [size, setSize] = useState(20);
+    console.log(size);
+    // const [rainbow, setRainbow] = useState(false);
+    const [pink, setPink] = useState(false);
 
     useEffect(() => {
-        const availableWidth = window.innerWidth;
-        const availableHeight = window.innerHeight - 96;
-        console.log('Available Width:', availableWidth);
-        console.log('Available Height: ', availableHeight);
-
-        const cellWidth = availableWidth / gridSize.cols;
-        const cellHeight = availableHeight / gridSize.rows;
-        console.log('Cell Width:', cellWidth);
-        console.log('Cell Height:', cellHeight);
-
-        const newGrid = Array.from({ length: gridSize.rows }, () => Array.from({ length: gridSize.cols }, () => ({
-            width: cellWidth, 
-            height: cellHeight, 
-        }))
-        );
-        console.log('New Grid:', newGrid);
-
-        setGrid(newGrid);
-    }, [gridSize]);
-
+        createGrid();
+    }, [size]);
 
     const createGrid = () => {
-        console.log("create grid button clicked");
-        const newSize = prompt('Enter grid size (maximum 100):');
-        if(!isNaN(newSize) && newSize >= 1 && newSize <= 100) {
-            const cellWidth = window.innerWidth / newSize;
-            const cellHeight = (window.innerHeight - 96) / newSize;
+        // clearGrid(); 
+        makeRowsAndColumns();
+        applyHoverColor();
+    };
 
-            setGridSize({rows: newSize, cols: newSize, cellWidth, cellHeight });
+    const makeRowsAndColumns = () => {
+        const container = document.getElementById('container');
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+        const cellWidth = containerWidth / size;
+        const cellHeight = containerHeight / size;
 
-        } else {
-            alert('Please enter a valid number between 1 and 100');
+        for(let i = 0; i < size; i++) {
+            for(let j = 0; j < size; j++) {
+                let cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.style.width = `${cellWidth}px`;
+                cell.style.height = `${cellHeight}px`;
+                container.appendChild(cell);
+            }
         }
+    };
+
+    const applyHoverColor = () => {
+        const cells = document.getElementsByClassName('cell');
+
+        for(let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener('mouseover', (event) => {
+                event.target.style.backgroundColor = 'pink';
+            })
+        }
+    };
+
+    const handlePinkColor = () => {
+        console.log('Pink color button clicked');
+        setPink(true);
     };
 
     return (
@@ -60,12 +62,6 @@ function EtchASketch() {
             <h1 className="text-3xl font-medium pb-4 mt-10">Etch-a-sketch</h1>
                 <div className="main">
                     <div className="btns pt-2 font-medium flex justify-center">
-                        {/* <input className="text-black"
-                        type="number"
-                        placeholder="Enter grid size (maximum 100):"
-                        value={inputValue}
-                        onChange={handleInputChange}
-                        ></input> */}
                         
                         <button className="grid-size p-2"
                         onClick={createGrid}
@@ -78,9 +74,7 @@ function EtchASketch() {
                         >Clear</button>
 
                         <button className="pink p-2"
-                        onClick={(() => {
-                            console.log("pink button clicked");
-                        })}
+                        onClick={handlePinkColor}
                         >Pink Color</button>
 
                         <button className="rainbow p-2"
@@ -89,19 +83,7 @@ function EtchASketch() {
                         })}
                         >Rainbow Color</button>
                     </div>
-                    <div id="container" className="container flex justify-center items-center flex-col min-h-screen pb-96">
-                        <div className="grid" style={{ width: gridSize.cols * gridSize.cellWidth, height: gridSize.rows * gridSize.cellHeight }}> 
-                            {grid.map((row, rowIndex) => (
-                                <div key={rowIndex} className="row">
-                                    {row.map((cell, colIndex) => (
-                                        <div key={colIndex} 
-                                        className="cell">
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <div id="container" className=""></div>
                 </div>
         </div>
         </>
