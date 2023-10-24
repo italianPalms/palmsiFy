@@ -19,6 +19,8 @@ function EtchASketch() {
         applyHoverColor();
     };
 
+    //add functionality to clear grid
+    
     const makeRowsAndColumns = () => {
         const container = document.getElementById('container');
         const containerWidth = container.clientWidth;
@@ -37,6 +39,7 @@ function EtchASketch() {
         }
     };
 
+    //add logic for rainbow color
     const applyHoverColor = () => {
         const cells = document.getElementsByClassName('cell');
 
@@ -47,6 +50,11 @@ function EtchASketch() {
         }
     };
 
+    //add random color to the rainbow functionality
+
+    //add logic to handle size change with prompt and alert
+
+    //add handler for rainbow color
     const handlePinkColor = () => {
         console.log('Pink color button clicked');
         setPink(true);
