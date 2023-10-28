@@ -19,7 +19,14 @@ function EtchASketch() {
         applyHoverColor();
     };
 
-    //add functionality to clear grid
+    //functionality to clear grid
+    const clearGrid = () => {
+        const cells = document.getElementsByClassName('cell');
+        for(let i = 0; i < cells.length; i++) {
+            cells[i].style.backgroundColor = 'white';
+        }
+        console.log('clear grid clicked');
+    }
     
     const makeRowsAndColumns = () => {
         const container = document.getElementById('container');
@@ -42,7 +49,6 @@ function EtchASketch() {
     //add logic for rainbow color
     const applyHoverColor = () => {
         const cells = document.getElementsByClassName('cell');
-
         for(let i = 0; i < cells.length; i++) {
             cells[i].addEventListener('mouseover', (event) => {
                 event.target.style.backgroundColor = 'pink';
@@ -76,9 +82,7 @@ function EtchASketch() {
                         >Create Grid</button>
 
                         <button className="clear-grid p-2"
-                        onClick={(() => {
-                            console.log("clear button clicked");
-                        })}
+                        onClick={clearGrid}
                         >Clear</button>
 
                         <button className="pink p-2"
@@ -91,7 +95,7 @@ function EtchASketch() {
                         })}
                         >Rainbow Color</button>
                     </div>
-                    <div id="container" className=""></div>
+                    <div id="container" className="mt-6"></div>
                 </div>
         </div>
         </>
