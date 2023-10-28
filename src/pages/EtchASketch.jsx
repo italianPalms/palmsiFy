@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 
 function EtchASketch() {
-    const defaultSize = 20;
-    const [size, setSize] = useState(defaultSize);
+    const [size, setSize] = useState(20);
     console.log(size);
     const [, setPink] = useState(false);
     const [, setRainbow] = useState(false)
