@@ -36,8 +36,8 @@ code {
   margin-left: stretch;
   margin-right: stretch;
   font-size: 0;
-  height: 500px;
-  width: 500px;
+  height: 800px;
+  width: 800px;
   border: solid 10px grey;
   overflow: hidden;
 }
