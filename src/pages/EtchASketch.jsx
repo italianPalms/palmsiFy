@@ -3,36 +3,51 @@ import React, { useEffect, useState } from 'react';
 
 
 function EtchASketch() {
-
-    const [size, setSize] = useState(20);
+    const defaultSize = 20;
+    const [size, setSize] = useState(defaultSize);
     console.log(size);
-    const [pink, setPink] = useState(false);
-    const [rainbow, setRainbow] = useState(false);
+    const [, setPink] = useState(false);
+    const [, setRainbow] = useState(false)
 
 
     useEffect(() => {
         createGrid();
     }, [size]);
 
+   
+
     const createGrid = () => {
-        // clearGrid(); 
+        clearGrid(); 
         makeRowsAndColumns();
         applyHoverPink();
-    };
+        };
 
-    //functionality to clear grid
+    //add logic to handle size change with prompt and alert
+    const chooseSize = () => {
+        let preferredSize = prompt('Enter the size you want for the grid (maximum 100):');
+        let newSize = parseInt(preferredSize);
+        if(!isNaN(newSize) && newSize > 0 && newSize <= 100) {
+
+            setSize(newSize);
+        } else {
+            alert('Invalid size entered. Please enter a number between 1 and 100.');
+        }
+        
+    };
+    //function to clear the grid
     const clearGrid = () => {
         const cells = document.getElementsByClassName('cell');
-        for(let i = 0; i < cells.length; i++) {
+        for (let i = 0; i < cells.length; i++) {
             cells[i].style.backgroundColor = 'white';
-        }
-        console.log('clear grid clicked');
-    }
+        }      
+    };
+
     
     const makeRowsAndColumns = () => {
         clearGrid();
 
         const container = document.getElementById('container');
+        container.innerHTML = ''; //clear the container
         const containerWidth = container.clientWidth;
         const containerHeight = container.clientHeight;
         const cellWidth = containerWidth / size;
@@ -49,7 +64,6 @@ function EtchASketch() {
         }
     };
 
-
     const applyHoverPink = () => {
         const cells = document.getElementsByClassName('cell');
 
@@ -59,7 +73,7 @@ function EtchASketch() {
             })
         }
     }
-    //add logic for rainbow color
+    //logic for rainbow color
   
     const applyHoverColor = () => {
         const cells = document.getElementsByClassName('cell');
@@ -72,15 +86,13 @@ function EtchASketch() {
         }
     };
 
-    //add random color to the rainbow functionality
+    //random color to the rainbow functionality
     const getRandomColor = () => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
         return `rgb(${r}, ${g}, ${b})`;
     };
-
-    //add logic to handle size change with prompt and alert
 
     const handlePinkColor = () => {
         console.log('Pink color button clicked');
@@ -96,7 +108,6 @@ function EtchASketch() {
         applyHoverColor();
     }
     
-
     return (
         <>
         <div className="flex">
@@ -109,8 +120,8 @@ function EtchASketch() {
                     <div className="btns p-2 font-medium flex justify-center">
                         
                         <button className="grid-size p-2"
-                        onClick={createGrid}
-                        >Create Grid</button>
+                        onClick={chooseSize}
+                        >Choose Size</button>
 
                         <button className="clear-grid p-2"
                         onClick={clearGrid}
