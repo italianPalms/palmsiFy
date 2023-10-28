@@ -81,7 +81,7 @@ export function LoggedInHeader () {
 
             <button className="p-1 m-3" 
             onClick={etchASketch}
-            >Etch-a-Sketch</button>
+            >Etch-A-Sketch</button>
 
         </div>
         <div className="absolute top-0 right-0 flex justify-end items-end">
