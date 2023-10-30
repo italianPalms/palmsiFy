@@ -67,16 +67,23 @@ export function LoggedInHeader () {
         navigate('/groceries');
     }
 
+    const getUsers = () => {
+        navigate('/allusers');
+    }
+
     return (
         <>
-        <div className="top-0 left-0 flex justify-between">
-            <button className="p-1 m-3 ml-4 flex items-center"
+        <div className="flex justify-between items-center mt-3">
+        <div className="flex items-center">
+            
+            <button className="p-1 flex items-center"
             onClick={profile}
             >
                 <img src={logo} alt="logo" className="w-28"></img>
             <span className="font-bold text-4xl italic">PalmsiFy</span>
             </button>
             
+            <div className="mt-1">
             <button className="p-1 m-3"
             onClick={movies}
             >Movies</button>
@@ -89,13 +96,19 @@ export function LoggedInHeader () {
             onClick={etchASketch}
             >Etch-A-Sketch</button>
 
-        </div>
-        <div className="absolute top-0 right-0 flex justify-end items-end">
+            <button className="p-1 m-3"
+            onClick={getUsers}
+            >Get all users</button>
+            </div>
+
+            {/* <div className="ml-auto flex justify-end items-end">
             <p className="p-1 m-3 font-semibold">Welcome <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>
             
-            <button className="p-1 m-3 mr-4"
+            <button className="p-1 m-3 mr-6"
             onClick={logout}
             >Logout</button>
+        </div> */}
+        </div>
         </div>
         </>
     )
