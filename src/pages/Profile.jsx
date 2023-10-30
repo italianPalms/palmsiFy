@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 
     export default function Profile() {
 
@@ -41,6 +42,7 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
             <>
             <div className="flex">
                 <LoggedInHeader />
+                <LoggedInHeaderII />
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-28">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 import { MovieHeader } from "../components/MovieHeader";
 
 export default function Movies() {
@@ -35,6 +36,7 @@ export default function Movies() {
         <div>
             <div className="flex">
             <LoggedInHeader />
+            <LoggedInHeaderII />
             <MovieHeader />
             </div>
         </div>
@@ -51,7 +53,7 @@ export default function Movies() {
                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}
                         className="mx-auto mb-2"/>
                         <h2 className="text-lg font-semibold">{movie.title}</h2>
-                    {/* <p className="">{movie.overview}</p> */}
+                    <p className="font-medium">{movie.vote_average}</p>
                 </div>
             </div>
         ))}
