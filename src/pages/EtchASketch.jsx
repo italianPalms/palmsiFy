@@ -13,35 +13,31 @@ function EtchASketch() {
         createGrid();
     }, [size]);
 
-   
-
     const createGrid = () => {
         clearGrid(); 
         makeRowsAndColumns();
         applyHoverPink();
         };
 
-    //add logic to handle size change with prompt and alert
+    //logic to handle size change with prompt and alert
     const chooseSize = () => {
         let preferredSize = prompt('Enter the size you want for the grid (maximum 100):');
         let newSize = parseInt(preferredSize);
         if(!isNaN(newSize) && newSize > 0 && newSize <= 100) {
-
             setSize(newSize);
         } else {
             alert('Invalid size entered. Please enter a number between 1 and 100.');
         }
-        
     };
+
     //function to clear the grid
     const clearGrid = () => {
         const cells = document.getElementsByClassName('cell');
         for (let i = 0; i < cells.length; i++) {
-            cells[i].style.backgroundColor = 'white';
+            cells[i].style.backgroundColor = 'white'; //sets all cells to white
         }      
     };
 
-    
     const makeRowsAndColumns = () => {
         clearGrid();
 
