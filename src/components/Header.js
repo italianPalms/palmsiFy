@@ -35,7 +35,7 @@ export default function Header() {
             </button>
         </div>
             
-        <div className="fixed top-0 right-0 flex justify-between items-start">
+        <div className="fixed top-0 right-0 flex justify-between items-start mt-6">
         
         <button className="p-1 m-3"
         onClick={about}
@@ -45,7 +45,7 @@ export default function Header() {
         onClick={investors}
         >Investors</button>
         
-        <button className="p-1 m-3 mr-4"
+        <button className="p-1 m-3 mr-6"
         onClick={forgotPassword}
         >Forgot password</button>
         </div>
