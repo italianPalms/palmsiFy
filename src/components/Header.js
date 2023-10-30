@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
-
+import logo from "../img/logo.png";
 export default function Header() {
 
     const navigate = useNavigate();
@@ -28,9 +27,12 @@ export default function Header() {
         <>
         <div className="fixed">
         <div className="flex justify-between ">
-            <button className="p-1 m-3 ml-4"
+            <button className="p-1 m-3 ml-4 flex items-center"
             onClick={homePage}
-            >Got to home page</button>
+            > 
+            <img src={logo} alt="logo" className="w-28"></img>
+            <span className="text-[#FF00FF] font-bold text-4xl italic">PalmsiFy</span>
+            </button>
         </div>
             
         <div className="fixed top-0 right-0 flex justify-between items-start">

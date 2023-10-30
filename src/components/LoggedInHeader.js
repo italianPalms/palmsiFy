@@ -3,6 +3,9 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import React, {useState, useEffect} from "react";
 
+// const logo = require ("../img/logo.png");
+import logo from "../img/logo.png";
+
 export function LoggedInHeader () {
 
     const navigate = useNavigate();
@@ -67,9 +70,12 @@ export function LoggedInHeader () {
     return (
         <>
         <div className="top-0 left-0 flex justify-between">
-            <button className="p-1 m-3 ml-4"
+            <button className="p-1 m-3 ml-4 flex items-center"
             onClick={profile}
-            >Go to profile page</button>
+            >
+                <img src={logo} alt="logo" className="w-28"></img>
+            <span className="text-[#FF00FF] font-bold text-4xl italic">PalmsiFy</span>
+            </button>
             
             <button className="p-1 m-3"
             onClick={movies}
