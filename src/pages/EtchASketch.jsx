@@ -1,4 +1,5 @@
 import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 import React, { useEffect, useState } from 'react';
 
 
@@ -7,7 +8,6 @@ function EtchASketch() {
     console.log(size);
     const [, setPink] = useState(false);
     const [, setRainbow] = useState(false)
-
 
     useEffect(() => {
         createGrid();
@@ -107,6 +107,7 @@ function EtchASketch() {
         <>
         <div className="flex">
             <LoggedInHeader />
+            <LoggedInHeaderII />
         </div>
 
         <div className="flex flex-col justify-center items-center">
