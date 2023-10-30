@@ -13,6 +13,7 @@ import Investors from "./pages/Investors";
 import Movies from "./pages/Movies";
 import EtchASketch from "./pages/EtchASketch";
 import Groceries from "./pages/Groceries";
+import AllUsers from "./pages/Allusers";
 
 function App() {
 
@@ -29,8 +30,6 @@ function App() {
           <Route path = "/verifyEmail" element= { <VerifyEmail />} />
           <Route path = "/about" element = { <About /> } />
           <Route path = "/investors" element = { <Investors /> } />
-          <Route path = "/groceries" element = { <Groceries /> } />
-          <Route path = "/etchASketch" element = { <EtchASketch /> } />
 
           <Route path ="/profile" element= {
             <Protected Login={Login}>
@@ -40,6 +39,24 @@ function App() {
           <Route path = "/movies" element = {
             <Protected Login={Login}>
               <Movies />
+            </Protected>
+          } />
+
+          <Route path = "/groceries" element = {
+            <Protected Login={Login}>
+              <Groceries />
+            </Protected>
+          } />
+
+          <Route path = "/etchASketch" element = {
+            <Protected Login={Login}>
+              <EtchASketch />
+            </Protected>
+          } />
+
+          <Route path = "/allusers" element = {
+            <Protected Login={Login}>
+              <AllUsers />
             </Protected>
           } />
 
