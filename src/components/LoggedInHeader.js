@@ -74,7 +74,7 @@ export function LoggedInHeader () {
             onClick={profile}
             >
                 <img src={logo} alt="logo" className="w-28"></img>
-            <span className="text-[#FF00FF] font-bold text-4xl italic">PalmsiFy</span>
+            <span className="font-bold text-4xl italic">PalmsiFy</span>
             </button>
             
             <button className="p-1 m-3"
