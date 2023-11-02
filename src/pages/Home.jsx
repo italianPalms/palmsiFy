@@ -22,21 +22,21 @@ export default function Home() {
             <Header />
         </div>
 
-        <div className="flex flex-row justify-center items-center">
+        <div className="full-home-container flex flex-row justify-center items-center p-4">
             <div className="flex flex-col items-center justify-center h-screen w-96">
-                <img src={airbot} alt="Airbot"/>
+                <img className="home-img" src={airbot} alt="Airbot"/>
             </div>
             
-            <div className="flex flex-col items-center justify-center">
-            <div className="home-heading mb-2">
-            <h1 className="p-2 text-5xl font-bold italic">Home page</h1>
+            <div className="home-container items-center justify-center">
+            <div className="mb-2 flex items-center justify-center">
+            <h1 className="home-heading p-2 text-5xl font-bold italic">Home page</h1>
             </div>
 
-            <div className="login-btn flex-col items-center justify-center min-w-min">
-            <button className="p-2 mr-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
+            <div className="home-btn-container flex-col items-center justify-center min-w-min">
+            <button className="login-btn p-2 mr-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
                 onClick={login}>Login</button>
             
-            <button className="signup-btn p-2 ml-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
+            <button className="signup-btn p-2 mt-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
                 onClick={signup}>Signup</button>
             </div>
             </div>
