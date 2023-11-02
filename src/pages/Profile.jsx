@@ -44,7 +44,7 @@ import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
                 <LoggedInHeader />
                 <LoggedInHeaderII />
             </div>
-            <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-28">
+            <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-64">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
 
                 <div className="w-100 text-xl mt-8">
