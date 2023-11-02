@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import airbot from "../img/airobot.png";
 
 export default function Signup() {
 
@@ -85,8 +86,12 @@ export default function Signup() {
             <Header />
         </div>
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-56">
+        <div className="flex flex-row items-center justify-center">
+        <div className="w-96 mr-8">
+            <img src={airbot} alt="Airbot"></img>
+        </div>
 
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
         <h1 className="text-4xl font-semibold">
             {loading ? "Processing" : "Signup"}
             </h1>
@@ -135,7 +140,7 @@ export default function Signup() {
         <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
 
         {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
-
+        </div>
         </div>
         </>
     )

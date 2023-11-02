@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import airbot from "../img/airobot.png";
 
 export default function Login() {
 ''
@@ -85,7 +86,13 @@ export default function Login() {
             <Header />
         </div>
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-56">
+        <div className="flex flex-row items-center justify-center">
+
+        <div className="w-96 mr-8">
+            <img src={airbot} alt="Aitbot"></img>
+        </div>
+
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
         <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
 
         <label className="text-xl font-medium mt-3">Email</label>
@@ -120,7 +127,7 @@ export default function Login() {
         <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
         {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
-
+        </div>
         </div>
         </>
     )
