@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import Quote from "../img/quote.webp";
 import airbot from "../img/airobot.png";
 
 export default function Home() {

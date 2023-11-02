@@ -50,26 +50,6 @@ code {
   display: inline-block;
 }
 
-
-/* .home-container {
-  display: flex; 
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-.home-btn-container {
-  display: flex; 
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-btn {
-  margin-right: 10px;
-} */
-
 @media (max-width: 885px) {
   .home-img {
     width: 250px;
