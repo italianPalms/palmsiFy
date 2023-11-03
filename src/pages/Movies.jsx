@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { LoggedInHeader } from "../components/LoggedInHeader";
 import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 import { MovieHeader } from "../components/MovieHeader";
+import Footer from "../components/Footer";
 
 export default function Movies() {
 
@@ -64,6 +65,8 @@ export default function Movies() {
             return <pre key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
         })}
         
+        <Footer />
+
         </>
     )
 }
