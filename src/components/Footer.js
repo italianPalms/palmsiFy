@@ -1,6 +1,5 @@
 import logo from "../img/logo.png";
 import airbot from "../img/airobot.png";
-import React, {useEffect, useRef} from "react";
 
 export default function Footer() {
   
