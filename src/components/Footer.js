@@ -1,5 +1,8 @@
 import logo from "../img/logo.png";
 import airbot from "../img/airobot.png";
+import Youtube from "../img/yt_logo_rgb_dark.png";
+import X from "../img/logo-white.png"
+import Instagram from "../img/Instagram_Glyph_Gradient.png";
 
 export default function Footer() {
   
@@ -17,6 +20,19 @@ export default function Footer() {
                 <h4 className="text-2xl font-medium italic">Contact us</h4>
                 <p><strong>Email:</strong> c1H9Z@example.com</p>
                 <p><strong>Phone:</strong> 123-456-7890</p>
+                <div className="flex items-center mt-4">
+                    <a href="https://www.youtube.com">
+                    <img className="w-20 mr-4" src={Youtube} alt="" />
+                    </a>
+
+                    <a href="https://www.x.com">
+                    <img className="w-5 mr-4" src={X} alt="" />
+                    </a>
+                    
+                    <a href="https://www.instagram.com">
+                    <img className="w-7 mr-4" src={Instagram} alt="" />
+                    </a>
+                </div>
             </div>
         </footer>
     )
