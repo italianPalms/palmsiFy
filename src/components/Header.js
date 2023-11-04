@@ -26,7 +26,7 @@ export default function Header() {
     return (
         <>
         <div className="fixed">
-        <div className="flex justify-between ">
+        <div className="flex justify-between header-logo">
             <button className="p-1 m-3 ml-4 flex items-center"
             onClick={homePage}
             > 

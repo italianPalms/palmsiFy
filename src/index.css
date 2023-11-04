@@ -75,7 +75,6 @@ code {
   }
 }
 
-
 .sticky-footer {
   position: relative;
   bottom: 0;
@@ -90,3 +89,128 @@ code {
   width: 100%;
   z-index: 999;
 } */
+
+.parallax {
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 0;
+  min-height: 75vh;
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.parallax > * {
+  grid-area: stack;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+
+.parallax > img {
+  width: 100%;
+}
+
+.primary-header, .hero {
+  --parallax-speed: 10;
+  z-index: 10;
+}
+
+.parallax_bg {
+  --parallax-speed: -1;
+  z-index: 1;
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parallax_dust {
+  --parallax-speed: -10;
+  z-index: 2;
+}
+
+.parallax_luna {
+  --parallax-speed: 8;
+  z-index: 3;
+}
+
+.parallax_manny {
+  --parallax-speed: 6;
+  z-index: 4;
+}
+
+.parallax_jax {
+  --parallax-speed: 4;
+  z-index: 5;
+}
+
+.parallax_rays {
+  --parallax-speed: 3;
+  z-index: 3;
+}
+
+.parallax_foreground-front,
+.parallax_foreground-back {
+  z-index: 999;
+  align-self: end;
+}
+
+.parallax_foreground-back {
+  transform: scaleY(1.2);
+  transform-origin: bottom;
+  mix-blend-mode: hard-light;
+}
+
+@keyframes parallax {
+  to {
+    transform: 
+      translateY(calc(var(--parallax-speed) * 200px));
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  background: hsl(238, 100%, 6%);
+  padding-block: 6rem;
+}
+
+.wrapper {
+  width: min(65rem, 100% - 4rem);
+  margin-inline: auto;
+}
+
+.primary-header {
+  padding-block: 2rem;
+}
+
+.primary-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero_title {
+  font-size: 4rem;
+  max-width: 10ch;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 900;
+  position: relative;
+
+  > span {
+    font-style: normal;
+    font-size: 0.5em;
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    z-index: -1;
+    scale: 2;
+    opacity: 0.5;
+    filter: blur(5rem);
+    translate: -50%;
+  }
+}
