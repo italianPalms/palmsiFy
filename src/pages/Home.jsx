@@ -56,6 +56,9 @@ export default function Home() {
                 <h2 className="text-2xl font-medium">Meet the team</h2>
                 <p className="text-4xl font-bold"><strong>The founder</strong></p>
             <img className="w-96" src={Founder} alt=""></img>
+            <p className="font-medium text-xl mt-4">Tech guy</p>
+            <p className="font-bold text-2xl italic">Eirik</p>
+            <p className="font-medium text-xl">Enginnering for the future</p>
         </div>
             {/* <div className="flex flex-col items-center justify-center h-screen w-96 ml-4">
                 <img className="home-img" src={airbot} alt="Airbot"/>
@@ -63,7 +66,7 @@ export default function Home() {
             
             <div className="home-container items-center justify-center">
             <div className="mb-2 flex items-center justify-center">
-            <h1 className="home-heading p-2 text-5xl font-bold italic">Home page</h1>
+            <h1 className="home-heading p-2 text-5xl font-bold italic">Check it out!</h1>
             </div>
 
             <div className="home-btn-container flex-col items-center justify-center min-w-min">
