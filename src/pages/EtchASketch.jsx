@@ -109,30 +109,29 @@ function EtchASketch() {
             <LoggedInHeader />
             <LoggedInHeaderII />
         </div>
-
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-3xl font-medium pb-4 mt-10">Etch-a-sketch</h1>
-                <div className="main">
-                    <div className="btns p-2 font-medium flex justify-center">
+            <div className="main">
+                <div className="btns p-2 font-medium flex justify-center">
                         
-                        <button className="grid-size p-2"
-                        onClick={chooseSize}
-                        >Choose Size</button>
+                    <button className="grid-size p-2"
+                    onClick={chooseSize}
+                    >Choose Size</button>
 
-                        <button className="clear-grid p-2"
-                        onClick={clearGrid}
-                        >Clear Grid</button>
+                    <button className="clear-grid p-2"
+                    onClick={clearGrid}
+                    >Clear Grid</button>
 
-                        <button className="pink p-2"
-                        onClick={handlePinkColor}
-                        >Pink Color</button>
+                    <button className="pink p-2"
+                    onClick={handlePinkColor}
+                    >Pink Color</button>
 
-                        <button className="rainbow p-2"
-                        onClick={handleRainbowColor}
-                        >Rainbow Color</button>
-                    </div>
-                    <div id="container" className="mt-6"></div>
+                    <button className="rainbow p-2"
+                    onClick={handleRainbowColor}
+                    >Rainbow Color</button>
                 </div>
+                <div id="container" className="mt-6"></div>
+            </div>
         </div>
         </>
     )}

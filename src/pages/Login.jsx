@@ -85,49 +85,45 @@ export default function Login() {
         <div>
             <Header />
         </div>
-
         <div className="flex flex-row items-center justify-center">
+            <div className="w-96 mr-8">
+                <img src={airbot} alt="Aitbot"></img>
+            </div>
+            <div className="flex flex-col items-center justify-center min-h-screen py-2">
+                <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
+                <label className="text-xl font-medium mt-3">Email</label>
+                <input
+                    className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
+                    id="email"
+                    type="email"
+                    value={user.email}
+                    onChange={(e) => setUser({...user, email: e.target.value})}
+                    placeholder="Enter your email"
+                    required>
+                </input>
+                {loginAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
 
-        <div className="w-96 mr-8">
-            <img src={airbot} alt="Aitbot"></img>
-        </div>
+                <label className="text-xl font-medium mt-3">Password</label>
+                <input
+                    className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
+                    id="password"
+                    type="password"
+                    value={user.password}
+                    onChange={(e) => setUser({...user, password: e.target.value})}
+                    onKeyDown={onLoginKeypress}
+                    placeholder="Enter your password"
+                    required>
+                </input>
+                {loginAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
+                <button type="submit" className={`border-2 mt-8 p-2 w-48 ${buttonColor}`}
+                onClick={onLogin}
+                >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 
-        <label className="text-xl font-medium mt-3">Email</label>
-        <input
-        className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
-        id="email"
-        type="email"
-        value={user.email}
-        onChange={(e) => setUser({...user, email: e.target.value})}
-        placeholder="Enter your email"
-        required>
-        </input>
-        {loginAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
+                <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
-        <label className="text-xl font-medium mt-3">Password</label>
-        <input
-        className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
-        id="password"
-        type="password"
-        value={user.password}
-        onChange={(e) => setUser({...user, password: e.target.value})}
-        onKeyDown={onLoginKeypress}
-        placeholder="Enter your password"
-        required>
-        </input>
-        {loginAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
-
-        <button type="submit" className={`border-2 mt-8 p-2 w-48 ${buttonColor}`}
-        onClick={onLogin}
-        >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
-
-        <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
-
-        {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
-        </div>
+                {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
+            </div>
         </div>
         </>
     )

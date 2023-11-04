@@ -24,8 +24,8 @@ export default function AllUsers() {
     return (
         <>
         <div className="flex">
-        <LoggedInHeader />
-        <LoggedInHeaderII />
+            <LoggedInHeader />
+            <LoggedInHeaderII />
         </div>
         <div>
             <h1 className="font-medium text-4xl flex justify-center items-center mt-4 mb-6">See all registered users</h1>
@@ -33,13 +33,12 @@ export default function AllUsers() {
         <div className="p-2 ml-6">
            <ol>
             {users.map((user, index) => (                
-                <li key={user._id} className="mt-1">
-                    {index + 1}. Username: {user.username}, Email: {user.email}, isVerified: {user.isVerified ? 'True' : 'False'}, isAdmin: {user.isAdmin ? 'True' : 'False'} 
-
-                </li>
+            <li key={user._id} className="mt-1">
+                {index + 1}. Username: {user.username}, Email: {user.email}, isVerified: {user.isVerified ? 'True' : 'False'}, isAdmin: {user.isAdmin ? 'True' : 'False'} 
+            </li>
             ))}
            </ol>
         </div>
-            </>
+        </>
     )
 }

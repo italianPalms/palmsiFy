@@ -85,62 +85,60 @@ export default function Signup() {
         <div>
             <Header />
         </div>
-
         <div className="flex flex-row items-center justify-center">
-        <div className="w-96 mr-8">
-            <img src={airbot} alt="Airbot"></img>
-        </div>
+            <div className="w-96 mr-8">
+                <img src={airbot} alt="Airbot"></img>
+            </div>
+            <div className="flex flex-col items-center justify-center min-h-screen py-2">
+                <h1 className="text-4xl font-semibold">
+                    {loading ? "Processing" : "Signup"}
+                    </h1>
 
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1 className="text-4xl font-semibold">
-            {loading ? "Processing" : "Signup"}
-            </h1>
+                <label className="text-xl font-medium mt-3">Username</label>
+                <input
+                    className={`p-2 mt-2 text-black rounded border-2 ${usernameColor}`}
+                    id="username"
+                    type="username"
+                    value={user.username}
+                    onChange={(e) => setUser({...user, username: e.target.value})}
+                    placeholder="Enter your username"
+                    required>
+                </input>
+                {signupAttempted && usernameBorderColor && <p className="text-red-500">Username is required</p>}
 
-        <label className="text-xl font-medium mt-3">Username</label>
-        <input
-        className={`p-2 mt-2 text-black rounded border-2 ${usernameColor}`}
-        id="username"
-        type="username"
-        value={user.username}
-        onChange={(e) => setUser({...user, username: e.target.value})}
-        placeholder="Enter your username"
-        required>
-        </input>
-        {signupAttempted && usernameBorderColor && <p className="text-red-500">Username is required</p>}
+                <label className="text-xl font-medium mt-3">Email</label>
+                <input
+                    className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
+                    id="email"
+                    type="email"
+                    value={user.email}
+                    onChange={(e) => setUser({...user, email: e.target.value})}
+                    placeholder="Enter your email"
+                    required>
+                </input>
+                {signupAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
 
-        <label className="text-xl font-medium mt-3">Email</label>
-        <input
-        className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
-        id="email"
-        type="email"
-        value={user.email}
-        onChange={(e) => setUser({...user, email: e.target.value})}
-        placeholder="Enter your email"
-        required>
-        </input>
-        {signupAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
+                <label className="text-xl font-medium mt-3">Password</label>
+                <input
+                    className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
+                    id="password"
+                    type="password"
+                    value={user.password}
+                    onChange={(e) => setUser({...user, password: e.target.value})}
+                    onKeyDown={onSingupKeypress}
+                    placeholder="Enter your password"
+                    required>
+                </input>
+                {signupAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
 
-        <label className="text-xl font-medium mt-3">Password</label>
-        <input
-        className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
-        id="password"
-        type="password"
-        value={user.password}
-        onChange={(e) => setUser({...user, password: e.target.value})}
-        onKeyDown={onSingupKeypress}
-        placeholder="Enter your password"
-        required>
-        </input>
-        {signupAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
+                <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
+                    onClick={onSignup}
+                >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 
-        <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
-        onClick={onSignup}
-        >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
+                <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
 
-        <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
-
-        {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
-        </div>
+                {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
+            </div>
         </div>
         </>
     )

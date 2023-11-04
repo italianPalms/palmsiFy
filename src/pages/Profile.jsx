@@ -46,7 +46,6 @@ import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-64">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
-
                 <div className="w-100 text-xl mt-8">
                     {showUserDetails && user ? (
                     <table>
@@ -74,7 +73,6 @@ import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
                 <button className="boder-2 mt-8 p-2 w-48 bg-orange-700 hover:bg-orange-900 rounded" 
                 onClick={toggleUserDetails}
                 >{buttonText}</button>
-
             </div>
             </>
         )

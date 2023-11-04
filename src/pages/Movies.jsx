@@ -61,38 +61,38 @@ export default function Movies() {
 
     return (
         <>
-            <div className="min-h-screen relative">
-                <div>
-                    <div className="flex">
+        <div className="min-h-screen relative">
+            <div>
+                <div className="flex">
                     <LoggedInHeader />
                     <LoggedInHeaderII />
                     <MovieHeader />
-                    </div>
                 </div>
-                <div className="flex-1" ref={contentRef}>
-                    <div className="bg-gradient-to-r from-neutral-950 via-purple-950 to-neutral-950">
-                        <div className="flex flex-col items-center justify-center pt-8 pb-8 text-4xl font-semibold">
-                            <h1>Movies</h1>
-                        </div>
-                    </div>
-                    <div className="flex flex-wrap pl-10 pr-10 mb-10">
-                            {movies.map((movie) => (
-                        <div key={movie.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4">
-                            <div className="text-center">
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}
-                                className="mx-auto mb-2"/>
-                                <h2 className="text-lg font-semibold">{movie.title}</h2>
-                                <p className="font-medium">{movie.vote_average}</p>
-                            </div>
-                        </div>
-                        ))}
-                    </div>
-                    {movies.map((movie) => {
-                    return <pre key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
-                    })}
-                </div>
-                <Footer className={footerVisible ? "sticky-footer footerVisible" : "sticky-footer"} />
             </div>
+            <div className="flex-1" ref={contentRef}>
+                <div className="bg-gradient-to-r from-neutral-950 via-purple-950 to-neutral-950">
+                    <div className="flex flex-col items-center justify-center pt-8 pb-8 text-4xl font-semibold">
+                        <h1>Movies</h1>
+                    </div>
+                </div>
+                <div className="flex flex-wrap pl-10 pr-10 mb-10">
+                    {movies.map((movie) => (
+                    <div key={movie.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4">
+                        <div className="text-center">
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}
+                            className="mx-auto mb-2"/>
+                            <h2 className="text-lg font-semibold">{movie.title}</h2>
+                            <p className="font-medium">{movie.vote_average}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+                {movies.map((movie) => {
+                return <pre key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
+                })}
+            </div>
+            <Footer className={footerVisible ? "sticky-footer footerVisible" : "sticky-footer"} />
+        </div>
         </>
     )
 }
