@@ -148,7 +148,7 @@ code {
 
 .parallax_jax {
   --parallax-speed: 5;
-  z-index: 5;
+  z-index: 2;
 }
 
 .parallax_rays {
@@ -158,7 +158,7 @@ code {
 
 .parallax_foreground-front,
 .parallax_foreground-back {
-  z-index: 0;
+  z-index: 5;
   align-self: end;
 }
 
@@ -179,8 +179,8 @@ code {
   position: relative;
   z-index: 99;
   background: hsl(238, 100%, 6%);
-  padding-block: 6rem;
-}
+  padding-block: 10rem;
+} 
 
 .wrapper {
   width: min(65rem, 100% - 4rem);

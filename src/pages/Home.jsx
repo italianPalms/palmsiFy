@@ -9,6 +9,7 @@ import Parallax_jax from "../img/jax.webp";
 import Parallax_luna from "../img/luna.webp";
 import Parallax_manny from "../img/manny.webp";
 import Parallax_rays from "../img/rays.webp";
+import Founder from "../img/hunter-2_2x.webp";
 
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
     return (
         <>
         <div className="parallax">
-        <div className="main-header max-h-10">
+        <div className="main-header max-h-10 ">
             <Header />
         </div>
         <div className="hero relative">
@@ -50,10 +51,15 @@ export default function Home() {
         <img className="parallax_rays" src={Parallax_rays} alt="" />
         </div>
         <div className="main-content">
-        <div className="full-home-containecolr flex flex- justify-center justify-center items-center p-4">
-            <div className="flex flex-col items-center justify-center h-screen w-96">
+        <div className="full-home-containecolr flex flex- justify-center justify-center items-center p-4 bg-navy-900">
+        <div className="flex flex-col items-center justify-center mr-20 ml-10 h-screen">
+                <h2 className="text-2xl font-medium">Meet the team</h2>
+                <p className="text-4xl font-bold"><strong>The founder</strong></p>
+            <img className="w-96" src={Founder} alt=""></img>
+        </div>
+            {/* <div className="flex flex-col items-center justify-center h-screen w-96 ml-4">
                 <img className="home-img" src={airbot} alt="Airbot"/>
-            </div>
+            </div> */}
             
             <div className="home-container items-center justify-center">
             <div className="mb-2 flex items-center justify-center">
@@ -68,8 +74,11 @@ export default function Home() {
                 onClick={signup}>Signup</button>
             </div>
             </div>
-            </div>
+            
         </div>
+            </div>
+
+      
         
         </>
     )
