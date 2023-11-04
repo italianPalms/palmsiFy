@@ -48,7 +48,7 @@ export default function Home() {
         <img className="parallax_jax" src={Parallax_jax} alt="" />
         <img className="parallax_luna" src={Parallax_luna} alt="" />
         <img className="parallax_manny" src={Parallax_manny} alt="" />
-        <img className="parallax_rays" src={Parallax_rays} alt="" />
+        {/* <img className="parallax_rays" src={Parallax_rays} alt="" /> */}
         </div>
         <div className="main-content">
         <div className="full-home-containecolr flex flex- justify-center justify-center items-center p-4 bg-navy-900">
