@@ -27,15 +27,16 @@ export default function Home() {
     return (
         <>
         <div className="parallax">
-        <div>
-            <Header className="primary-header" />
+        <div className="main-header max-h-10">
+            <Header />
         </div>
-        <div className="hero">
-            <div className="wrapper flex flex-col justify-end">
-                <h1 className="hero_title">
+        <div className="hero relative">
+            <div className="wrapper absolute top-96 left-56 ">
+                <h1 className="hero_title absolute">
                    <span>Gear up!</span> Welcome to PalmsiFy
                 </h1>
                 <button className="login-btn p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={login}>Login</button>
+                <button className="login-btn p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={signup}>Signup</button>
             </div>
             </div>
 
@@ -49,7 +50,7 @@ export default function Home() {
         <img className="parallax_rays" src={Parallax_rays} alt="" />
         </div>
         <div className="main-content">
-        <div className="full-home-container flex flex-row justify-center items-center p-4">
+        <div className="full-home-containecolr flex flex- justify-center justify-center items-center p-4">
             <div className="flex flex-col items-center justify-center h-screen w-96">
                 <img className="home-img" src={airbot} alt="Airbot"/>
             </div>
