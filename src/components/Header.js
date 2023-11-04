@@ -53,15 +53,15 @@ export default function Header() {
                         
                 <div className="flex items-center p-1 m-3 mr-6">
                     <a href="https://www.youtube.com">
-                    <img className="w-20 mr-4" src={Youtube} alt="" />
+                    <img className="w-20 mr-8" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="w-5 mr-4" src={X} alt="" />
+                    <img className="w-5 mr-8" src={X} alt="" />
                     </a>
                             
                     <a href="https://www.instagram.com">
-                    <img className="w-7 mr-4" src={Instagram} alt="" />
+                    <img className="w-7" src={Instagram} alt="" />
                     </a>
                 </div>
             </div>

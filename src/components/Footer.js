@@ -22,15 +22,15 @@ export default function Footer() {
                 <p><strong>Phone:</strong> 123-456-7890</p>
                 <div className="flex items-center mt-4">
                     <a href="https://www.youtube.com">
-                    <img className="w-20 mr-4" src={Youtube} alt="" />
+                    <img className="w-20 mr-8" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="w-5 mr-4" src={X} alt="" />
+                    <img className="w-5 mr-8" src={X} alt="" />
                     </a>
                     
                     <a href="https://www.instagram.com">
-                    <img className="w-7 mr-4" src={Instagram} alt="" />
+                    <img className="w-7" src={Instagram} alt="" />
                     </a>
                 </div>
             </div>
