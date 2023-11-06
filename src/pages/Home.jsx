@@ -58,7 +58,7 @@ export default function Home() {
                     <img className="w-96" src={Founder} alt=""></img>
                     <p className="font-medium text-xl mt-4">Tech guy</p>
                     <p className="font-bold text-2xl italic">Eirik</p>
-                    <p className="font-medium text-xl">Enginnering for the future</p>
+                    <p className="font-medium text-xl">Engineering for the future</p>
                 </div>
                 {/* <div className="flex flex-col items-center justify-center h-screen w-96 ml-4">
                     <img className="home-img" src={airbot} alt="Airbot"/>
