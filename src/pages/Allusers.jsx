@@ -34,7 +34,7 @@ export default function AllUsers() {
            <ol>
             {users.map((user, index) => (                
             <li key={user._id} className="mt-1">
-                {index + 1}. Username: {user.username}, Email: {user.email}, isVerified: {user.isVerified ? 'True' : 'False'}, isAdmin: {user.isAdmin ? 'True' : 'False'} 
+                {index + 1}. Username: <strong className="text-[#FF00FF]">{user.username}</strong>, Email: {user.email}, isVerified: {user.isVerified ? 'True' : 'False'}, isAdmin: {user.isAdmin ? 'True' : 'False'} 
             </li>
             ))}
            </ol>
