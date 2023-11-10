@@ -56,8 +56,8 @@ export default function Home() {
                     <h2 className="text-2xl font-medium">Meet the team</h2>
                     <p className="text-4xl font-bold"><strong>The founder</strong></p>
                     <img className="w-96" src={Founder} alt=""></img>
-                    <p className="font-medium text-xl mt-4">Tech guy</p>
-                    <p className="font-bold text-2xl italic">Eirik</p>
+                    {/* <p className="font-medium text-xl mt-4">Tech guy</p> */}
+                    <p className="font-bold text-2xl mt-4 italic">Eirik</p>
                     <p className="font-medium text-xl">Engineering for the future</p>
                 </div>
                 {/* <div className="flex flex-col items-center justify-center h-screen w-96 ml-4">
