@@ -53,8 +53,8 @@ export default function Home() {
         <div className="main-content">
             <div className="full-home-containecolr flex flex- justify-center justify-center items-center p-4 bg-navy-900">
                 <div className="flex flex-col items-center justify-center mr-20 ml-10 h-screen">
-                    <h2 className="text-2xl font-medium">Meet the team</h2>
-                    <p className="text-4xl font-bold"><strong>The founder</strong></p>
+                    <h2 className="text-4xl font-bold mb-4"><strong>Meet the team </strong></h2>
+                    {/* <p className="text-4xl font-bold"><strong>The founder</strong></p> */}
                     <img className="w-96" src={Founder} alt=""></img>
                     {/* <p className="font-medium text-xl mt-4">Tech guy</p> */}
                     <p className="font-bold text-2xl mt-4 italic">Eirik</p>
