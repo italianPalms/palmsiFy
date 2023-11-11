@@ -14,6 +14,7 @@ import Movies from "./pages/Movies";
 import EtchASketch from "./pages/EtchASketch";
 import Groceries from "./pages/Groceries";
 import AllUsers from "./pages/Allusers";
+import RockPaperScissor from "./pages/Rock-Paper-Scissor";
 
 function App() {
 
@@ -57,6 +58,12 @@ function App() {
           <Route path = "/allusers" element = {
             <Protected Login={Login}>
               <AllUsers />
+            </Protected>
+          } />
+
+          <Route path = "/rockPaperScissor" element = {
+            <Protected Login={Login}>
+              <RockPaperScissor />
             </Protected>
           } />
 

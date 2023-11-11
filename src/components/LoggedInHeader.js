@@ -71,6 +71,10 @@ export function LoggedInHeader () {
         navigate('/allusers');
     }
 
+    const rockPaperScissor = () => {
+        navigate('/rockPaperScissor')
+    }
+
     return (
         <>
         <div className="flex justify-between items-center mt-3">
@@ -95,6 +99,11 @@ export function LoggedInHeader () {
             <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center" 
             onClick={etchASketch}
             >Etch-A-Sketch</button>
+
+            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+            onClick={rockPaperScissor}
+            >Rock Paper Scissor
+            </button>
 
             <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={getUsers}
