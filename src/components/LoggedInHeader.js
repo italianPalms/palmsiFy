@@ -84,19 +84,19 @@ export function LoggedInHeader () {
             </button>
             
             <div className="mt-1">
-            <button className="p-1 m-3"
+            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={movies}
             >Movies</button>
 
-            <button className="p-1 m-3"
+            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={groceries}
             >Groceries</button>
 
-            <button className="p-1 m-3" 
+            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center" 
             onClick={etchASketch}
             >Etch-A-Sketch</button>
 
-            <button className="p-1 m-3"
+            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={getUsers}
             >Get all users</button>
             </div>

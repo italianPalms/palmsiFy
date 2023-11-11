@@ -39,29 +39,29 @@ export default function Header() {
             </div>
             
             <div className="fixed top-0 right-0 flex justify-between items-start mt-6">
-                <button className="p-1 m-3"
+                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={about}
                 >About</button>
                 
-                <button className="p-1 m-3"
+                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={investors}
                 >Investors</button>
                 
-                <button className="p-1 m-3"
+                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={forgotPassword}
                 >Forgot password</button>
                         
                 <div className="flex items-center p-1 m-3 mr-6">
                     <a href="https://www.youtube.com">
-                    <img className="w-20 mr-8" src={Youtube} alt="" />
+                    <img className="w-20 mr-8 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="w-5 mr-8" src={X} alt="" />
+                    <img className="w-5 mr-8 hover:w-6 transition-transform duration-100 transform origin-center" src={X} alt="" />
                     </a>
                             
                     <a href="https://www.instagram.com">
-                    <img className="w-7" src={Instagram} alt="" />
+                    <img className="w-7 hover:w-8 transition-transform duration-100 transform origin-center" src={Instagram} alt="" />
                     </a>
                 </div>
             </div>
