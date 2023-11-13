@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import React, {useState, useEffect} from "react";
-
 // const logo = require ("../img/logo.png");
 import logo from "../img/logo.png";
+
 
 export function LoggedInHeader () {
 
@@ -32,24 +32,23 @@ export function LoggedInHeader () {
         fetchUsername();
     }, [])
 
-    const logout = async () => {
-        try {
-            setLoading(true);
-            await axios.get('http://localhost:4000/logout');
-            console.log("Logout successful");
+    // const logout = async () => {
+    //     try {
+    //         setLoading(true);
+    //         await axios.get('http://localhost:4000/logout');
+    //         console.log("Logout successful");
 
-            setCookie("access_token", "", {expires: new Date(0)});
-            localStorage.removeItem("access_token");            
+    //         setCookie("access_token", "", {expires: new Date(0)});
+    //         localStorage.removeItem("access_token");            
 
-            navigate('/home');
+    //         navigate('/home');
 
-        } catch (error) {
-            console.log("Logout failed" + error)
-        } finally {
-            setLoading(false);
-        }
-        
-    }
+    //     } catch (error) {
+    //         console.log("Logout failed" + error)
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // }
 
     const profile = () => {
         navigate('/profile');
@@ -116,7 +115,7 @@ export function LoggedInHeader () {
             <button className="p-1 m-3 mr-6"
             onClick={logout}
             >Logout</button>
-        </div> */}
+            </div> */}
         </div>
         </div>
         </>
