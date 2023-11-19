@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import React, {useState, useEffect} from "react";
@@ -6,6 +6,7 @@ import logo from "../img/logo.png";
 import Youtube from "../img/yt_logo_rgb_dark.png";
 import X from "../img/logo-white.png";
 import Instagram from "../img/Instagram_Glyph_Gradient.png";
+import "./components.css";
 
 
 export function LoggedInHeader () {
@@ -15,6 +16,7 @@ export function LoggedInHeader () {
     const [loading, setLoading] = useState(false)
     const [cookies ] = useCookies(["access_token"]);
     const [, setCookie] = useCookies();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const fetchUsername = async () => {
@@ -52,73 +54,66 @@ export function LoggedInHeader () {
         }
     }
 
-    const profile = () => {
-        navigate('/profile');
-    }
-
-    const movies = () => {
-        navigate('/movies');
-    }
-
-    const etchASketch = () => {
-        navigate('/etchASketch');
-    }
-
-    const groceries = () => {
-        navigate('/groceries');
-    }
-
-    const getUsers = () => {
-        navigate('/allusers');
-    }
-
-    const rockPaperScissor = () => {
-        navigate('/rockPaperScissor')
-    }
-
     return (
         <>
-        <div className="flex justify-between items-center mt-3">
+        <nav className="flex justify-between items-center mt-3">
         <div className="flex items-center">
-            
-            <button className="p-1 flex items-center"
-            onClick={profile}
-            >
+
+            <Link to ="../profile" className="p-1 flex items-center">
                 <img src={logo} alt="logo" className="w-28"></img>
-            <span className="font-bold text-4xl italic">PalmsiFy</span>
-            </button>
-            
+                <span className="font-bold text-4xl italic">PalmsiFy</span>
+            </Link>
+
+            <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>       
+                </div>
             <div className="mt-1">
-            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
-            onClick={movies}
-            >Movies</button>
+            <ul className={menuOpen ? "open" : ""}>
+                <li>
+                    <NavLink to ="../movies" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
+                    Movies
+                    </NavLink>
+                </li>
 
-            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
-            onClick={groceries}
-            >Groceries</button>
+                <li>
+                    <NavLink to ="../groceries" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
+                    Groceries
+                    </NavLink>
+                </li>
 
-            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center" 
-            onClick={etchASketch}
-            >Etch-A-Sketch</button>
+                <li>
+                    <NavLink to ="../etchASketch" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
+                        Etch-A-Sketch
+                    </NavLink>
+                </li>
 
-            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
-            onClick={rockPaperScissor}
-            >Rock Paper Scissor
-            </button>
+                <li>
+                    <NavLink to ="../rockPaperScissor" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
+                        Rock Paper Scissor
+                    </NavLink>
+                </li>
 
-            <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
-            onClick={getUsers}
-            >Get all users</button>
+                <li>
+                    <NavLink to ="../allusers" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
+                        Get all users
+                    </NavLink>
+                </li>
+           
+            </ul>
             </div>
         </div>
-        </div>
+        
+        
+        </nav>
         <div className="ml-auto flex items-center mt-3 justify-end flex-direction: column">
             <p className="p-1 m-3 font-semibold">Welcome <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>    
             <button className="p-1 m-3 mr-6 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={logout}
             >Logout</button>
 
-            <div className="flex items-center p-1 m-3 mr-6 logo">
+            <div className="SOME-logo flex items-center p-1 m-3 mr-6 logo">
                 <a href="https://www.youtube.com">
                 <img className="w-20 mr-8 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
                 </a>
