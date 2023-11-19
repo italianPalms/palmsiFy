@@ -1,5 +1,4 @@
 import { LoggedInHeader } from "../components/LoggedInHeader";
-import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 import React from "react";
 
 export default function RockPaperScissor() {
@@ -7,7 +6,6 @@ export default function RockPaperScissor() {
         <>
             <div className="flex">
                 <LoggedInHeader />
-                <LoggedInHeaderII />
             </div>
 
             <div className="items-center justify-center flex text-4xl mt-6">

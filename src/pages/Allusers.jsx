@@ -1,5 +1,4 @@
 import { LoggedInHeader } from "../components/LoggedInHeader";
-import { LoggedInHeaderII } from "../components/LoggedInHeaderII";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
@@ -25,7 +24,6 @@ export default function AllUsers() {
         <>
         <div className="flex">
             <LoggedInHeader />
-            <LoggedInHeaderII />
         </div>
         <div>
             <h1 className="font-medium text-4xl flex justify-center items-center mt-4 mb-6">See all registered users</h1>

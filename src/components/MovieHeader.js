@@ -11,7 +11,7 @@ export function MovieHeader () {
         </div> */}
 
         <div>
-        <button className=" absolute p-1 m-3 mt-4 top-5"
+        <button className=" relative p-1 m-3 mt-4 top-5"
             onClick={() => {
                 console.log("Search icon clicked");
             }}>

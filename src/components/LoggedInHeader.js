@@ -4,6 +4,9 @@ import { useCookies } from "react-cookie";
 import React, {useState, useEffect} from "react";
 // const logo = require ("../img/logo.png");
 import logo from "../img/logo.png";
+import Youtube from "../img/yt_logo_rgb_dark.png";
+import X from "../img/logo-white.png";
+import Instagram from "../img/Instagram_Glyph_Gradient.png";
 
 
 export function LoggedInHeader () {
@@ -32,23 +35,23 @@ export function LoggedInHeader () {
         fetchUsername();
     }, [])
 
-    // const logout = async () => {
-    //     try {
-    //         setLoading(true);
-    //         await axios.get('http://localhost:4000/logout');
-    //         console.log("Logout successful");
+    const logout = async () => {
+        try {
+            setLoading(true);
+            await axios.get('http://localhost:4000/logout');
+            console.log("Logout successful");
 
-    //         setCookie("access_token", "", {expires: new Date(0)});
-    //         localStorage.removeItem("access_token");            
+            setCookie("access_token", "", {expires: new Date(0)});
+            localStorage.removeItem("access_token");            
 
-    //         navigate('/home');
+            navigate('/home');
 
-    //     } catch (error) {
-    //         console.log("Logout failed" + error)
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // }
+        } catch (error) {
+            console.log("Logout failed" + error)
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const profile = () => {
         navigate('/profile');
@@ -108,15 +111,25 @@ export function LoggedInHeader () {
             onClick={getUsers}
             >Get all users</button>
             </div>
-
-            {/* <div className="ml-auto flex justify-end items-end">
-            <p className="p-1 m-3 font-semibold">Welcome <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>
-            
-            <button className="p-1 m-3 mr-6"
+        </div>
+        </div>
+        <div className="ml-auto flex items-center mt-3 justify-end flex-direction: column">
+            <p className="p-1 m-3 font-semibold">Welcome <strong className="text-[#FF00FF] capitalize">{userId}</strong></p>    
+            <button className="p-1 m-3 mr-6 hover:font-bold transition-transform duration-100 transform origin-center"
             onClick={logout}
             >Logout</button>
-            </div> */}
-        </div>
+
+            <div className="flex items-center p-1 m-3 mr-6 logo">
+                <a href="https://www.youtube.com">
+                <img className="w-20 mr-8 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
+                </a>
+                <a href="https://www.x.com">
+                <img className="w-5 mr-8 hover:w-6 transition-transform duration-100 transform origin-center" src={X} alt="" />
+                </a>
+                <a href="https://www.instagram.com">
+                <img className="w-7 hover:w-8 transition-transform duration-100 transform origin-center" src={Instagram} alt="" />
+                </a>
+            </div>
         </div>
         </>
     )
