@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import React, {useState, useEffect} from "react";
-// const logo = require ("../img/logo.png");
 import logo from "../img/logo.png";
 import Youtube from "../img/yt_logo_rgb_dark.png";
 import X from "../img/logo-white.png";
