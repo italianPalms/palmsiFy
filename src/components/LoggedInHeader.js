@@ -76,35 +76,29 @@ export function LoggedInHeader () {
                     Movies
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink to ="../groceries" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
                     Groceries
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink to ="../etchASketch" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
                         Etch-A-Sketch
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink to ="../rockPaperScissor" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
                         Rock Paper Scissor
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink to ="../allusers" className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center">
                         Get all users
                     </NavLink>
                 </li>
-           
             </ul>
             </div>
         </div>
-        
         
         </nav>
         <div className="ml-auto flex items-center mt-3 justify-end flex-direction: column">

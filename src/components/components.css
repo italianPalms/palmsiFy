@@ -29,6 +29,7 @@ nav .menu span {
     border-radius: 0.2rem;
 }
 
+/*TODO: fix the drop down menu on smaller screens*/
 @media (max-width: 1390px) {
     nav .menu {
         display: flex;
