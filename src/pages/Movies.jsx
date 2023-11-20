@@ -57,6 +57,8 @@ export default function Movies() {
         };
     }, []);
 
+    // TODO: Add functionality to search for movies (including a search bar that cbecomes visible when the user click the search icon)
+
     return (
         <>
         <div className="min-h-screen relative">

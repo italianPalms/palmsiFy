@@ -26,6 +26,8 @@ export default function Home() {
     };
 
     return (
+        //TODO: Fix heading on small screens
+        //TODO: Fix bug when user scroll all the way down
         <>
         <div className="parallax">
             <div className="main-header max-h-10 ">
