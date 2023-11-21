@@ -16,20 +16,24 @@ code {
     monospace;
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  width: 8px;
+::selection {
+  background-color: #FF00FF;
 }
 
-::-webkit-scrollbar-thump {
-  background: #FF00FF;
-  border-radius: 4px;
-  border: 3px solid transparent;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 1px;
+  border: 1px solid transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: gray;
 }
+
 
 #container {
   display: inline-block;
