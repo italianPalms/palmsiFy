@@ -17,7 +17,7 @@ export default function Footer() {
             </div>
 
             <div>
-                <h4 className="text-2xl font-medium italic">Contact us</h4>
+                <h4 className="text-2xl font-medium italic mb-2">Contact us</h4>
                 <p><strong>Email:</strong> c1H9Z@example.com</p>
                 <p><strong>Phone:</strong> 123-456-7890</p>
                 <div className="flex items-center mt-4">
