@@ -66,3 +66,9 @@ nav .menu span {
         display: none;
     }
 }
+
+@media screen and (max-width: 880px) {
+    .SOME-logo-front {
+        display: none;
+    }
+}
