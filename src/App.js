@@ -71,13 +71,6 @@ function App() {
         </Routes>
       </BrowserRouter>
       <div>
-        <style>
-          {`
-          ::selection {
-            background-color: #FF00FF;
-          }
-          `}
-        </style>
       </div>
     </div>
   );
