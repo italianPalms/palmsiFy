@@ -53,11 +53,14 @@ export default function Groceries() {
         }
     }, []);
 
+    // TODO: Send the data to the DB
+
     return (
         <>
         <div className="flex">
             <LoggedInHeader />
         </div>
+
 
         <div className="flex flex-col justify-center items-center mt-10">
             <h1 className="text-4xl font-bold">Groceries</h1>
@@ -78,7 +81,7 @@ export default function Groceries() {
             }}
             >Add</button>
             {addGroceriesAttempted || groceries.lenght === 0 ? (
-                <p className="text-red-500">Please add groceries</p>
+                <p className="text-red-500 mt-4">Please add groceries</p>
                 ) : null}
         </div>
 
