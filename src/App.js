@@ -19,7 +19,7 @@ import RockPaperScissor from "./pages/Rock-Paper-Scissor";
 function App() {
 
   return (
-    <div className="text-white bg-black">
+    <div className=" text-white bg-black">
 
       <BrowserRouter>
         <Routes>

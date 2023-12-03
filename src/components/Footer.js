@@ -7,7 +7,7 @@ import Instagram from "../img/Instagram_Glyph_Gradient.png";
 export default function Footer() {
   
     return (
-        <footer className="sticky-footer fixed bottom-0 w-full bg-gray-900 flex justify-between items-center p-6">
+        <footer className="sticky-footer fixed bottom-0 w-full bg-black flex justify-between items-center p-6">
             <div className="flex items-center">
                 <img src={logo} alt="logo" className="w-28"></img>
                 <p className="font-medium text-2xl">PalmsiFy</p>
