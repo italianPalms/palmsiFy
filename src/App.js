@@ -15,12 +15,12 @@ import EtchASketch from "./pages/EtchASketch";
 import Groceries from "./pages/Groceries";
 import AllUsers from "./pages/Allusers";
 import RockPaperScissor from "./pages/Rock-Paper-Scissor";
+// import Sidebar from './pages/global/sidebar';
 
 function App() {
 
   return (
     <div className=" text-white bg-gray-900 h-fit min-h-screen">
-
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
@@ -69,7 +69,7 @@ function App() {
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
       <div>
       </div>
     </div>

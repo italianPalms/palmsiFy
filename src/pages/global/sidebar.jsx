@@ -77,7 +77,7 @@ const Sidebar = () => {
                     </MenuItem>
 
                     {/* User */}
-                    
+
                 </Menu>
 
             </ProSidebar>
