@@ -61,7 +61,7 @@ export default function Movies() {
 
     return (
         <>
-        <div className="min-h-screen relative">
+        <div className="relative">
             <div>
                 <div className="flex">
                     <LoggedInHeader />
