@@ -96,7 +96,7 @@ export default function Movies() {
                     ))}
                 </div>
                 {movies.map((movie) => {
-                return <pre key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
+                return <pre className="whitespace-pre-wrap ml-5" key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
                 })}
             </div>
             <Footer className={footerVisible ? "sticky-footer footerVisible" : "sticky-footer"} />
