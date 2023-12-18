@@ -68,12 +68,12 @@ export default function Movies() {
                 </div>
             </div>
             <div className="flex-1" ref={contentRef}>
-                <div className="mt-4 bg-gradient-to-r from-neutral-950 via-purple-950 to-neutral-950">
-                    <div className="flex flex-col items-center justify-center pt-8 pb-8 text-4xl font-semibold">
+                <div className="mt-4">
+                    <div className="flex flex-col items-center justify-center pt-4 pb-2 text-4xl font-semibold">
                         <h1>Movies</h1>
                     </div>
                 </div>
-                <div className="pl-10 mb-8">
+                <div className="pl-5 mb-8">
                     <button className=" relative p-1 m-3 mt-4 top-5"
                         onClick={() => {
                         console.log("Search icon clicked");
@@ -83,7 +83,7 @@ export default function Movies() {
                         </svg>
                     </button>
                 </div>
-                <div className="flex flex-wrap pl-10 pr-10 mb-10">
+                <div className="flex flex-wrap pl-5 pr-10 mb-10">
                     {movies.map((movie) => (
                     <div key={movie.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4">
                         <div className="text-center">

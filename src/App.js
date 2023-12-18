@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -20,14 +20,14 @@ import Sidebar from './pages/global/sidebar';
 function App() {
 
   return (
-    <div className=" text-white bg-gray-900 h-fit min-h-screen">
-      <BrowserRouter>
+    <div className="flex relative text-white bg-gray-900 h-fit min-h-screen">
       <Sidebar />
+      <main className="content">
         <Routes>
           <Route index element={<Home />} />
-          <Route path ="/home" element={<Home />} />
-          <Route path ="/login" element= { <Login />} />
-          <Route path ="/signup" element= { <Signup />} />
+          <Route path = "/home" element={<Home />} />
+          <Route path = "/login" element= { <Login />} />
+          <Route path = "/signup" element= { <Signup />} />
           <Route path = "/forgotPassword" element={ <ForgotPassword />} />
           <Route path = "/verifyEmail" element= { <VerifyEmail />} />
           <Route path = "/about" element = { <About /> } />
@@ -39,13 +39,13 @@ function App() {
             </Protected>
             }/>
           <Route path = "/movies" element = {
-            <Protected Login={Login}>
+            <Protected  Login={Login}>
               <Movies />
             </Protected>
           } />
 
           <Route path = "/groceries" element = {
-            <Protected Login={Login}>
+            <Protected  Login={Login}>
               <Groceries />
             </Protected>
           } />
@@ -70,9 +70,7 @@ function App() {
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
-        </BrowserRouter>
-      <div>
-      </div>
+        </main>
     </div>
   );
 }

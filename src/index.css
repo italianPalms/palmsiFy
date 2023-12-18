@@ -35,13 +35,17 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #888;
   border-radius: 1px;
   border: 1px solid transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: gray;
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #555;
 }
 
 

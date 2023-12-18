@@ -10,6 +10,8 @@ import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
 // import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined';
 // import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import Picture from "../../img/hunter-2_2x.webp";
+import Logo from "../../img/logo.png";
 
 
 const Item = ({ title, to, icon, selected, setSelected}) => {
@@ -21,16 +23,17 @@ const Item = ({ title, to, icon, selected, setSelected}) => {
             icon={icon}
         >
             <Typography>{title}</Typography>
-            {/* <Link to={to} /> */}
+            <Link to={to} />
         </MenuItem>
     );
 };
 
 const Sidebar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
-    const [selected, setSelected] = useState("Home")
+    const [selected, setSelected] = useState('');
 
     return (
+    <div>
         <Box>
             <ProSidebar collapsed={isCollapsed}>
                 <Menu iconShape="square">
@@ -54,7 +57,7 @@ const Sidebar = () => {
                                     variant='h3'
                                     color= '#e0e0e0'
                                 >
-                                    <img src={`../../img/logo.png`} alt="logo" className="w-28"></img>
+                                    <img src={Logo} alt="logo" className="w-28"></img>
                                     <span className="font-bold text-4xl italic">PalmsiFy</span>
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -76,7 +79,7 @@ const Sidebar = () => {
                                 alt="profile-user"
                                 width="100px"
                                 height="100px"
-                                src={`../../img/hunter-2_2x.webp`}
+                                src={Picture}
                                 style={{ cursor: "pointer", borderRadius: "50%"}}
                                 />
                             </Box>
@@ -93,7 +96,7 @@ const Sidebar = () => {
                                 variant="h5"
                                 color="#4cceac"
                                 >
-                                    VP PalmsiFy
+                                    CEO PalmsiFy
                                 </Typography>
                             </Box>
                         </Box>
@@ -101,10 +104,10 @@ const Sidebar = () => {
 
                     {/* Menu Items*/}
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-                        <Item 
+                        <Item
                             title="Home Page"
                             to="/profile"
-                            icon={HomeOutlinedIcon}
+                            // icon={HomeOutlinedIcon}
                             selected={selected}
                             setSelected={setSelected}
                         />
@@ -118,7 +121,7 @@ const Sidebar = () => {
                         <Item
                             title="Movies"
                             to="/movies"
-                            icon={TheatersOutlinedIcon}
+                            // icon={TheatersOutlinedIcon}
                             selected={selected}
                             setSelected={setSelected}
                         />
@@ -126,6 +129,7 @@ const Sidebar = () => {
                 </Menu>
             </ProSidebar>
         </Box>
+    </div>
     )
 }
 export default Sidebar;
