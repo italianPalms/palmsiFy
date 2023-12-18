@@ -15,13 +15,14 @@ import EtchASketch from "./pages/EtchASketch";
 import Groceries from "./pages/Groceries";
 import AllUsers from "./pages/Allusers";
 import RockPaperScissor from "./pages/Rock-Paper-Scissor";
-// import Sidebar from './pages/global/sidebar';
+import Sidebar from './pages/global/sidebar';
 
 function App() {
 
   return (
     <div className=" text-white bg-gray-900 h-fit min-h-screen">
       <BrowserRouter>
+      <Sidebar />
         <Routes>
           <Route index element={<Home />} />
           <Route path ="/home" element={<Home />} />

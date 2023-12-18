@@ -12,8 +12,13 @@ body {
 
 }
 
-html, body {
+html, 
+body,
+#root, 
+.app,
+.content {
   height: 100%;
+  width: 100%;
 }
 
 code {
