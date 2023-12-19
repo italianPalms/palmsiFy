@@ -1,9 +1,9 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import airbot from "../img/airobot.png";
+import airbot from "../../img/airobot.png";
 
 export default function Signup() {
 

@@ -1,4 +1,4 @@
-import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeader } from "../../components/LoggedInHeader";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 

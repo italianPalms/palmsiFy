@@ -1,4 +1,4 @@
-import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeader } from "../../components/LoggedInHeader";
 import React, { useEffect, useState } from 'react';
 
 

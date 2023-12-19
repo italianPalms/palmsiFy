@@ -1,20 +1,20 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import NoPage from "./pages/NoPage";
-import Profile from "./pages/Profile";
-import ForgotPassword from "./pages/ForgotPassword";
+import Home from "./pages/home_page/Home";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
+import NoPage from "./pages/no_page/NoPage";
+import Profile from "./pages/profile_page/Profile";
+import ForgotPassword from "./pages/forgot_password/ForgotPassword";
 import Protected from "./components/Protected";
-import VerifyEmail from "./pages/VerifyEmail";
-import About from "./pages/About";
-import Investors from "./pages/Investors";
-import Movies from "./pages/Movies";
-import EtchASketch from "./pages/EtchASketch";
-import Groceries from "./pages/Groceries";
-import AllUsers from "./pages/Allusers";
-import RockPaperScissor from "./pages/RockPaperScissor";
+import VerifyEmail from "./pages/verify_email/VerifyEmail";
+import About from "./pages/about/About";
+import Investors from "./pages/investor/Investors";
+import Movies from "./pages/movies/Movies";
+import EtchASketch from "./pages/etch_a_sketch/EtchASketch";
+import Groceries from "./pages/groceries/Groceries";
+import AllUsers from "./pages/all_users/Allusers";
+import RockPaperScissor from "./pages/rock_paper_scissor/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
 
 function App() {

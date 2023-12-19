@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { LoggedInHeader } from "../components/LoggedInHeader";
+import { LoggedInHeader } from "../../components/LoggedInHeader";
 
     export default function Profile() {
 
