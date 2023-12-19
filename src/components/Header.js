@@ -29,14 +29,14 @@ export default function Header() {
     return (
         <>
         <div className="fixed">
-            <div className="flex justify-between header-logo">
+            {/* <div className="flex justify-between header-logo">
                 <button className="p-1 m-3 ml-4 flex items-center"
                 onClick={homePage}
                 > 
                 <img src={logo} alt="logo" className="w-28"></img>
                 <span className="font-bold text-4xl italic">PalmsiFy</span>
                 </button>
-            </div>
+            </div> */}
             
             <div className="fixed top-0 right-0 flex justify-between items-start mt-6">
                 <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"

@@ -1,4 +1,4 @@
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +30,7 @@ nav .menu span {
 }
 
 /*TODO: fix the drop down menu on smaller screens*/
-@media (max-width: 1390px) {
+/* @media (max-width: 1390px) {
     nav .menu {
         display: flex;
         position: relative;
@@ -71,4 +71,4 @@ nav .menu span {
     .SOME-logo-front {
         display: none;
     }
-}
+} */

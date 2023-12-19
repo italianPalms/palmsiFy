@@ -14,7 +14,7 @@ import Movies from "./pages/Movies";
 import EtchASketch from "./pages/EtchASketch";
 import Groceries from "./pages/Groceries";
 import AllUsers from "./pages/Allusers";
-import RockPaperScissor from "./pages/Rock-Paper-Scissor";
+import RockPaperScissor from "./pages/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
 
 function App() {

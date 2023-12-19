@@ -5,10 +5,10 @@ import { Box, IconButton, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
-// import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
-// import GamesOutlinedIcon from '@mui/icons-material/GamesOutlined';
-// import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined';
-// import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
+import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
+import GamesOutlinedIcon from '@mui/icons-material/GamesOutlined';
+import FastfoodOutlinedIcon from '@mui/icons-material/FastfoodOutlined';
+import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Picture from "../../img/hunter-2_2x.webp";
 import Logo from "../../img/logo.png";
@@ -33,16 +33,35 @@ const Sidebar = () => {
     const [selected, setSelected] = useState('');
 
     return (
-    <div>
-        <Box>
-            <ProSidebar collapsed={isCollapsed}>
+    <>
+    <div className='flex !bg-gray-900'>
+        <Box
+        sx={{
+            "& .pro-sidebar-inner": {
+                background: "rgb(31 41 55)"
+            }, 
+            "& .pro-icon-wrapper": {
+                backgroundColor: "transparent !important"
+            }, 
+            "& .pro-inner-item": {
+                padding: "5px 35px 5px 20px !important"
+            }, 
+            "& .pro-inner-item:hover": {
+                color: "#868dfb !important"
+            }, 
+            "& .pro-menu-item.active": {
+                color: "#6870fa !important"
+            },
+        }}
+        >
+            <ProSidebar collapsed={isCollapsed} className='bg-gray-900'>
                 <Menu iconShape="square">
                     {/* Logo and menu item */}
                     <MenuItem
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                     style={{
-                        margin: "10px 0 20px 0",
+                        margin: "5px 0 10px 0",
                         color: "#e0e0e0",
                     }}
                     >
@@ -51,17 +70,18 @@ const Sidebar = () => {
                                 display = 'flex'
                                 justifyContent='space-between'
                                 alignItems='center'
-                                ml='15px'
                             >
                                 <Typography
-                                    variant='h3'
+                                    variant='h5'
                                     color= '#e0e0e0'
                                 >
-                                    <img src={Logo} alt="logo" className="w-28"></img>
-                                    <span className="font-bold text-4xl italic">PalmsiFy</span>
+                                    <div className='flex justify-center items-center'>
+                                    <img src={Logo} to="/profile" alt="logo" className="w-16"></img>
+                                    <span className="font-bold text-xl italic">PalmsiFy</span>
+                                    </div>
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                                    <MenuOutlinedIcon />
+                                    <MenuOutlinedIcon className='text-white flex' />
                                 </IconButton>
                             </Box>
                         )}
@@ -69,7 +89,7 @@ const Sidebar = () => {
 
                     {/* User */}
                     {!isCollapsed && (
-                        <Box mb="25px">
+                        <Box mb="20px">
                             <Box
                                 display="flex"
                                 justifyContent="center"
@@ -85,18 +105,18 @@ const Sidebar = () => {
                             </Box>
                             <Box textAlign="center">
                                 <Typography
-                                variant="h2"
-                                color="#e0e0e0"
+                                variant="h4"
+                                color="white"
                                 fontWeight="bold"
-                                sx={{ m: "10px 0 0 0"}}
+                                sx={{ m: "15px 0 0 0"}}
                                 >
                                     Eirik
                                 </Typography>
                                 <Typography
-                                variant="h5"
+                                variant="h6"
                                 color="#4cceac"
                                 >
-                                    CEO PalmsiFy
+                                    VP PalmsiFy
                                 </Typography>
                             </Box>
                         </Box>
@@ -107,29 +127,63 @@ const Sidebar = () => {
                         <Item
                             title="Home Page"
                             to="/profile"
-                            // icon={HomeOutlinedIcon}
+                            icon={<HomeOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
+                        {!isCollapsed &&(
                         <Typography
                         variant="h6"
                         color="#a3a3a3"
-                        sx={{ m: "15px 0 5px 20px"}}
+                        sx={{ m: "10px 0 5px 20px"}}
                         >
                             Welcome
                         </Typography>
+                        )}
                         <Item
                             title="Movies"
                             to="/movies"
-                            // icon={TheatersOutlinedIcon}
+                            icon={<TheatersOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
+                        />
+                        <Item
+                        title="Groceries"
+                        to="/groceries"
+                        icon={<FastfoodOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        <Item 
+                        title="Etch-A-Sketch"
+                        to="/etchasketch"
+                        icon={<SmartToyOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        <Item 
+                        title="Rock Paper Scissor"
+                        to="/rockpaperscissor"
+                        icon={<GamesOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        <Item 
+                        
+                        title="All users"
+                        to="/allusers"
+                        icon={<GroupAddOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
                         />
                     </Box>
                 </Menu>
             </ProSidebar>
         </Box>
     </div>
+    </>
     )
+    
 }
+
 export default Sidebar;
