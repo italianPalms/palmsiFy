@@ -58,7 +58,7 @@ import { LoggedInHeader } from "../components/LoggedInHeader";
                             <tr>
                                 <td className="p-2">{user.username}</td>
                                 <td className="p-2">{user.email}</td>
-                                <td className="p-2">{user._id}</td>  
+                                <td className="p-2">{user._id}</td>
                             </tr>
                         </tbody>
                     </table>
