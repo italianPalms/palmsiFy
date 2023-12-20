@@ -12,6 +12,8 @@ import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Picture from "../../img/hunter-2_2x.webp";
 import Logo from "../../img/logo.png";
+import { useCookies } from "react-cookie";
+
 
 
 const Item = ({ title, to, icon, selected, setSelected}) => {
@@ -28,9 +30,15 @@ const Item = ({ title, to, icon, selected, setSelected}) => {
     );
 };
 
-const Sidebar = () => {
+const Sidebar = ({ access_token }) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState('');
+    const [cookies] = useCookies(["access_token"]);
+
+
+    if (!cookies.access_token) {
+        return null;
+    }
 
     return (
     <>
