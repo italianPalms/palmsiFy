@@ -42,7 +42,7 @@ import { LoggedInHeader } from "../../components/LoggedInHeader";
             <div className="flex">
                 <LoggedInHeader />
             </div>
-            <div className="flex flex-col items-center justify-center min-h-screen py-2 pb-64">
+            <div className="flex flex-col items-center justify-center min-h-screen pb-64">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
                 <div className="w-100 text-xl mt-8">
                     {showUserDetails && user ? (
@@ -68,7 +68,7 @@ import { LoggedInHeader } from "../../components/LoggedInHeader";
                 </div>
                 {/* <h4 className="font-semibold rounded bg-purple-500 p-1 mt-8">{data === "nothing" ? "Nothing" : <Link to={`/user/${data}`}>{data}</Link>}</h4> */}
 
-                <button className="boder-2 mt-8 p-2 w-48 bg-orange-700 hover:bg-orange-900 rounded" 
+                <button className="border-2 mt-8 p-2 w-48 bg-orange-700 hover:bg-orange-900 rounded" 
                 onClick={toggleUserDetails}
                 >{buttonText}</button>
             </div>
