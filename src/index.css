@@ -241,3 +241,15 @@ code {
     translate: -50%;
   }
 }
+
+@media screen and (max-width: 942px) {
+  .SOME-logo {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .welcome-user {
+    display: none;
+  }
+}
