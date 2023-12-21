@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useCookies } from "react-cookie";
 import { ProSidebar, Menu, MenuItem} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Box, IconButton, Typography } from '@mui/material';
@@ -12,7 +13,6 @@ import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Picture from "../../img/hunter-2_2x.webp";
 import Logo from "../../img/logo.png";
-import { useCookies } from "react-cookie";
 
 
 
