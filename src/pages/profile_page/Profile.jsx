@@ -39,9 +39,6 @@ import { LoggedInHeader } from "../../components/LoggedInHeader";
 
         return (
             <>
-            <div className="flex">
-                <LoggedInHeader />
-            </div>
             <div className="flex flex-col items-center justify-center min-h-screen pb-64">
                 <h1 className="text-4xl font-semibold">{loading ? "Logging out" : "Welcome to your profile"}</h1>
                 <div className="w-100 text-xl mt-8">
