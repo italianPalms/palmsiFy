@@ -16,6 +16,7 @@ import Groceries from "./pages/groceries/Groceries";
 import AllUsers from "./pages/all_users/Allusers";
 import RockPaperScissor from "./pages/rock_paper_scissor/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
+import Topbar from './pages/global/topbar';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
     <div className="flex relative text-white bg-gray-900 h-fit min-h-screen">
       <Sidebar />
       <main className="content">
+        <Topbar />
         <Routes>
           <Route index element={<Home />} />
           <Route path = "/home" element={<Home />} />
