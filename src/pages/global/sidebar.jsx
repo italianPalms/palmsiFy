@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCookies } from "react-cookie";
 import { ProSidebar, Menu, MenuItem} from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
@@ -13,15 +13,24 @@ import GroupAddOutlinedIcon from '@mui/icons-material/GroupAddOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Picture from "../../img/hunter-2_2x.webp";
 import Logo from "../../img/logo.png";
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import axios from 'axios';
 
 
 
-const Item = ({ title, to, icon, selected, setSelected}) => {
+
+const Item = ({ title, onClick, to, icon, selected, setSelected}) => {
     return (
         <MenuItem
             active = {selected === title}
             style = {{color: '#e0e0e0' }}
-            onClick={() => setSelected(title)}
+            onClick={() => {
+                // console.log(`Clicked on ${title}`);
+                if(onClick) {
+                    onClick();
+                }
+                setSelected(title);
+            }}
             icon={icon}
         >
             <Typography>{title}</Typography>
@@ -34,7 +43,42 @@ const Sidebar = ({ access_token }) => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState('');
     const [cookies] = useCookies(["access_token"]);
+    const [loading, setLoading] = useState(false);
+    const [, setCookie] = useCookies();
+    const [userId, setUserId] = useState();
 
+    useEffect(() => {
+        const fetchUsername = async () => {
+            await axios.get('http://localhost:4000/getUserDetails', {
+                headers: {
+                    Authorization: `Bearer ${cookies.access_token}`
+                }
+            })
+            .then((response) => {
+                setUserId(response.data.username);
+            })
+            .catch(err => {
+                console.log("Failed to fethc userId sidebar", err);
+            })
+        }
+        fetchUsername();
+    }, [])
+
+    const logout = async () => {
+        try {
+            setLoading(true);
+            await axios.get('http://localhost:4000/logout');
+            console.log("Logout successful");
+
+            setCookie("access_token", "", {expires: new Date(0)});
+            localStorage.removeItem("access_token");
+
+        } catch (error) {
+            console.log("Logout failed" + error)
+        } finally {
+            setLoading(false);
+        }
+    }
 
     if (!cookies.access_token) {
         return null;
@@ -111,14 +155,14 @@ const Sidebar = ({ access_token }) => {
                                 style={{ cursor: "pointer", borderRadius: "50%"}}
                                 />
                             </Box>
-                            <Box textAlign="center">
+                            <Box className="capitalize" textAlign="center">
                                 <Typography
                                 variant="h4"
                                 color="white"
                                 fontWeight="bold"
                                 sx={{ m: "15px 0 0 0"}}
                                 >
-                                    Eirik
+                                    {userId}
                                 </Typography>
                                 <Typography
                                 variant="h6"
@@ -177,10 +221,17 @@ const Sidebar = ({ access_token }) => {
                         setSelected={setSelected}
                         />
                         <Item 
-                        
                         title="All users"
                         to="/allusers"
                         icon={<GroupAddOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        <Item
+                        title="Logout"
+                        onClick={logout}
+                        to="/home"
+                        icon={<LogoutOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
                         />
