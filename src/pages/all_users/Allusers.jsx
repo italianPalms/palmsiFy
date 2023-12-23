@@ -2,11 +2,15 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
+import { ResponsivePie } from '@nivo/pie';
+import { Verified } from "@mui/icons-material";
+import PieChartVerified from '../../components/PieChartVerified';
+import PieChartAdmin from "../../components/PieChartAdmin";
 
 export default function AllUsers() {
 
     const [users, setUsers] = useState([]);
-
+    // Fetch all users from db
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -21,8 +25,10 @@ export default function AllUsers() {
         fetchUsers();
     }, []);
 
+    //Make sure that the users are without circular reference
     const usersWithoutCircularReferences = JSON.parse(JSON.stringify(users));
 
+    //Columns in the data grid from Mui
     const columns = [
         {
             field: "username", 
@@ -47,6 +53,7 @@ export default function AllUsers() {
         }
     ];
 
+    //Rows in the data grid from Mui
     const rows = usersWithoutCircularReferences.map((users, index) => ({
         id: users._id, 
         username: users.username,
@@ -61,8 +68,7 @@ export default function AllUsers() {
             <h1 className="font-medium text-4xl flex justify-center items-center mt-4 mb-6">See all registered users</h1>
         </div>
         <Box
-        m="40px 0 0 0"
-        height="75vh"
+        //Style the data grind from Mui (overwrite the default styling)
         sx={{
             "& .MuiDataGrid-root": {
                 border: "none", 
@@ -99,18 +105,34 @@ export default function AllUsers() {
                 border: "none",
                 borderTop: "none", 
                 borderBottom: "none", 
-            }, 
-
-
+            },
         }}
         >
-        <div className="flex justify-center items-center m-10 mt-16">
+        <div className="flex justify-center items-center ml-10 mr-10 mt-16">
         <DataGrid className=" flex max-w-7xl"
             rows={rows}
             columns={columns}
         />
         </div>
         </Box>
+
+        {/*Pie chart for verified */}
+        <div className="pieChart flex justify-center items-center">
+        <Box m="20px">
+            <h1 className="font-medium text-2xl flex justify-center items-center mt-16 mb-6">Verified users</h1>
+            <Box height="50vh" width="50vh">
+            <PieChartVerified />
+            </Box>
+        </Box>
+
+        {/* Pie chart for admin */}
+        <Box m="20px">
+            <h1 className="font-medium text-2xl flex justify-center items-center mt-16 mb-6">Admin users</h1>
+            <Box height="50vh" width="50vh">
+                <PieChartAdmin />
+            </Box>
+        </Box>
+        </div>
         </>
-    )
+    )   
 }
