@@ -30,15 +30,15 @@ export default function Header() {
         <>
         <div className="fixed">
             <div className="flex justify-between header-logo">
-                <button className="p-1 m-3 ml-4 flex items-center"
+                <button className="ml-4 flex items-center"
                 onClick={homePage}
                 > 
-                <img src={logo} alt="logo" className="w-28"></img>
-                <span className="font-bold text-4xl italic">PalmsiFy</span>
+                <img src={logo} alt="logo" className="w-24"></img>
+                <span className="font-bold text-3xl italic">PalmsiFy</span>
                 </button>
             </div>
             
-            <div className="fixed top-0 right-0 flex justify-between items-start mt-6">
+            <div className="fixed top-0 right-0 flex justify-between items-start mt-1 font-bold">
                 <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={about}
                 >About</button>
@@ -53,11 +53,11 @@ export default function Header() {
                         
                 <div className="flex items-center p-1 m-3 mr-6">
                     <a href="https://www.youtube.com">
-                    <img className="SOME-logo-front w-20 mr-8 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
+                    <img className="SOME-logo-front w-20 mr-4 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="SOME-logo-front w-5 mr-8 hover:w-6 transition-transform duration-100 transform origin-center" src={X} alt="" />
+                    <img className="SOME-logo-front w-5 mr-4 hover:w-6 transition-transform duration-100 transform origin-center" src={X} alt="" />
                     </a>
                             
                     <a href="https://www.instagram.com">
