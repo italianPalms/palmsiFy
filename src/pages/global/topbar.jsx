@@ -93,12 +93,12 @@ const Topbar = ({ access_token }) => {
             </Box>
         </Box>
 
-        <Box className=" flex flex-end" marginLeft="auto">
+        <Box className="flex flex-end" marginLeft="auto">
             
             {/* Welcome message */}
             <Box display= "flex">
-            <p className='welcome-user mr-4 font-semibold mt-2'>Welcome
-                <strong className='text-[#FF00FF] capitalize ml-2'>{userId}</strong>
+            <p className='welcome-user capitalize mr-4 font-semibold mt-2'>welcome
+                <strong className='text-[#FF00FF] ml-2'>{userId && userId.charAt(0).toUpperCase() + userId.slice(1)}</strong>
             </p>
             </Box>
 
