@@ -104,9 +104,6 @@ function EtchASketch() {
     
     return (
         <>
-        <div className="flex">
-            <LoggedInHeader />
-        </div>
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-3xl font-medium pb-4 mt-10">Etch-a-sketch</h1>
             <div className="main">

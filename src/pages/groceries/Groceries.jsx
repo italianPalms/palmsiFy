@@ -57,11 +57,6 @@ export default function Groceries() {
 
     return (
         <>
-        <div className="flex">
-            <LoggedInHeader />
-        </div>
-
-
         <div className="flex flex-col justify-center items-center mt-10">
             <h1 className="text-4xl font-bold">Groceries</h1>
         </div>
