@@ -246,6 +246,9 @@ code {
   .SOME-logo {
       display: none;
   }
+  .SOME-logo-front {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 790px) {
