@@ -15,6 +15,7 @@ import Picture from "../../img/hunter-2_2x.webp";
 import Logo from "../../img/logo.png";
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import axios from 'axios';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 
 
 
@@ -217,6 +218,13 @@ const Sidebar = ({ access_token }) => {
                         title="Rock Paper Scissor"
                         to="/rockpaperscissor"
                         icon={<GamesOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+                        <Item
+                        title="Calendar"
+                        to="/calendar"
+                        icon={<CalendarMonthOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
                         />

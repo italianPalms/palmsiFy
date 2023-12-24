@@ -17,6 +17,7 @@ import AllUsers from "./pages/all_users/Allusers";
 import RockPaperScissor from "./pages/rock_paper_scissor/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
 import Topbar from './pages/global/topbar';
+import Calendar from './pages/calendar/calendar';
 
 function App() {
 
@@ -58,17 +59,25 @@ function App() {
             </Protected>
           } />
 
+          <Route path = "/rockPaperScissor" element = {
+            <Protected Login={Login}>
+              <RockPaperScissor />
+            </Protected>
+          } />
+
+          <Route path = "/calendar" element = {
+            <Protected Login={Login}>
+              <Calendar />
+            </Protected>
+          } />
+
           <Route path = "/allusers" element = {
             <Protected Login={Login}>
               <AllUsers />
             </Protected>
           } />
 
-          <Route path = "/rockPaperScissor" element = {
-            <Protected Login={Login}>
-              <RockPaperScissor />
-            </Protected>
-          } />
+          
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
