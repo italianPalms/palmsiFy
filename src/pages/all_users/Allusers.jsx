@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { ResponsivePie } from '@nivo/pie';
-import { Verified } from "@mui/icons-material";
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import PieChartVerified from '../../components/PieChartVerified';
 import PieChartAdmin from "../../components/PieChartAdmin";
+import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 
 export default function AllUsers() {
 
@@ -44,7 +45,23 @@ export default function AllUsers() {
         {
             field: "isVerified",
             headerName: "Is verified",
-            flex: 1, 
+            flex: 1,
+            display: "justifyContent: start", 
+            renderCell: ({ row: {isVerified}}) => (
+                <Box className="flex justify-center items-start"
+                 width="50%"
+                 p="2px"
+                 display="flex"
+                 justifyContent="center"
+                 backgroundColor={isVerified === "True" ? "#4cceac" : "red"}
+                 borderRadius="4px"
+                 >
+                    {isVerified === "True" ? <VerifiedOutlinedIcon /> : <ErrorOutlineOutlinedIcon />}
+                    <Typography color="#e0e0e0" sx={{ ml: "5px"}}>
+                        {isVerified}
+                    </Typography>
+                </Box>
+            )
         },
         {
             field: "isAdmin",
@@ -58,14 +75,14 @@ export default function AllUsers() {
         id: users._id, 
         username: users.username,
         email: users.email, 
-        isVerified: users.isVerified ? 'True' : 'False', 
+        isVerified: users.isVerified ? 'True' : 'False',
         isAdmin: users.isAdmin ? 'True': 'False',
     }));
 
     return (
         <>
         <div>
-            <h1 className="font-medium text-4xl flex justify-center items-center mt-4 mb-6">See all registered users</h1>
+            <h1 className="font-medium text-4xl flex justify-center items-center mt-8 mb-6">See all registered users</h1>
         </div>
         <Box
         //Style the data grind from Mui (overwrite the default styling)
@@ -79,6 +96,7 @@ export default function AllUsers() {
             }, 
             "& .name-column--cell": {
                 color: "#4cceac",
+                display: "flex", 
             }, 
             "& .MuiDataGrid-columnHeaders": {
                 backgroundColor: "rgb(31 41 55)",
@@ -109,7 +127,7 @@ export default function AllUsers() {
         }}
         >
         <div className="flex justify-center items-center ml-10 mr-10 mt-16">
-        <DataGrid className=" flex max-w-7xl"
+        <DataGrid className="max-w-7xl"
             rows={rows}
             columns={columns}
         />
@@ -119,16 +137,16 @@ export default function AllUsers() {
         {/*Pie chart for verified */}
         <div className="pieChart flex justify-center items-center">
         <Box m="20px">
-            <h1 className="font-medium text-2xl flex justify-center items-center mt-16 mb-6">Verified users</h1>
-            <Box height="50vh" width="50vh">
+            <h1 className="font-medium text-2xl flex justify-center items-center mt-16">Verified users</h1>
+            <Box height="50vh" width="40vh">
             <PieChartVerified />
             </Box>
         </Box>
 
         {/* Pie chart for admin */}
         <Box m="20px">
-            <h1 className="font-medium text-2xl flex justify-center items-center mt-16 mb-6">Admin users</h1>
-            <Box height="50vh" width="50vh">
+            <h1 className="font-medium text-2xl flex justify-center items-center mt-16">Admin users</h1>
+            <Box height="50vh" width="40vh">
                 <PieChartAdmin />
             </Box>
         </Box>
