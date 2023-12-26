@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { ResponsivePie } from '@nivo/pie';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import PieChartVerified from '../../components/PieChartVerified';
 import PieChartAdmin from "../../components/PieChartAdmin";
