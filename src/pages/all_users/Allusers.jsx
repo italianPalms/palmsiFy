@@ -89,14 +89,15 @@ export default function AllUsers() {
         sx={{
             "& .MuiDataGrid-root": {
                 border: "none", 
-                color: "white", 
+                color: "white",
             }, 
             "& .MuiDataGrid-cell": {
                 borderBottom: "none", 
             }, 
             "& .name-column--cell": {
                 color: "#4cceac",
-                display: "flex", 
+                display: "flex",
+                margin: "0 0 0 5px", 
             }, 
             "& .MuiDataGrid-columnHeaders": {
                 backgroundColor: "rgb(31 41 55)",
