@@ -66,7 +66,7 @@ export default function ForgotPassword () {
             <Header />
         </div>
         <div className="flex flex-col items-center min-h-screen justify-center py-2 pb-56">
-            <h1 className="text-4xl font-semibold mb-3">Enter your email to reset your password</h1>
+            <h1 className="text-4xl font-semibold mb-3">Reset your password below</h1>
             <label className="mb-2 mt-2 font-semibold">Email</label>
             <input className={`p-2 text-black rounded border-2 ${emailColor}`}
                 id="email" 
