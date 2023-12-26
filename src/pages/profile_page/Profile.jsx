@@ -1,13 +1,9 @@
-import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { LoggedInHeader } from "../../components/LoggedInHeader";
 
     export default function Profile() {
 
-        const navigate = useNavigate();
-        const [, setCookie] = useCookies();
         const [loading, setLoading] = useState(false);
         const [user, setUser] = useState(null);
         const [cookies ] = useCookies(["access_token"]);
@@ -35,7 +31,6 @@ import { LoggedInHeader } from "../../components/LoggedInHeader";
                 .catch(err => console.log("Failed to fetch user details", err)); 
                 }
             }
-
 
         return (
             <>
