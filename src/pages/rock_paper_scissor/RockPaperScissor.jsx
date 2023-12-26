@@ -35,7 +35,7 @@ export default function RockPaperScissor() {
                 setResultMsg("It's a tie");
                 setRoundsPlayed(roundsPlayed + 1);
             } else if (computerSelection === 'paper') {
-                setResultMsg("Computer wins")
+                setResultMsg("Computer wins");
                 setComputerScore(computerScore + 1);
                 setRoundsPlayed(roundsPlayed + 1);
             } else {
