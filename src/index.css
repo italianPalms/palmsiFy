@@ -262,3 +262,13 @@ code {
     display: grid;
   }
 }
+@media screen and (max-width: 1000px) {
+  .piechart_profile {
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
