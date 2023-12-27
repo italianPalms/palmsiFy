@@ -35,10 +35,10 @@ export default function Home() {
             </div>
             <div className="hero relative">
                 <div className="wrapper absolute top-96 left-56 ">
-                    <h1 className="hero_title absolute">
+                    <h1 className="hero_title absolute text-6xl sm:text-5xl md:text-6xl lg:text-7xl">
                     <span>Gear up!</span> Welcome to PalmsiFy
                     </h1>
-                    <button className="login-btn p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={login}>Login</button>
+                    <button className="login-btn mt-6 p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={login}>Login</button>
                     <button className="login-btn p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={signup}>Signup</button>
                 </div>
             </div>
@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-center mr-20 ml-10 h-screen">
                     <h2 className="text-4xl font-bold mb-4"><strong>Meet the team </strong></h2>
                     {/* <p className="text-4xl font-bold"><strong>The founder</strong></p> */}
-                    <img className="w-96" src={Founder} alt=""></img>
+                    <img className="w-96 sm:w-64 md:w-76 lg:w-96" src={Founder} alt=""></img>
                     {/* <p className="font-medium text-xl mt-4">Tech guy</p> */}
                     <p className="font-bold text-2xl mt-4 italic">Eirik</p>
                     <p className="font-medium text-xl">Engineering for the future</p>
@@ -68,7 +68,7 @@ export default function Home() {
                 
                 <div className="home-container items-center justify-center">
                     <div className="mb-2 flex items-center justify-center">
-                    <h1 className="home-heading p-2 text-5xl font-bold italic">Check it out!</h1>
+                    <h1 className="home-heading p-2 text-5xl sm:text-2xl md:text-3xl lg:text-4xl font-bold italic">Check it out!</h1>
                     </div>
 
                     <div className="home-btn-container flex-col items-center justify-center min-w-min">

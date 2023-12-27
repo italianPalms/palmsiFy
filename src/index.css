@@ -68,7 +68,7 @@ code {
   display: inline-block;
 }
 
-@media (max-width: 965px) {
+@media (max-width: 1024px) {
   .home-img {
     width: 250px;
   }
@@ -78,13 +78,14 @@ code {
     flex-direction: column;
   }
   .login-btn {
-    margin-right: 0;
+    margin-right: 5px;
     margin-bottom: 5px;
   }
 
   .signup-btn {
     margin-top: 5px;
     margin-left: 0px;
+    margin-right: 5px;
   }
 
   .home-heading {
