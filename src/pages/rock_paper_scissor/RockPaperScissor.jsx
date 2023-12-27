@@ -93,7 +93,7 @@ export default function RockPaperScissor() {
         useEffect(() => {
             if (playerScore === 5 || computerScore === 5) {
                 if(playerScore === 5) {
-                    setGameResultMsg("Congratz, you won the game!");
+                    setGameResultMsg("Congratz, you won the game! 🥳");
                     setTextColor("#4cceac");
                     console.log('Player won the game!');
                 } else if (computerScore === 5) {
