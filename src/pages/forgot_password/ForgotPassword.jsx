@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
+import airbot from "../../img/airobot.png";
 
 export default function ForgotPassword () {
 
@@ -65,8 +66,14 @@ export default function ForgotPassword () {
         <div>
             <Header />
         </div>
-        <div className="flex flex-col items-center min-h-screen justify-center py-2 pb-56">
-            <h1 className="text-4xl font-semibold mb-3">Reset your password below</h1>
+        <div className="flex flex-row items-center justify-center">
+        
+            <div>
+                <img className="sm:w-80 md:w-80 lg:w-96" src={airbot} alt="Aitbot"></img>
+            </div>
+
+            <div className="flex flex-col justify-center items-center min-h-screen">
+            <h1 className="text-5xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold mb-3">Reset your password</h1>
             <label className="mb-2 mt-2 font-semibold">Email</label>
             <input className={`p-2 text-black rounded border-2 ${emailColor}`}
                 id="email" 
@@ -79,7 +86,7 @@ export default function ForgotPassword () {
             {resetPasswordAttempted && emailBorderColor ? <p className="text-red-500">Email is required</p> : ""}
 
             <label className="mb-2 mt-4 font-semibold">New password</label>
-            <input className={`p-2 text-black rounded border-2 ${passwordColor}`}
+            <input className={`p-2 text-black rounded border-2 mb-2 ${passwordColor}`}
                 id="password"
                 type="password"
                 value={user.password}
@@ -96,7 +103,8 @@ export default function ForgotPassword () {
 
             <a href="/login" className="p-2 font-medium text-base">Back to login</a>
 
-            {resetPasswordAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl">Please fill out all required fields</h2> : ""}
+            {resetPasswordAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl text-red-300">Please fill out all required fields</h2> : ""}
+            </div>
         </div>
         </>
     )
