@@ -39,15 +39,15 @@ export default function Header() {
             </div>
             
             <div className="fixed top-0 right-0 flex justify-between items-start mt-1 font-bold">
-                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_about p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={about}
                 >About</button>
                 
-                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_investor p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={investors}
                 >Investors</button>
                 
-                <button className="p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_forgotPassword p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
                 onClick={forgotPassword}
                 >Forgot password</button>
                         
