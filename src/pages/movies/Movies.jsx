@@ -62,7 +62,7 @@ export default function Movies() {
         <>
         <div className="relative">
             <div className="flex-1" ref={contentRef}>
-                <div className="mt-4">
+                <div className="mt-16">
                     <div className="flex flex-col items-center justify-center mb-6 pt-4 pb-2 text-4xl font-semibold">
                         <h1>Movies</h1>
                     </div>
