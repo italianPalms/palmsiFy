@@ -77,7 +77,7 @@ export default function RockPaperScissor() {
             setComputerSelection(computerSelection);
             playRound(playerSelection, computerSelection);
 
-            //TODO: fix console.logs to be updated correctly - now they are a delayed update
+            //TODO: Fix the console.log prints - now there are a delayed update so the result are not correct and not aligned with what is shown on screen
             console.log('Player choose: ' + playerSelection);
             console.log('Computer choose: ' + computerSelection);
             console.log('Result: ' + resultMsg);
