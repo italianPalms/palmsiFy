@@ -86,7 +86,7 @@ export default function Login() {
             <Header />
         </div>
         <div className="flex flex-row items-center justify-center">
-            <div className="w-96 mr-8">
+            <div className="sm:w-80 md:w-80 lg:w-96 mr-8">
                 <img src={airbot} alt="Aitbot"></img>
             </div>
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -122,7 +122,7 @@ export default function Login() {
 
                 <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
 
-                {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8">Please fill out all required fields</h2> : ""}
+                {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8 text-red-300">Please fill out all required fields</h2> : ""}
             </div>
         </div>
         </>
