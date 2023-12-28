@@ -252,6 +252,13 @@ code {
   }
 }
 
+@media screen and (max-width: 942px) {
+  .header_about, .header_investor, .header_forgotPassword {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
 @media screen and (max-width: 790px) {
   .welcome-user {
     display: none;
