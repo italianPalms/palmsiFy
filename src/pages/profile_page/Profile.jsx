@@ -7,8 +7,6 @@ import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 import PieChartVerified from "../../components/PieChartVerified"; 
 
-
-
     export default function Profile() {
 
         const [loading, setLoading] = useState(false);
