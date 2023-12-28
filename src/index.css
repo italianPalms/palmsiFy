@@ -197,7 +197,6 @@ code {
   position: relative;
   z-index: 99;
   background: hsl(238, 100%, 6%);
-  padding-block: 10rem;
 }
 
 .wrapper {
