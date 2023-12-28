@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { LoggedInHeader } from "../../components/LoggedInHeader";
 import Footer from "../../components/Footer";
 
 export default function Movies() {
