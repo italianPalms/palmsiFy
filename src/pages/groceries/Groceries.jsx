@@ -58,7 +58,7 @@ export default function Groceries() {
     return (
         <>
         <div className="flex flex-col justify-center items-center mt-16">
-            <h1 className="text-4xl font-semibold">Groceries</h1>
+            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Groceries</h1>
         </div>
 
         <div className="flex flex-col justify-center items-center">

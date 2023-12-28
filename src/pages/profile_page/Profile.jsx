@@ -87,7 +87,7 @@ import PieChartVerified from "../../components/PieChartVerified";
         return (
             <>
             <div className="flex-col justify-center items-center mt-16">
-                <h1 className="text-4xl font-semibold justify-center items-center flex">{loading ? "Logging out" : "Welcome to your profile"}</h1>
+                <h1 className="sm:text-2xl md:text-3xl lg:text-4xl font-semibold justify-center items-center flex">{loading ? "Logging out" : "Welcome to your profile"}</h1>
                 <div className=" text-xl mt-8">
                     {showUserDetails && user ? (
                     <Box

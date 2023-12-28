@@ -113,8 +113,8 @@ export default function RockPaperScissor() {
     return (
         <>
         <div className="flex flex-col items-center justify-center">
-            <div className="items-center justify-center flex text-4xl font-semibold mt-16">
-                <h1>Welcome to Rock Paper Scissor</h1> 
+            <div className="items-center justify-center flex mt-16">
+                <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Welcome to Rock Paper Scissor</h1> 
             </div>
             <div className="flex justify-center items-center mt-12">
             <p className="mr-2">Player Score: {playerScore}</p>

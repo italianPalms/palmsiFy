@@ -104,7 +104,7 @@ function EtchASketch() {
     return (
         <>
         <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl font-semibold pb-4 mt-16">Etch-a-sketch</h1>
+            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl pb-4 mt-16">Etch-a-sketch</h1>
             <div className="main">
                 <div className="btns p-2 font-medium flex justify-center">
                         
