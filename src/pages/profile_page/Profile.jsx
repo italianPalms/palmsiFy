@@ -9,7 +9,7 @@ import PieChartVerified from "../../components/PieChartVerified";
 
     export default function Profile() {
 
-        const [loading, setLoading] = useState(false);
+        const [loading] = useState(false);
         const [user, setUser] = useState(null);
         const [cookies ] = useCookies(["access_token"]);
         const [showUserDetails, setShowUserDetails] = useState(false);
