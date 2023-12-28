@@ -12,8 +12,6 @@ export default function RockPaperScissor() {
     const [gameResultMsg, setGameResultMsg] = useState("");
     const [textColor, setTextColor] = useState();
 
-
-
     function getComputerChoice() {
         let choices = ['rock', 'paper', 'scissors'];
         let randomChoice = Math.floor(Math.random() * choices.length) + 1;
@@ -87,7 +85,6 @@ export default function RockPaperScissor() {
             console.log('Computer Score: ' + computerScore);
             console.log('Rounds played: ' + roundsPlayed);
            
-
         }
 
         useEffect(() => {
@@ -108,7 +105,6 @@ export default function RockPaperScissor() {
                 // setComputerSelection("");
                 // setPlayerSelection("");
                 // setResultMsg("");
-                
             }
         }, [playerScore, computerScore]);
 
@@ -116,8 +112,8 @@ export default function RockPaperScissor() {
 
     return (
         <>
-        <div className="flex flex-col items-center justify-center mt-56">
-            <div className="items-center justify-center flex text-4xl mt-10">
+        <div className="flex flex-col items-center justify-center">
+            <div className="items-center justify-center flex text-4xl font-semibold mt-16">
                 <h1>Welcome to Rock Paper Scissor</h1> 
             </div>
             <div className="flex justify-center items-center mt-12">

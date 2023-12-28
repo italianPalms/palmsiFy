@@ -1,4 +1,3 @@
-import { LoggedInHeader } from "../../components/LoggedInHeader";
 import React, { useEffect, useState } from 'react';
 
 
@@ -105,7 +104,7 @@ function EtchASketch() {
     return (
         <>
         <div className="flex flex-col justify-center items-center">
-            <h1 className="text-3xl font-medium pb-4 mt-10">Etch-a-sketch</h1>
+            <h1 className="text-4xl font-semibold pb-4 mt-16">Etch-a-sketch</h1>
             <div className="main">
                 <div className="btns p-2 font-medium flex justify-center">
                         

@@ -81,7 +81,7 @@ export default function AllUsers() {
     return (
         <>
         <div>
-            <h1 className="font-medium text-4xl flex justify-center items-center mt-8 mb-6">See all registered users</h1>
+            <h1 className="font-semibold text-4xl flex justify-center items-center mt-16">See all registered users</h1>
         </div>
         <Box
         //Style the data grind from Mui (overwrite the default styling)
