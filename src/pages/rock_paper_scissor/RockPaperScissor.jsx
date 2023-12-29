@@ -117,8 +117,8 @@ export default function RockPaperScissor() {
                 <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Welcome to Rock Paper Scissor</h1> 
             </div>
             <div className="flex justify-center items-center mt-12">
-            <p className="mr-5 border p-2 w-56">Player Score: {playerScore}</p>
-            <p className="ml-5 border  p-2 w-56">Computer Score: {computerScore}</p>
+            <p className="mr-5 border p-2 w-56 rounded-lg">Player Score: {playerScore}</p>
+            <p className="ml-5 border  p-2 w-56 rounded-lg">Computer Score: {computerScore}</p>
             </div>  
             <div style={{ color: textColor}}>
             {hiddenButtons ? <h2 className="flex justify-center items-center text-2xl font-bold mt-10">{gameResultMsg}</h2> : 
@@ -145,8 +145,8 @@ export default function RockPaperScissor() {
             }
             </div>
             <div className="flex justify-center items-center mt-10">
-                <p className="mr-5 border p-2 w-56">You choose: {playerSelection}</p>
-                <p className="ml-5 border p-2 w-56">Computer choose: {computerSelection}</p>
+                <p className="mr-5 border p-2 w-56 rounded-lg">You choose: {playerSelection}</p>
+                <p className="ml-5 border p-2 w-56 rounded-lg">Computer choose: {computerSelection}</p>
             </div>
             <div className="flex justify-center items-center mt-10 text-2xl">
                 <p className="mr-6">Result: {resultMsg}</p>
