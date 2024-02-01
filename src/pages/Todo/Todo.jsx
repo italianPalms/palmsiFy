@@ -1,52 +1,52 @@
 import { LoggedInHeader } from "../../components/LoggedInHeader";
 import React, { useEffect, useState } from "react";
 
-export default function Groceries() {
+export default function Todo() {
 
-    const [groceries, setGroceries] = useState([]);
+    const [todo, setTodo] = useState([]);
     const [input, setInput] = useState();
     const [buttonDisabled, setButtonDisabled] = useState(true)
-    const [addGroceriesAttempted, setAddGroceriesAttempted] = useState(false);
+    const [addTodoAttempted, setAddTodoAttempted] = useState(false);
 
-    const handleAddGroceries = () => {
+    const handleAddTodo = () => {
         if(!input) {
-            setAddGroceriesAttempted(true);
+            setAddTodoAttempted(true);
             return;
         }
         try {
-            const newGroceries = {
+            const newTodo = {
                 id: Math.random(), //Generate a unique ID for each item
                 text: input.charAt(0).toUpperCase() + input.slice(1), //Capitalize the input text
                 completed: false, //Initialize the item as not completed
             };
     
-            setGroceries([...groceries, newGroceries]); //Add the new item to the list
+            setTodo([...todo, newTodo]); //Add the new item to the list
             setInput(''); //Clear the input field
             
         } catch (error) {
             console.log("Please add groceris" + error)
         } finally {
-            setAddGroceriesAttempted(false);
+            setAddTodoAttempted(false);
         }
         }
     
-    const handleToggleGroceries = (id) => {
-        setGroceries(groceries.map((groceries) => {
-            if (groceries.id === id) {
-                return { ...groceries, completed: !groceries.completed}; //Toggle the completed property
+    const handleToggleTodo = (id) => {
+        setTodo(todo.map((todo) => {
+            if (todo.id === id) {
+                return { ...todo, completed: !todo.completed}; //Toggle the completed property
             }
-            return groceries;
+            return todo;
         }));
     };
 
-    const onAddGroceriesKeypress = e => {
+    const onAddTodoKeypress = e => {
         if (e.keyCode === 13) {
-            handleAddGroceries();
+            handleAddTodo();
         }
     }
 
     useEffect(() => {
-        if (groceries.length > 0) {
+        if (todo.length > 0) {
             setButtonDisabled(false); 
         } else {
             setButtonDisabled(true);
@@ -58,7 +58,7 @@ export default function Groceries() {
     return (
         <>
         <div className="flex flex-col justify-center items-center mt-16">
-            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Groceries</h1>
+            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">To Do</h1>
         </div>
 
         <div className="flex flex-col justify-center items-center">
@@ -68,26 +68,26 @@ export default function Groceries() {
                 placeholder="Add item "
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyDown={onAddGroceriesKeypress}
+                onKeyDown={onAddTodoKeypress}
                 ></input>
             <button className="p-1 mt-4 bg-sky-400 w-48 hover:bg-sky-500 text-white rounded"
             onClick={() => {
-                handleAddGroceries()
+                handleAddTodo()
             }}
             >Add</button>
-            {addGroceriesAttempted || groceries.lenght === 0 ? (
-                <p className="text-red-500 mt-4">Please add groceries</p>
+            {addTodoAttempted || todo.lenght === 0 ? (
+                <p className="text-red-500 mt-4">Please add a to do item</p>
                 ) : null}
         </div>
 
         <div className="flex flex-col justify-center items-center mt-10">
             <ul className="text-xl">
-                {groceries.map((groceries) => (
+                {todo.map((groceries) => (
                     <li className="mt-1" key={groceries.id}>
                         <input 
                             className="mr-2 w-4 h-4"
                             type="checkbox" 
-                            checked={groceries.completed} onChange={(e) => handleToggleGroceries(groceries.id)} />
+                            checked={groceries.completed} onChange={(e) => handleToggleTodo(todo.id)} />
                         {groceries.text}
                     </li>
                 ))}

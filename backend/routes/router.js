@@ -33,7 +33,7 @@ router.post('/signup', async (req, res) => {
         //     res.status(400).json({})
         //     return console.log("Password must be longer")
         // }
- 
+
         //add logic to hash password
         const salt = await bcryptjs.genSalt(10)
         const hashedPassword = await bcryptjs.hash

@@ -12,7 +12,7 @@ import About from "./pages/about/About";
 import Investors from "./pages/investor/Investors";
 import Movies from "./pages/movies/Movies";
 import EtchASketch from "./pages/etch_a_sketch/EtchASketch";
-import Groceries from "./pages/groceries/Groceries";
+import Todo from "./pages/Todo/Todo";
 import AllUsers from "./pages/all_users/Allusers";
 import RockPaperScissor from "./pages/rock_paper_scissor/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
@@ -47,9 +47,9 @@ function App() {
             </Protected>
           } />
 
-          <Route path = "/groceries" element = {
+          <Route path = "/todo" element = {
             <Protected  Login={Login}>
-              <Groceries />
+              <Todo />
             </Protected>
           } />
 

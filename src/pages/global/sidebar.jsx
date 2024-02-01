@@ -201,8 +201,8 @@ const Sidebar = ({ access_token }) => {
                             setSelected={setSelected}
                         />
                         <Item
-                        title="Groceries"
-                        to="/groceries"
+                        title="To do"
+                        to="/todo"
                         icon={<FastfoodOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
