@@ -50,13 +50,14 @@ function EtchASketch() {
             for(let j = 0; j < size; j++) {
                 let cell = document.createElement('div');
                 cell.classList.add('cell');
-                cell.style.width = `${cellWidth}px`;
-                cell.style.height = `${cellHeight}px`;
+                cell.style.width = `${cellWidth}px`; //set the cell width according to CSS styling and make sure all cells are the same size inside the container
+                cell.style.height = `${cellHeight}px`; //set the cell height according to CSS styling and make sure all cells are the same size inside the container
                 container.appendChild(cell);
             }
         }
     };
 
+    //logic for pink color
     const applyHoverPink = () => {
         const cells = document.getElementsByClassName('cell');
 
@@ -66,8 +67,8 @@ function EtchASketch() {
             })
         }
     }
+    
     //logic for rainbow color
-  
     const applyHoverColor = () => {
         const cells = document.getElementsByClassName('cell');
 
@@ -87,6 +88,7 @@ function EtchASketch() {
         return `rgb(${r}, ${g}, ${b})`;
     };
 
+    //add handler for pink color
     const handlePinkColor = () => {
         console.log('Pink color button clicked');
         setRainbow(false);
@@ -129,5 +131,4 @@ function EtchASketch() {
         </div>
         </>
     )}
-
     export default EtchASketch;
