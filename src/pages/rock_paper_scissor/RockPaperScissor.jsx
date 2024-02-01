@@ -155,7 +155,7 @@ export default function RockPaperScissor() {
                 <p>Rounds played: {roundsPlayed}</p>
             </div>
 
-            {hiddenButtons ? <h2 className="flex justify-center items-center text-2xl mt-28 text-red-500">Refresh the page to play another round</h2> : ""}
+            {hiddenButtons ? <h2 className="flex justify-center items-center text-2xl mt-28 text-[#FF00FF]">Refresh the page to play another round</h2> : ""}
         </div>
         </>
     )
