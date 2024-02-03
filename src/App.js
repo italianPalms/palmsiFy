@@ -18,6 +18,11 @@ import RockPaperScissor from "./pages/rock_paper_scissor/RockPaperScissor";
 import Sidebar from './pages/global/sidebar';
 import Topbar from './pages/global/topbar';
 import Calendar from './pages/calendar/calendar';
+import CountryInfo from './pages/countries/CountryInfo';
+import Italy from './pages/countries/italy';
+import Norway from './pages/countries/norway';
+import USA from './pages/countries/USA';
+import Germany from './pages/countries/germany';
 
 function App() {
 
@@ -77,7 +82,31 @@ function App() {
             </Protected>
           } />
 
-          
+          <Route path = "/countryInfo" element = {
+            <Protected Login={Login}>
+              <CountryInfo />
+            </Protected>
+          } />
+          <Route path = "/italy" element = {
+            <Protected Login={Login}>
+              <Italy />
+            </Protected>
+          } />
+          <Route path = "/norway" element = {
+            <Protected Login={Login}>
+              <Norway />
+            </Protected>
+          } />
+          <Route path = "/usa" element = {
+            <Protected Login={Login}>
+              <USA />
+            </Protected>
+          } />
+          <Route path = "/germany" element ={
+            <Protected Login={Login}>
+              <Germany />
+            </Protected>
+          } />
 
           <Route path="*" element= {<NoPage />} />
         </Routes>
