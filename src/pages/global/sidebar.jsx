@@ -16,6 +16,7 @@ import Logo from "../../img/logo.png";
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import axios from 'axios';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 
 
 
@@ -232,6 +233,14 @@ const Sidebar = ({ access_token }) => {
                         title="All users"
                         to="/allusers"
                         icon={<GroupAddOutlinedIcon />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+
+                        <Item
+                        title="Country Info"
+                        to="/countryInfo"
+                        icon={<PublicOutlinedIcon />}
                         selected={selected}
                         setSelected={setSelected}
                         />
