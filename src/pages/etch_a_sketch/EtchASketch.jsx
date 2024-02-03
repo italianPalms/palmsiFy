@@ -130,5 +130,6 @@ function EtchASketch() {
             </div>
         </div>
         </>
-    )}
+    )
+}
     export default EtchASketch;
