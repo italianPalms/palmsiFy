@@ -54,6 +54,11 @@ export default function Todo() {
     }, []);
 
     // TODO: Send the data to the DB
+    // TODO: Retrieve the data from the DB
+    // TODO: Display the data on the screen
+
+
+
 
     return (
         <>
