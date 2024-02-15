@@ -5,6 +5,7 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const sendEmail = require('../../src/components/Mailer');
 require('dotenv').config();
+const Todo = require('../models/todoModel');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -234,5 +235,38 @@ router.get('/getAllUsers', async (req, res) => {
         res.status(500).json({message: "Failed to fetch users"});
     }
 })
+
+router.post('/storeTodo', async (req, res) => {
+    try {
+        const {_id, text, completed} = req.body;
+        console.log(req.body)
+
+        const newTodo = new Todo ({
+            _id, 
+            text, 
+            completed, 
+        })
+        
+        const saveTodo = await newTodo.save();
+        console.log("This is the saved todo", saveTodo);
+
+        res.json(saveTodo);
+        console.log("Todo item stored successfully");
+
+    } catch (error) {
+        console.log("Failed to store todo item", error)
+        res.status(500).json({message: "Failed to store todo item"});
+    }
+})
+
+router.get('/getTodos', async (req, res) => {
+    try {
+        const todos = await Todo.find();
+        res.json(todos);
+    } catch (error) {
+        console.log("Failed to fetch todos", error)
+    }
+})
+
 
 module.exports = router;

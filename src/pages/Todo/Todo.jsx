@@ -1,14 +1,15 @@
-import { LoggedInHeader } from "../../components/LoggedInHeader";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Todo() {
 
     const [todo, setTodo] = useState([]);
-    const [input, setInput] = useState();
+    const [input, setInput] = useState("");
     const [buttonDisabled, setButtonDisabled] = useState(true)
     const [addTodoAttempted, setAddTodoAttempted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const handleAddTodo = () => {
+    const handleAddTodo = async () => {
         if(!input) {
             setAddTodoAttempted(true);
             return;
@@ -19,13 +20,17 @@ export default function Todo() {
                 text: input.charAt(0).toUpperCase() + input.slice(1), //Capitalize the input text
                 completed: false, //Initialize the item as not completed
             };
-    
             setTodo([...todo, newTodo]); //Add the new item to the list
-            setInput(''); //Clear the input field
-            
+
+            const response = await axios.post("http://localhost:4000/storeTodo", newTodo);
+            console.log("New todo added", response.data)
+            setLoading(true);
+
         } catch (error) {
-            console.log("Please add groceris" + error)
+            console.log("Post todo failed" + error)
         } finally {
+            setInput(''); //Clear the input field
+            setLoading(false);
             setAddTodoAttempted(false);
         }
         }
@@ -53,12 +58,22 @@ export default function Todo() {
         }
     }, []);
 
-    // TODO: Send the data to the DB
     // TODO: Retrieve the data from the DB
+    const getTodos = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/getTodos")
+            console.log(response.data);
+        } catch (error) {
+            console.log("Failed to fetch todos", error)
+        }
+    }
+
+    useEffect(() => {
+        getTodos();
+    }, []);
+
+
     // TODO: Display the data on the screen
-
-
-
 
     return (
         <>
@@ -70,7 +85,7 @@ export default function Todo() {
             <label className="text-xl font-medium mt-3">Add your item</label>
             <input className="p-1 text-black mt-2 w-48" 
                 type="text"
-                placeholder="Add item "
+                placeholder="Add item"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={onAddTodoKeypress}
@@ -80,20 +95,22 @@ export default function Todo() {
                 handleAddTodo()
             }}
             >Add</button>
+            
+{/* TODO: Make sure that the red text goes away when the input is not empty */}
             {addTodoAttempted || todo.lenght === 0 ? (
-                <p className="text-red-500 mt-4">Please add a to do item</p>
+                <p className="text-red-500 mt-4">Please add a todo item</p>
                 ) : null}
         </div>
 
         <div className="flex flex-col justify-center items-center mt-10">
             <ul className="text-xl">
-                {todo.map((groceries) => (
-                    <li className="mt-1" key={groceries.id}>
+                {todo.map((todo) => (
+                    <li className="mt-1" key={todo.id}>
                         <input 
                             className="mr-2 w-4 h-4"
-                            type="checkbox" 
-                            checked={groceries.completed} onChange={(e) => handleToggleTodo(todo.id)} />
-                        {groceries.text}
+                            type="checkbox"
+                            checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
+                        {todo.text}
                     </li>
                 ))}
             </ul>
