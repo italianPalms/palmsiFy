@@ -105,9 +105,9 @@ export default function Todo() {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-10">
-            <ul className="text-xl ml-32">
+            <ul className="text-xl">
                 {getTodos.map((getTodo) => (
-                    <li className="mt-1" key={getTodo.id}>
+                    <li className="mt-1" key={`${getTodo.text}-${getTodo.id}`}>
                         <input className="mr-2 w-4 h-4" type="checkbox" />
                         {getTodo.text}
                     {/* <pre className="whitespace-pre-wrap ml-5"
@@ -117,7 +117,7 @@ export default function Todo() {
                     </li>
                 ))}
                 {todo.map((addTodo) => (
-                    <li className="mt-1" key={addTodo.id}>
+                    <li className="mt-1" key={`${addTodo.text}-${addTodo.id}`}>
                         <input 
                             className="mr-2 w-4 h-4"
                             type="checkbox"
