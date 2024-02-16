@@ -8,8 +8,9 @@ export default function Todo() {
     const [buttonDisabled, setButtonDisabled] = useState(true)
     const [addTodoAttempted, setAddTodoAttempted] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [getTodos, setGetTodos] = useState([]);
 
-    const handleAddTodo = async () => {
+    const addTodo = async () => {
         if(!input) {
             setAddTodoAttempted(true);
             return;
@@ -46,7 +47,7 @@ export default function Todo() {
 
     const onAddTodoKeypress = e => {
         if (e.keyCode === 13) {
-            handleAddTodo();
+            addTodo();
         }
     }
 
@@ -59,9 +60,10 @@ export default function Todo() {
     }, []);
 
     // TODO: Retrieve the data from the DB
-    const getTodos = async () => {
+    const fetchTodos = async () => {
         try {
             const response = await axios.get("http://localhost:4000/getTodos")
+            setGetTodos(response.data);
             console.log(response.data);
         } catch (error) {
             console.log("Failed to fetch todos", error)
@@ -69,7 +71,7 @@ export default function Todo() {
     }
 
     useEffect(() => {
-        getTodos();
+        fetchTodos();
     }, []);
 
 
@@ -92,7 +94,7 @@ export default function Todo() {
                 ></input>
             <button className="p-1 mt-4 bg-sky-400 w-48 hover:bg-sky-500 text-white rounded"
             onClick={() => {
-                handleAddTodo()
+                addTodo()
             }}
             >Add</button>
             
@@ -103,14 +105,24 @@ export default function Todo() {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-10">
-            <ul className="text-xl">
-                {todo.map((todo) => (
-                    <li className="mt-1" key={todo.id}>
+            <ul className="text-xl ml-32">
+                {getTodos.map((getTodo) => (
+                    <li className="mt-1" key={getTodo.id}>
+                        <input className="mr-2 w-4 h-4" type="checkbox" />
+                        {getTodo.text}
+                    {/* <pre className="whitespace-pre-wrap ml-5"
+                    key={todo.id}>
+                        {JSON.stringify(todo, null, 2)}
+                    </pre> */}
+                    </li>
+                ))}
+                {todo.map((addTodo) => (
+                    <li className="mt-1" key={addTodo.id}>
                         <input 
                             className="mr-2 w-4 h-4"
                             type="checkbox"
                             checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
-                        {todo.text}
+                        {addTodo.text}
                     </li>
                 ))}
             </ul>
