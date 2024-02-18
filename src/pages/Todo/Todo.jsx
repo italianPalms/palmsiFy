@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 export default function Todo() {
 
@@ -74,8 +75,15 @@ export default function Todo() {
         fetchTodos();
     }, []);
 
-
-    // TODO: Display the data on the screen
+    //Delete the todo from the DB
+    const deleteTodo = async (_id) => {
+        try {
+            const response = await axios.delete("http://localhost:4000/deleteTodo")
+            console.log("Todo deleted", response.data)
+        } catch (error) {
+            console.log("Failed to delete todo item", error)
+        }
+    }
 
     return (
         <>
@@ -107,22 +115,31 @@ export default function Todo() {
         <div className="flex flex-col justify-center items-center mt-10">
             <ul className="text-xl">
                 {getTodos.map((getTodo) => (
-                    <li className="mt-1" key={`${getTodo.text}-${getTodo.id}`}>
+                    <li className="flex justify-between items-center mt-1" key={`${getTodo.text}-${getTodo.id}`}>
+                        <div className="flex items-center">
                         <input className="mr-2 w-4 h-4" type="checkbox" />
                         {getTodo.text}
+                        </div>
                     {/* <pre className="whitespace-pre-wrap ml-5"
                     key={todo.id}>
                         {JSON.stringify(todo, null, 2)}
                     </pre> */}
+                    <DeleteOutlinedIcon className="ml-10 cursor-pointer"
+                    onClick={deleteTodo} />
                     </li>
                 ))}
+                
                 {todo.map((addTodo) => (
-                    <li className="mt-1" key={`${addTodo.text}-${addTodo.id}`}>
+                    <li className="flex justify-between mt-1" key={`${addTodo.text}-${addTodo.id}`}>
+                        <div className="flex items-center">
                         <input 
                             className="mr-2 w-4 h-4"
                             type="checkbox"
                             checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
                         {addTodo.text}
+                        </div>
+                        <DeleteOutlinedIcon className="ml-10 cursor-pointer"
+                    onClick={deleteTodo} />
                     </li>
                 ))}
             </ul>

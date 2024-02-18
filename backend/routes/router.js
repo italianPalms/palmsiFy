@@ -268,5 +268,18 @@ router.get('/getTodos', async (req, res) => {
     }
 })
 
+//TODO: Fix this shit code - does not f@cking delete the todo item
+    //Need to first fetch the _id from mongoDB, then delete. 
+
+router.delete('/deleteTodo', async (res, req) => {
+    try {
+        const itemToBeDeleted = await Todo.find()
+        const deleteTodoItem = await Todo.findByIdAndDelete(itemToBeDeleted);
+        console.log("This is the deleted todo item", deleteTodoItem )
+    } catch (error) {
+        console.log("Failed to delete the todo item", error)
+    }
+})
+
 
 module.exports = router;
