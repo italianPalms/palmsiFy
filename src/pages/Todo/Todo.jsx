@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import Footer from "../../components/Footer";
 
 export default function Todo() {
 
@@ -144,6 +145,9 @@ export default function Todo() {
                 ))}
             </ul>
         </div>
+        {/* <div>
+            <Footer className="" />
+        </div> */}
         </>
     )
 }
