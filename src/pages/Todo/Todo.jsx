@@ -144,10 +144,13 @@ export default function Todo() {
                     </li>
                 ))}
             </ul>
+            
         </div>
-        {/* <div>
-            <Footer className="" />
-        </div> */}
+    {/* TODO: Fix so the width of the footer is flexible with the sidebar */}
+                <div className="fixed bottom-0 w-full pr-72">
+                    <Footer className="justify-between" />
+                </div>
+        
         </>
     )
 }
