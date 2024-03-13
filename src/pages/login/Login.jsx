@@ -6,7 +6,6 @@ import { useCookies } from "react-cookie";
 import airbot from "../../img/airobot.png";
 
 export default function Login() {
-''
     const [user, setUser] = useState({
         email: "", 
         password: "",
