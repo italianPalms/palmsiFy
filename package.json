@@ -1,5 +1,5 @@
 {
-  "name": "react_app",
+  "name": "palmsify-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,7 +35,6 @@
     "react-pro-sidebar": "^0.7.1",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.20.1",
-    "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "styled-components": "^5.3.10",
     "tailwind": "^4.0.0",
@@ -44,35 +43,12 @@
     "yup": "^1.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "tailwind.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.6"
+  }
 }
