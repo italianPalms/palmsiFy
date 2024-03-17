@@ -30,16 +30,16 @@ export default function Home() {
         //TODO: Fix bug when user scroll all the way down
         <>
         <div className="parallax">
-            <div className="main-header max-h-10 ">
+            <div className="homePage-header">
                 <Header />
-            </div>
+            </div>  
             <div className="hero relative">
                 <div className="wrapper absolute top-96 left-56 ">
                     <h1 className="hero_title absolute text-6xl sm:text-5xl md:text-6xl lg:text-7xl">
                     <span>Gear up!</span> Welcome to PalmsiFy
                     </h1>
-                    <button className="login-btn mt-6 p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={login}>Login</button>
-                    <button className="login-btn p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={signup}>Signup</button>
+                    <button className="login-btn_1 mt-6 p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={login}>Login</button>
+                    <button className="signup-btn_1 p-2 mr-2 border-2 w-48 bg-pink-400 hover:bg-pink-500" onClick={signup}>Signup</button>
                 </div>
             </div>
 
@@ -72,10 +72,10 @@ export default function Home() {
                     </div>
 
                     <div className="home-btn-container flex-col items-center justify-center min-w-min">
-                    <button className="login-btn p-2 mr-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
+                    <button className="login-btn_2 p-2 mr-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
                         onClick={login}>Login</button>
                     
-                    <button className="signup-btn p-2 mt-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
+                    <button className="signup-btn_2 p-2 mt-2 border-2 w-48 bg-sky-400 hover:bg-sky-500"
                         onClick={signup}>Signup</button>
                     </div>
                 </div>
