@@ -29,25 +29,25 @@ export default function Header() {
     return (
         <>
         <div className="fixed">
-            <div className="flex justify-between header-logo">
-                <button className="ml-4 flex items-center"
+            <div className="">
+                <button className=""
                 onClick={homePage}
                 > 
-                <img src={logo} alt="logo" className="w-24"></img>
-                <span className="font-bold text-3xl italic">PalmsiFy</span>
+                <img src={logo} alt="logo" className="header_logo"></img>
+                <span className="header_logo-text">PalmsiFy</span>
                 </button>
             </div>
             
             <div className="fixed top-0 right-0 flex justify-between items-start mt-1 font-bold">
-                <button className="header_about p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_about"
                 onClick={about}
                 >About</button>
                 
-                <button className="header_investor p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_investor"
                 onClick={investors}
                 >Investors</button>
                 
-                <button className="header_forgotPassword p-1 m-3 hover:font-bold transition-transform duration-100 transform origin-center"
+                <button className="header_forgotPassword"
                 onClick={forgotPassword}
                 >Forgot password</button>
                         

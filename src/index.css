@@ -64,6 +64,16 @@ code {
   height: 25px;
 }
 
+.header_forgotPassword, .header_about, .header_investor {
+  background-color: rgb(17 24 39);
+  color: white;
+}
+
+.header_logo {
+  width: 110px;
+  height: 100px;
+}
+
 
 
 #container {
