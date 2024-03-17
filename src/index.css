@@ -96,33 +96,125 @@ code {
 }
 
 /* Home Page */
-
+/* Login and signup button on the top of the home page */
 .login-btn_1, .signup-btn_1 {
-  padding: 10px;
+  padding: 12px;
   margin-right: 8px;
   border-radius: 10px;
   border-width: 3px;
-  width: 130px;
+  width: 140px;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
   background-color: rgb(244 114 182);
   cursor: pointer;
-  z-index: 59;
 }
 
+/* Login and signup button on the bottom of the home page */
 .login-btn_2, .signup-btn_2 {
-  padding: 10px;
+  padding: 12px;
   margin-right: 8px;
   border-radius: 10px;
   border-width: 3px;
-  width: 130px;
+  width: 140px;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 700;
   background-color: rgb(14 165 233);
   cursor: pointer;
-  
 }
+
+/* Includes the hero and buttons on the home page */
+.hero-homePage_btn {
+  display: flex;
+  margin: 260px 300px 0px 0px;
+  z-index: 1;
+  width: min(65rem, 100% - 4rem);
+  margin-inline: auto;
+}
+
+/* Styling for the h1 title */
+.hero_title {
+  font-size: 8rem;
+  max-width: 10ch;
+  line-height: 1;
+  font-style: italic;
+  font-weight: 900;
+  position: relative;
   
+  > span {
+    font-style: normal;
+    font-size: 0.5em;
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    z-index: -1;
+    scale: 2;
+    opacity: 0.5;
+    filter: blur(5rem);
+    translate: -50%;
+  }
+}
+
+/* Includes the div that covers the whole bottom part of the home page */
+.main-content {
+  display: flex;
+  justify-content: center;
+  background: hsl(238, 100%, 6%);
+  padding: 10px 0px 250px 20px;
+}
+
+/* styling for the h2 title for the team at the bottom of the page */
+.main-container {
+  display: flex;
+}
+
+.content-wrapper_homePage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.home-container {
+  flex: 1;
+}
+
+.main-container .img-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-left: 200px;
+}
+
+.team-img {
+  width: 450px;
+  height: auto;
+}
+
+.info-homePage {
+  margin: 5px;
+}
+
+/* Styling for all h2, p */
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* Home Page - mobile */
 @media (max-width: 1024px) {
   .home-img {
     width: 250px;
@@ -152,7 +244,7 @@ code {
 
 
 
-
+/* Etcha-Sketch */ 
 #container {
   display: inline-block;
   margin-left: stretch;
@@ -209,10 +301,6 @@ code {
   max-height: 60px;
 }
 
-.hero {
-  z-index: 1;
-}
-
 .parallax_bg {
   --parallax-speed: 0;
   z-index: -1;
@@ -265,17 +353,6 @@ code {
   }
 }
 
-.main-content {
-  position: relative;
-  z-index: 0;
-  background: hsl(238, 100%, 6%);
-}
-
-.wrapper {
-  width: min(65rem, 100% - 4rem);
-  margin-inline: auto;
-}
-
 .primary-header {
   padding-block: 2rem;
   z-index: -1
@@ -287,32 +364,7 @@ code {
   align-items: center;
 }
 
-.hero_title {
-  font-size: 8rem;
-  max-width: 10ch;
-  line-height: 1;
-  font-style: italic;
-  font-weight: 900;
-  position: relative;
 
-  > span {
-    font-style: normal;
-    font-size: 0.5em;
-    display: block;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: black;
-    z-index: -1;
-    scale: 2;
-    opacity: 0.5;
-    filter: blur(5rem);
-    translate: -50%;
-  }
-}
 
 @media screen and (max-width: 942px) {
   .SOME-logo {
