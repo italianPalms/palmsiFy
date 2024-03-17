@@ -28,30 +28,25 @@ export default function Header() {
 
     return (
         <>
-        <div className="fixed">
-            <div className="">
-                <button className=""
-                onClick={homePage}
-                > 
+        <div className="header-container">
+            <div className="header-logo_text">
+                <a href="/home"> 
                 <img src={logo} alt="logo" className="header_logo"></img>
-                <span className="header_logo-text">PalmsiFy</span>
-                </button>
+                <span className="header_text">PalmsiFy</span>
+                </a>
             </div>
             
-            <div className="fixed top-0 right-0 flex justify-between items-start mt-1 font-bold">
-                <button className="header_about"
-                onClick={about}
-                >About</button>
+            <div className="header-links">
+                <a href="/about" className="header_about"
+                >About</a>
                 
-                <button className="header_investor"
-                onClick={investors}
-                >Investors</button>
+                <a href="/investors" className="header_investor"
+                >Investors</a>
                 
-                <button className="header_forgotPassword"
-                onClick={forgotPassword}
-                >Forgot password</button>
+                <a href="/forgotPassword" className="header_forgotPassword"
+                >Forgot password</a>
                         
-                <div className="flex items-center p-1 m-3 mr-6">
+                <div>
                     <a href="https://www.youtube.com">
                     <img className="youtube-logo-homePage SOME-logo-front w-20 mr-4 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
                     </a>

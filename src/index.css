@@ -51,28 +51,58 @@ code {
 
 /* Home page */
 /* Header */
+
+.header-container {
+  display: flex;
+}
+
+.header-logo_text a {
+  display: flex;
+  align-items: center;
+}
+
+.header_text {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.header_logo {
+  width: 100px;
+  height: auto;
+}
+
+.header-links {
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px;
+  align-items: center;
+}
+
 .youtube-logo-homePage {
   width: 110px;
   height: 25px;
+  margin-left: 10px;
 }
 .x-logo-homePage {
   width: 25px;
   height: 25px;
+  margin-left: 10px;
 }
 .instagram-logo-homePage {
   width: 25px;
   height: 25px;
+  margin-left: 10px;
 }
+
 
 .header_forgotPassword, .header_about, .header_investor {
-  background-color: rgb(17 24 39);
   color: white;
+  margin: 0px 10px 0px 0px;
 }
 
-.header_logo {
-  width: 110px;
-  height: 100px;
-}
+
+
 
 
 
