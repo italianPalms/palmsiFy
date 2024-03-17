@@ -49,7 +49,7 @@ export default function Login() {
             navigate('/profile');
             
         } catch (error) {
-            console.log("Login failed" + error);
+            console.log("Login failed " + error);
         } finally {
             setLoading(false);
             setLoginAttempted(true);
