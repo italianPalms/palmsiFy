@@ -27,7 +27,7 @@ import Germany from './pages/countries/germany';
 function App() {
 
   return (
-    <div className="flex relative text-white bg-gray-900 h-fit min-h-screen">
+    <div>
       <Sidebar />
       <main className="content">
         <Topbar />
