@@ -66,47 +66,47 @@ export default function ForgotPassword () {
         <div>
             <Header />
         </div>
-        <div className="flex flex-row items-center justify-center">
-        
+        <div className="login_signup-container">
             <div>
-                <img className="sm:w-80 md:w-80 lg:w-96" src={airbot} alt="Aitbot"></img>
+                <img className="login_signup-img" src={airbot} alt="Aitbot"></img>
             </div>
 
-            <div className="flex flex-col justify-center items-center min-h-screen">
-            <h1 className="text-5xl sm:text-3xl md:text-3xl lg:text-5xl font-semibold mb-3">Reset your password</h1>
-            <label className="mb-2 mt-2 font-semibold">Email</label>
-            <input className={`p-2 text-black rounded border-2 ${emailColor}`}
-                id="email" 
-                type="email" 
-                value={user.email}
-                onChange={(e) => setUser({...user, email: e.target.value})}
-                placeholder="Enter your email"
-                required>
-            </input>
-            {resetPasswordAttempted && emailBorderColor ? <p className="text-red-500">Email is required</p> : ""}
+            <div className="login_signup-content">
+                <h1>Reset your password</h1>
+                <label className="login_signup-label">Email</label>
+                <input className={`login_signup-input ${emailColor}`}
+                    id="email" 
+                    type="email" 
+                    value={user.email}
+                    onChange={(e) => setUser({...user, email: e.target.value})}
+                    placeholder="Enter your email"
+                    required>
+                </input>
+                
+                {resetPasswordAttempted && emailBorderColor ? <p className="required-field">Email is required</p> : ""}
 
-            <label className="mb-2 mt-4 font-semibold">New password</label>
-            <input className={`p-2 text-black rounded border-2 mb-2 ${passwordColor}`}
-                id="password"
-                type="password"
-                value={user.password}
-                onChange={(e) => setUser({...user, password: e.target.value})}
-                onKeyDown={onResetKeyPress}
-                placeholder="Enter new password"
-                required>
-            </input>
-            {resetPasswordAttempted && passwordBorderColor ? <p className="text-red-500">New password is required</p> : ""}
+                <label className="login_signup-label">New password</label>
+                <input className={`login_signup-input ${passwordColor}`}
+                    id="password"
+                    type="password"
+                    value={user.password}
+                    onChange={(e) => setUser({...user, password: e.target.value})}
+                    onKeyDown={onResetKeyPress}
+                    placeholder="Enter new password"
+                    required>
+                </input>
+            
+                {resetPasswordAttempted && passwordBorderColor ? <p className="required-field">New password is required</p> : ""}
 
-            <button className={`border-2 p-2 w-48 mt-6 mb-3 ${buttonColor}`}
-            onClick={resetPassword}
-            >{buttonDisabled ? "Fill out required fields": "Reset password"}</button>
+                <button className={`login_signup-btn ${buttonColor}`}
+                onClick={resetPassword}
+                >{buttonDisabled ? "Fill out required fields": "Reset password"}</button>
 
-            <a href="/login" className="p-2 font-medium text-base">Back to login</a>
+                <a href="/login" className="login_signup-link">Back to login</a>
 
-            {resetPasswordAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl text-red-300">Please fill out all required fields</h2> : ""}
+                {resetPasswordAttempted && emailBorderColor || passwordBorderColor ? <h2 className="login_signup-error">Please fill out all required fields</h2> : ""}
             </div>
         </div>
         </>
     )
-
 }
