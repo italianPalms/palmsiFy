@@ -45,6 +45,22 @@ code {
   background: #555;
 }
 
+/* Styling for all h2, p */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 /* Header */
 .header-container {
   display: flex;
@@ -161,13 +177,14 @@ code {
   }
 }
 
-/* Includes the div that covers the whole bottom part of the home page */
+/* Main content on the bottom part of home page */
 .main-content {
   display: flex;
   justify-content: center;
   background: hsl(238, 100%, 6%);
   padding: 10px 0px 250px 20px;
 }
+
 
 /* styling for the h2 title for the team at the bottom of the page */
 .main-container {
@@ -194,25 +211,16 @@ code {
   margin-left: 200px;
 }
 
+/* styling for the img at bottom */
 .team-img {
   width: 450px;
   height: auto;
 }
 
+/* styling for the info at bottom */
 .info-homePage {
   margin: 5px;
 }
-
-/* Styling for all h2, p */
-h2 {
-  font-size: 30px;
-  font-weight: bold;
-}
-p {
-  font-size: 20px;
-  font-weight: bold;
-}
-
 
 /* Home Page - mobile */
 @media (max-width: 1024px) {
@@ -239,6 +247,73 @@ p {
     font-size: 43px;
   }
 }
+
+
+/* Login and Signup page */
+ .login_signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+ }
+
+ .login_signup-img {
+  height: 500px;
+  width: auto;
+ }
+
+ .login_signup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+ }
+
+ .login_signup-btn {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 200px;
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(14 165 233);
+  cursor: pointer;
+ }
+
+ .login_signup-input {
+  border-radius: 10px;
+  padding: 7px;
+  width: 185px;
+  margin: 5px;
+ }
+
+ .login_signup-label {
+  font-size: large;
+  font-weight: 500;
+  margin-top: 5px;
+ }
+
+ .login_signup-link {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+ }
+
+ .login_signup-error {
+  color: rgb(232, 87, 87);
+ }
+
+ .required-field {
+  color: rgb(232, 87, 87);
+  margin-top: 0;
+ }
+
+
+
+
 
 
 

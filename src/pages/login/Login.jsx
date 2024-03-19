@@ -84,15 +84,15 @@ export default function Login() {
         <div>
             <Header />
         </div>
-        <div className="flex flex-row items-center justify-center">
-            <div className="sm:w-80 md:w-80 lg:w-96 mr-8">
-                <img src={airbot} alt="Aitbot"></img>
+        <div className="login_signup-container">
+            <div>
+                <img className="login_signup-img" src={airbot} alt="Aitbot"></img>
             </div>
-            <div className="flex flex-col items-center justify-center min-h-screen py-2">
-                <h1 className="text-4xl font-semibold mb-3">{loading ? "Processing" : "Login"}</h1>
-                <label className="text-xl font-medium mt-3">Email</label>
+            <div className="login_signup-content">
+                <h1>{loading ? "Processing" : "Login"}</h1>
+                <label className="login_signup-label">Email</label>
                 <input
-                    className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
+                    className={`login_signup-input ${emailColor}`}
                     id="email"
                     type="email"
                     value={user.email}
@@ -100,11 +100,11 @@ export default function Login() {
                     placeholder="Enter your email"
                     required>
                 </input>
-                {loginAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
+                {loginAttempted && emailBorderColor && <p className="required-field">Email is required</p>}
 
-                <label className="text-xl font-medium mt-3">Password</label>
+                <label className="login_signup-label">Password</label>
                 <input
-                    className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
+                    className={`login_signup-input ${passwordColor}`}
                     id="password"
                     type="password"
                     value={user.password}
@@ -113,15 +113,15 @@ export default function Login() {
                     placeholder="Enter your password"
                     required>
                 </input>
-                {loginAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
+                {loginAttempted && passwordBorderColor && <p className="required-field">Password is required</p>}
 
-                <button type="submit" className={`border-2 mt-8 p-2 w-48 ${buttonColor}`}
+                <button type="submit" className={`login_signup-btn ${buttonColor}`}
                 onClick={onLogin}
                 >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 
-                <a href="/signup" className="p-2 font-medium text-base">Not a user? Signup here!</a>
+                <a href="/signup" className="login_signup-link">Not a user? Signup here!</a>
 
-                {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8 text-red-300">Please fill out all required fields</h2> : ""}
+                {loginAttempted && emailBorderColor || passwordBorderColor ? <h2 className="login_signup-error">Please fill out all required fields</h2> : ""}
             </div>
         </div>
         </>

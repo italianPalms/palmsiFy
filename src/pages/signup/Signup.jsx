@@ -85,18 +85,18 @@ export default function Signup() {
         <div>
             <Header />
         </div>
-        <div className="flex flex-row items-center justify-center">
-            <div className="sm:w-80 md:w-80 lg:w-96 mr-8">
-                <img src={airbot} alt="Airbot"></img>
+        <div className="login_signup-container">
+            <div>
+                <img className="login_signup-img" src={airbot} alt="Airbot"></img>
             </div>
-            <div className="flex flex-col items-center justify-center min-h-screen py-2">
-                <h1 className="text-4xl font-semibold">
+            <div className="login_signup-content">
+                <h1>
                     {loading ? "Processing" : "Signup"}
                     </h1>
 
-                <label className="text-xl font-medium mt-3">Username</label>
+                <label className="login_signup-label">Username</label>
                 <input
-                    className={`p-2 mt-2 text-black rounded border-2 ${usernameColor}`}
+                    className={`login_signup-input ${usernameColor}`}
                     id="username"
                     type="username"
                     value={user.username}
@@ -104,11 +104,11 @@ export default function Signup() {
                     placeholder="Enter your username"
                     required>
                 </input>
-                {signupAttempted && usernameBorderColor && <p className="text-red-500">Username is required</p>}
+                {signupAttempted && usernameBorderColor && <p className="required-field">Username is required</p>}
 
-                <label className="text-xl font-medium mt-3">Email</label>
+                <label className="login_signup-label">Email</label>
                 <input
-                    className={`p-2 mt-2 text-black rounded border-2 ${emailColor}`}
+                    className={`login_signup-input ${emailColor}`}
                     id="email"
                     type="email"
                     value={user.email}
@@ -116,11 +116,11 @@ export default function Signup() {
                     placeholder="Enter your email"
                     required>
                 </input>
-                {signupAttempted && emailBorderColor && <p className="text-red-500">Email is required</p>}
+                {signupAttempted && emailBorderColor && <p className="required-field">Email is required</p>}
 
-                <label className="text-xl font-medium mt-3">Password</label>
+                <label className="login_signup-label">Password</label>
                 <input
-                    className={`p-2 mt-2 text-black rounded border-2 ${passwordColor}`}
+                    className={`login_signup-input ${passwordColor}`}
                     id="password"
                     type="password"
                     value={user.password}
@@ -129,15 +129,15 @@ export default function Signup() {
                     placeholder="Enter your password"
                     required>
                 </input>
-                {signupAttempted && passwordBorderColor && <p className="text-red-500">Password is required</p>}
+                {signupAttempted && passwordBorderColor && <p className="required-field">Password is required</p>}
 
-                <button className={`border-2 mt-8 p-2 min-w-fit w-48 ${buttonColor}`}
+                <button className={`login_signup-btn ${buttonColor}`}
                     onClick={onSignup}
                 >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 
-                <a href="/login" className="p-2 font-medium text-base">Already a user? Login here!</a>
+                <a href="/login" className="login_signup-link">Already a user? Login here!</a>
 
-                {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="text-2xl mt-8 text-red-300">Please fill out all required fields</h2> : ""}
+                {signupAttempted && usernameBorderColor || emailBorderColor || passwordBorderColor ? <h2 className="login_signup-error">Please fill out all required fields</h2> : ""}
             </div>
         </div>
         </>
