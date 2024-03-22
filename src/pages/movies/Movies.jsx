@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../components/Footer";
 
 export default function Movies() {
-
     const [movies, setMovies] = useState([]);
-    const [footerVisible, setFooterVisible] = useState(false);
-    const contentRef = useRef(null);
 
     const options = {
         method: 'GET',
@@ -32,36 +29,12 @@ export default function Movies() {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        // handle scrolling to make sure the footer is not visible before the user scroll all the way down
-        function handleScroll() {
-            // calculate how far the user has scrolled down
-            const scrollY = window.scrollY || window.pageYOffset;
-            const windowHeight = window.innerHeight;
-            const contentTop = contentRef.current.offsetTop;
-            const contentHeight = contentRef.current.clientHeight;
-
-
-            // when the user has scrolled to the end of the content, show the footer
-            if(scrollY + windowHeight >= contentTop + contentHeight /2) {
-                setFooterVisible(true);
-            } else {
-            setFooterVisible(false);
-            }
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     // TODO: Add functionality to search for movies (including a search bar that cbecomes visible when the user click the search icon)
 
     return (
         <>
         <div className="relative">
-            <div className="flex-1" ref={contentRef}>
+            <div className="flex-1">
                 <div className="mt-16">
                     <div className="flex flex-col items-center justify-center mb-6 pt-4 pb-2">
                         <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Movies</h1>
@@ -83,7 +56,7 @@ export default function Movies() {
                 return <pre className="whitespace-pre-wrap ml-5" key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
                 })}
             </div>
-            <Footer className={footerVisible ? "sticky-footer footerVisible" : "sticky-footer"} />
+            <Footer />
         </div>
         </>
     )
