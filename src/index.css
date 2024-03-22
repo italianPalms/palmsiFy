@@ -19,6 +19,10 @@ body,
   width: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -310,6 +314,16 @@ p {
   color: rgb(232, 87, 87);
   margin-top: 0;
  }
+
+/* Help pages - like about and investors */
+.help-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 50px 10px 50px;
+}
+
 
 
  /* Footer */
