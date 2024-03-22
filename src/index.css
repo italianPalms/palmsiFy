@@ -58,7 +58,6 @@ h2 {
 
 p {
   font-size: 18px;
-  font-weight: bold;
 }
 
 /* Header */
@@ -312,6 +311,38 @@ p {
  }
 
 
+ /* Footer */
+ .footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+ }
+
+ .footer-logo {
+  width: 200px;
+  height: auto;
+ }
+
+ .footer-logo_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .footer-text {
+  font-size: 18;
+  font-weight: bold;
+  margin: 0;
+ }
+
+ .footer-img {
+  width: 150px;
+ }
 
 
 
@@ -339,12 +370,7 @@ p {
   display: inline-block;
 }
 
-.sticky-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
+
 
 .parallax {
   overflow: hidden;

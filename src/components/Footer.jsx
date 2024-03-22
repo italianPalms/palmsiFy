@@ -7,30 +7,30 @@ import Instagram from "../img/Instagram_Glyph_Gradient.png";
 export default function Footer() {
   
     return (
-        <footer className="sticky-footer fixed bottom-0 w-full flex justify-between items-center p-6">
-            <div className="flex items-center">
-                <img src={logo} alt="logo" className="w-28"></img>
-                <p className="font-medium text-2xl">PalmsiFy</p>
+        <footer className="footer-container">
+            <div className="footer-logo_name">
+                <img src={logo} alt="logo" className="footer-logo"></img>
+                <p className="footer-text">PalmsiFy</p>
             </div>
             <div>
-                <img className="w-32" src={airbot} alt="Airbot"></img>
+                <img className="footer-img" src={airbot} alt="Airbot"></img>
             </div>
 
             <div>
-                <h4 className="text-2xl font-medium italic mb-2">Contact us</h4>
+                <h4><strong>Contact us</strong></h4>
                 <p><strong>Email:</strong> c1H9Z@example.com</p>
                 <p><strong>Phone:</strong> 123-456-7890</p>
-                <div className="flex items-center mt-4">
+                <div className="">
                     <a href="https://www.youtube.com">
-                    <img className="w-20 mr-8" src={Youtube} alt="" />
+                    <img className="youtube-logo-homePage" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="w-5 mr-8" src={X} alt="" />
+                    <img className="x-logo-homePage" src={X} alt="" />
                     </a>
                     
                     <a href="https://www.instagram.com">
-                    <img className="w-7" src={Instagram} alt="" />
+                    <img className="instagram-logo-homePage" src={Instagram} alt="" />
                     </a>
                 </div>
             </div>
