@@ -335,6 +335,47 @@ p {
   margin-top: 100px;
 }
 
+/* Verify email page */
+.verifyEmail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.verifyHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.emailVerified {
+  color: rgb(74 222 128);
+}
+
+.emailVerificationError {
+  color: rgb(248 113 113);
+  margin: 0;
+}
+
+.login_signup-link {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+ }
+
+
 
  /* Footer */
  .footer-container {
