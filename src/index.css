@@ -252,7 +252,6 @@ p {
   }
 }
 
-
 /* Login and Signup page */
  .login_signup-container {
   display: flex;
@@ -315,7 +314,7 @@ p {
   margin-top: 0;
  }
 
-/* Help pages - like about and investors */
+/* Help pages - about and investors */
 .help-container {
   display: flex;
   flex-direction: column;
@@ -324,6 +323,17 @@ p {
   margin: 20px 50px 10px 50px;
 }
 
+.img-about {
+  width: 800px;
+  height: auto;
+  margin-top: 100px;
+}
+
+.img-investor {
+  width: 500px;
+  height: auto;
+  margin-top: 100px;
+}
 
 
  /* Footer */

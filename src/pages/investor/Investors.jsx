@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import hunter from "../../img/hunter-2_2x.webp";
 
 export default function Investors () {
     return (
@@ -13,9 +14,10 @@ export default function Investors () {
                         <p>Thank you so much for investing in PalmsiFy!</p>
                     </div>
                     <div>
-                        {/* add img */}
+                        <img className="img-investor" src={hunter} alt="img of web developer"></img>
                     </div>
                 </div>
+            {/* TODO: Fix footer */}
             <Footer /> 
         </div>
         </>
