@@ -65,6 +65,23 @@ p {
   font-size: 18px;
 }
 
+/* Stlying for SOMO logo's */
+.youtube-logo {
+  width: 110px;
+  height: 25px;
+  margin-left: 10px;
+}
+.x-logo {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+.instagram-logo {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
 /* Header */
 .header-container {
   display: flex;
@@ -93,22 +110,6 @@ p {
   margin-right: 10px;
   align-items: center;
   z-index: 10;
-}
-
-.youtube-logo-homePage {
-  width: 110px;
-  height: 25px;
-  margin-left: 10px;
-}
-.x-logo-homePage {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
-}
-.instagram-logo-homePage {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
 }
 
 .header_forgotPassword, .header_about, .header_investor {
@@ -420,11 +421,24 @@ p {
   color: #e0e0e0;
 }
 
-.sidebar-logo-name-container {
+.menuOutlinedIcon {
+  color: #e0e0e0;
+}
+
+.logo_name_outlinedIcon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_name {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 5px 0 10px 0;
+  color: #e0e0e0;
+  font-size: x-large;
 }
 
 .sidebar-logo {
@@ -432,6 +446,42 @@ p {
   height: auto;
   display: flex;
 }
+
+.img_name_title-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar-img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* TODO: Figure out why the font-size and weight does not work on typography elements*/
+.user_id {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  margin: 15px 0 0 0;
+}
+
+/* TODO: Figure out why the font-size and weight does not work on typography elements*/
+.user_title {
+  color: #4cceac;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* TODO: Move inline styling for all manu items here */
+
+
+/* Topbar */
 
 
 

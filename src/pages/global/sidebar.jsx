@@ -84,7 +84,7 @@ const Sidebar = ({ access_token }) => {
 
     return (
     <>
-    <div className='flex !bg-gray-900'>
+    <div>
         <Box
         sx={{
             "& .pro-sidebar-inner": {
@@ -104,34 +104,23 @@ const Sidebar = ({ access_token }) => {
             },
         }}
         >
-            <ProSidebar collapsed={isCollapsed} className='bg-gray-900'>
+            <ProSidebar collapsed={isCollapsed}>
                 <Menu iconShape="square">
                     {/* Logo and menu item */}
                     <MenuItem
                     onClick={() => setIsCollapsed(!isCollapsed)}
                     icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-                    style={{
-                        margin: "5px 0 10px 0",
-                        color: "#e0e0e0",
-                    }}
                     >
                         {!isCollapsed && (
-                            <Box
-                                display = 'flex'
-                                justifyContent='space-between'
-                                alignItems='center'
-                            >
-                                <Typography
-                                    variant='h5'
-                                    color= '#e0e0e0'
-                                >
-                                    <div className='sidebar-logo-name-container'>
+                            <Box className="logo_name_outlinedIcon-container">
+                                <Typography>
+                                    <div className='logo_name'>
                                     <img src={Logo} to="/profile" alt="logo" className="sidebar-logo"></img>
                                     <span>PalmsiFy</span>
                                     </div>
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                                    <MenuOutlinedIcon className='text-white flex' />
+                                    <MenuOutlinedIcon className='menuOutlinedIcon' />
                                 </IconButton>
                             </Box>
                         )}
@@ -139,33 +128,15 @@ const Sidebar = ({ access_token }) => {
 
                     {/* User */}
                     {!isCollapsed && (
-                        <Box mb="20px">
-                            <Box
-                                display="flex"
-                                justifyContent="center"
-                                alignItems="center"
-                            >
-                                <img
-                                alt="profile-user"
-                                width="100px"
-                                height="100px"
-                                src={Picture}
-                                style={{ cursor: "pointer", borderRadius: "50%"}}
-                                />
+                        <Box className="img_name_title-container">
+                            <Box>
+                                <img className='sidebar-img' alt="profile-user" src={Picture}/>
                             </Box>
-                            <Box className="capitalize" textAlign="center">
-                                <Typography
-                                variant="h4"
-                                color="white"
-                                fontWeight="bold"
-                                sx={{ m: "15px 0 0 0"}}
-                                >
+                            <Box className="user_id">
+                                <Typography>
                                     {userId}
                                 </Typography>
-                                <Typography
-                                variant="h6"
-                                color="#4cceac"
-                                >
+                                <Typography className='user_title'>
                                     VP PalmsiFy
                                 </Typography>
                             </Box>

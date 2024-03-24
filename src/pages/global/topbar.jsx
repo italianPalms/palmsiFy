@@ -126,13 +126,13 @@ const Topbar = ({ access_token }) => {
             </Box>
             <Box className='SOME-logo flex items-center logo'>
                     <a href="https://www.youtube.com">
-                        <img className='w-16 mr-4 hover:w-20 transition-transform duration-100 transform origin-center' src={Youtube} alt="" />
+                        <img className='youtube-logo' src={Youtube} alt="youtube logo" />
                     </a>
                     <a href="https://www.x.com">
-                        <img className='w-4 mr-4 hover:w-5 transition-transform duration-100 transform origin-center' src={X} alt=""/>
+                        <img className='x-logo' src={X} alt="x logo"/>
                     </a>
                     <a href="https://www.instagram.com">
-                        <img className='w-6 mr-4 hover:w-7 transition-transform duration-100 transform origin-center' src={Instagram} alt="" />
+                        <img className='instagram-logo' src={Instagram} alt="instagram logo" />
                     </a>
             </Box>
         </Box>

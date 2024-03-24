@@ -48,15 +48,15 @@ export default function Header() {
                         
                 <div>
                     <a href="https://www.youtube.com">
-                    <img className="youtube-logo-homePage SOME-logo-front w-20 mr-4 hover:w-24 transition-transform duration-100 transform origin-center" src={Youtube} alt="" />
+                    <img className="youtube-logo" src={Youtube} alt="" />
                     </a>
 
                     <a href="https://www.x.com">
-                    <img className="x-logo-homePage SOME-logo-front w-5 mr-4 hover:w-6 transition-transform duration-100 transform origin-center" src={X} alt="" />
+                    <img className="x-logo" src={X} alt="" />
                     </a>
                             
                     <a href="https://www.instagram.com">
-                    <img className="instagram-logo-homePage" src={Instagram} alt="" />
+                    <img className="instagram-logo" src={Instagram} alt="" />
                     </a>
                 </div>
             </div>
