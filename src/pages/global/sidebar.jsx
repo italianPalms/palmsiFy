@@ -18,14 +18,10 @@ import axios from 'axios';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 
-
-
-
 const Item = ({ title, onClick, to, icon, selected, setSelected}) => {
     return (
-        <MenuItem
+        <MenuItem className='menuItems'
             active = {selected === title}
-            style = {{color: '#e0e0e0' }}
             onClick={() => {
                 // console.log(`Clicked on ${title}`);
                 if(onClick) {
@@ -129,9 +125,9 @@ const Sidebar = ({ access_token }) => {
                                     variant='h5'
                                     color= '#e0e0e0'
                                 >
-                                    <div className='flex justify-center items-center'>
-                                    <img src={Logo} to="/profile" alt="logo" className="w-16"></img>
-                                    <span className="font-bold text-xl italic">PalmsiFy</span>
+                                    <div className='sidebar-logo-name-container'>
+                                    <img src={Logo} to="/profile" alt="logo" className="sidebar-logo"></img>
+                                    <span>PalmsiFy</span>
                                     </div>
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
