@@ -65,6 +65,7 @@ p {
   font-size: 18px;
 }
 
+
 /* Stlying for SOMO logo's */
 .youtube-logo {
   width: 110px;
@@ -462,23 +463,24 @@ p {
   border-radius: 50%;
 }
 
-/* TODO: Figure out why the font-size and weight does not work on typography elements*/
 .user_id {
   text-align: center;
   font-size: x-large;
   font-weight: bold;
   color: white;
-  margin: 15px 0 0 0;
+  margin: 15px 0 10px 0;
 }
 
-/* TODO: Figure out why the font-size and weight does not work on typography elements*/
 .user_title {
   color: #4cceac;
-  font-size: 40px;
   font-weight: bold;
+  margin: 0 0 15px 0;
 }
 
-/* TODO: Move inline styling for all manu items here */
+.welcome-msg {
+  color: #a3a3a3;
+  margin: 10px 0 5px 20px;
+}
 
 
 /* Topbar */

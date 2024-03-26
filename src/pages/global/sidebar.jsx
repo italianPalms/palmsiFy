@@ -132,19 +132,22 @@ const Sidebar = ({ access_token }) => {
                             <Box>
                                 <img className='sidebar-img' alt="profile-user" src={Picture}/>
                             </Box>
-                            <Box className="user_id">
-                                <Typography>
+                            <Box>
+                                <h4 className="user_id">
                                     {userId}
-                                </Typography>
-                                <Typography className='user_title'>
+                                </h4>
+                                <h4 className='user_title'>
                                     VP PalmsiFy
-                                </Typography>
+                                </h4>
                             </Box>
                         </Box>
                     )}
 
                     {/* Menu Items*/}
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+                    {!isCollapsed &&(
+                        <h2 className='welcome-msg'>Welcome</h2>
+                        )}
                         <Item
                             title="Home Page"
                             to="/profile"
@@ -152,15 +155,6 @@ const Sidebar = ({ access_token }) => {
                             selected={selected}
                             setSelected={setSelected}
                         />
-                        {!isCollapsed &&(
-                        <Typography
-                        variant="h6"
-                        color="#a3a3a3"
-                        sx={{ m: "10px 0 5px 20px"}}
-                        >
-                            Welcome
-                        </Typography>
-                        )}
                         <Item
                             title="Movies"
                             to="/movies"
