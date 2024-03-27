@@ -124,15 +124,15 @@ export default function Todo() {
                             onClick={deleteTodo} />
                         </li>
                     ))}
-                    
+        
                     {todo.map((addTodo) => (
                         <li className="todo-li" key={`${addTodo.text}-${addTodo.id}`}>
-                            <div className="">
-                            <input 
-                                className="todo-checkbox"
-                                type="checkbox"
-                                checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
-                            {addTodo.text}
+                            <div className="todo-item-container">
+                                <input className="todo-checkbox" type="checkbox"
+                                    checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
+                                <span className="todo-text">
+                                    {addTodo.text}
+                                </span>
                             </div>
                             <DeleteOutlinedIcon className="todo-delete-icon" onClick={deleteTodo} />
                         </li>
