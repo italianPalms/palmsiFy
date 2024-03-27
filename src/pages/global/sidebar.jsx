@@ -84,7 +84,7 @@ const Sidebar = ({ access_token }) => {
 
     return (
     <>
-    <div>
+    <div className="">
         <Box
         sx={{
             "& .pro-sidebar-inner": {
@@ -101,7 +101,7 @@ const Sidebar = ({ access_token }) => {
             }, 
             "& .pro-menu-item.active": {
                 color: "#6870fa !important"
-            },
+            }, 
         }}
         >
             <ProSidebar collapsed={isCollapsed}>

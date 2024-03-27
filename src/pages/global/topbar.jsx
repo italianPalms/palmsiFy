@@ -62,43 +62,38 @@ const Topbar = ({ access_token }) => {
 
 
     return (
-        <Box className="flex flex-row p-2">
+    <>
+    <div className="topbar-container">
         <Box>
-            {/* Search bar */}
-            <Box
-            display="flex"
-            backgroundColor="#1f2a40"
-            borderRadius="3px"
-            flexDirection="row"
-            alignItems="center"
-            >
-                <InputBase
-                sx={{
-                    ml:2, 
-                    flex: 1, 
-                    color: "white"
-                }}
-                text="white"
-                placeholder="Search"
-                >
-                </InputBase>
-                <IconButton 
-                type="button" 
-                sx={{ p: 1, color: "white" }} 
-                onClick={() => {
-                    console.log("search icon clicked")
-                }}>
-                    <SearchOutlinedIcon />
-                </IconButton>
+            <Box>
+                {/* Search bar */}
+                <Box>
+                    <InputBase className='searchbar'
+                    sx={{
+                        ml:2, 
+                        flex: 1, 
+                        color: "white"
+                    }}
+                    text="white"
+                    placeholder="Search"
+                    >
+                    </InputBase>
+                    <IconButton 
+                    type="button" 
+                    sx={{ p: 1, color: "white" }} 
+                    onClick={() => {
+                        console.log("search icon clicked")
+                    }}>
+                        <SearchOutlinedIcon />
+                    </IconButton>
             </Box>
         </Box>
 
-        <Box className="flex flex-end" marginLeft="auto">
-            
+        <Box className="topbar-icons">   
             {/* Welcome message */}
             <Box display= "flex">
             <p className='welcome-user capitalize mr-4 font-semibold mt-2'>welcome
-                <strong className='text-[#FF00FF] ml-2'>{userId && userId.charAt(0).toUpperCase() + userId.slice(1)}</strong>
+                <strong className='topbar-user'>{userId && userId.charAt(0).toUpperCase() + userId.slice(1)}</strong>
             </p>
             </Box>
 
@@ -124,7 +119,8 @@ const Topbar = ({ access_token }) => {
                     <NotificationsNoneOutlinedIcon className='mr-4'/>
                 </IconButton>
             </Box>
-            <Box className='SOME-logo flex items-center logo'>
+            {/* SOME logo's */}
+                <Box className='SOME-logo flex items-center logo'>
                     <a href="https://www.youtube.com">
                         <img className='youtube-logo' src={Youtube} alt="youtube logo" />
                     </a>
@@ -134,10 +130,13 @@ const Topbar = ({ access_token }) => {
                     <a href="https://www.instagram.com">
                         <img className='instagram-logo' src={Instagram} alt="instagram logo" />
                     </a>
+                </Box>
             </Box>
         </Box>
-        </Box>
+    </div>
+    </>
     )
+    
 }
 
 export default Topbar;

@@ -483,7 +483,41 @@ p {
 }
 
 
+
 /* Topbar */
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(31 41 55);
+  color: white;
+  padding: 5px;
+}
+
+.searchbar {
+  display: flex;
+  background-color: #1f2d4a;
+  padding: 0 10px 0 10px;
+  flex-grow: 1;
+  }
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-user {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #FF00FF;
+}
+
+/* Makes the topbar and sidebar alig, as well as the main content */
+.flex {
+  display: flex;
+}
+
 
 
 
