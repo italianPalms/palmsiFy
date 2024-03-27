@@ -63,80 +63,64 @@ const Topbar = ({ access_token }) => {
 
     return (
     <>
-    <div className="topbar-container">
-        <Box>
-            <Box>
-                {/* Search bar */}
-                <Box>
-                    <InputBase className='searchbar'
-                    sx={{
-                        ml:2, 
-                        flex: 1, 
-                        color: "white"
-                    }}
-                    text="white"
-                    placeholder="Search"
-                    >
-                    </InputBase>
-                    <IconButton 
-                    type="button" 
-                    sx={{ p: 1, color: "white" }} 
-                    onClick={() => {
-                        console.log("search icon clicked")
-                    }}>
-                        <SearchOutlinedIcon />
-                    </IconButton>
-            </Box>
-        </Box>
+    <div className="topbar">
+        {/* Search bar */}
+        <div className='searchbar'>
+            <input className='search-input' type="text" placeholder="Search"></input>
+            <button className='search-icon'
+                type="button" 
+                onClick={() => {
+                    console.log("search icon clicked")
+                }}>
+                <SearchOutlinedIcon />
+            </button>
+        </div>
 
-        <Box className="topbar-icons">   
+        <div className="topbar-container">   
             {/* Welcome message */}
-            <Box display= "flex">
-            <p className='welcome-user capitalize mr-4 font-semibold mt-2'>welcome
+            <div>
+            <p>Welcome
+                {/* TODO: Figure out the late update of userId */}
                 <strong className='topbar-user'>{userId && userId.charAt(0).toUpperCase() + userId.slice(1)}</strong>
             </p>
-            </Box>
+            </div>
 
             {/* Icons */}
-            <Box dispay="flex">
-                <IconButton 
-                sx={{ color: "white"}} 
+            <div>
+                <button className='topbar-icons' 
                 onClick={() => {
                         console.log("lightmode button clicked")
                     }}>
                     <LightModeOutlinedIcon />
-                </IconButton>
-                <IconButton 
-                sx={{ color: "white"}} 
+                </button>
+
+                <button className='topbar-icons' 
                 onClick={logout}>
                     <LogoutOutlinedIcon />
-                </IconButton>
-                <IconButton 
-                sx={{ color: "white"}} 
+                </button>
+
+                <button className='topbar-icons' 
                 onClick={() => {
                         console.log("notification button clicked")
-                    }} >
-                    <NotificationsNoneOutlinedIcon className='mr-4'/>
-                </IconButton>
-            </Box>
+                    }}>
+                    <NotificationsNoneOutlinedIcon />
+                </button>
+            </div>
             {/* SOME logo's */}
-                <Box className='SOME-logo flex items-center logo'>
-                    <a href="https://www.youtube.com">
-                        <img className='youtube-logo' src={Youtube} alt="youtube logo" />
-                    </a>
-                    <a href="https://www.x.com">
-                        <img className='x-logo' src={X} alt="x logo"/>
-                    </a>
-                    <a href="https://www.instagram.com">
-                        <img className='instagram-logo' src={Instagram} alt="instagram logo" />
-                    </a>
-                </Box>
-            </Box>
-        </Box>
+            <div>
+                <a href="https://www.youtube.com">
+                    <img className='youtube-logo' src={Youtube} alt="youtube logo" />
+                </a>
+                <a href="https://www.x.com">
+                    <img className='x-logo' src={X} alt="x logo"/>
+                </a>
+                <a href="https://www.instagram.com">
+                    <img className='instagram-logo' src={Instagram} alt="instagram logo" />
+                </a>
+            </div>
+        </div>
     </div>
     </>
     )
-    
 }
-
 export default Topbar;

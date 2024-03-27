@@ -84,7 +84,7 @@ const Sidebar = ({ access_token }) => {
 
     return (
     <>
-    <div className="">
+    <div className="sidebar">
         <Box
         sx={{
             "& .pro-sidebar-inner": {
