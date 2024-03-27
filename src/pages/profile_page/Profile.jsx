@@ -83,7 +83,6 @@ import PieChartVerified from "../../components/PieChartVerified";
             const rows = user ? [user] : [];
             const getRowId = (row) => row._id;
            
-
         return (
             <>
             <div className="profilePage-container">
