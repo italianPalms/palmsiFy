@@ -419,9 +419,8 @@ p {
 
 /* Sidebar */
 .sidebar {
-  flex-shrink: 0;
   background-color: rgb(31 41 55);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .menuItems {
@@ -487,7 +486,6 @@ p {
   color: #a3a3a3;
   margin: 10px 0 5px 20px;
 }
-
 
 
 /* Topbar */
