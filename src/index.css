@@ -512,17 +512,11 @@ p {
   }
 }
 
-.search-input {
+.search-input, .search-icon {
   color: white;
   background-color: #1f2d4a;
   border: none;
   outline: none;
-}
-
-.search-icon {
-  color: white; 
-  background-color: #1f2d4a;
-  border: none;
 }
 
 .topbar-container {
@@ -548,6 +542,80 @@ p {
 }
 
 
+/* Profile page */
+.profilePage-container {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+
+}
+
+.profilePage-header {
+  display: flex;
+  justify-content: center;
+}
+
+.profilePage-dataGrid {
+  display: flex;
+  width: 100%;
+  padding: 0 70px 20px 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dataGrid-text {
+  display: flex;
+  justify-content: center;
+}
+
+.profilePage-btn-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.profilePage-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 200px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(14 165 233);
+  cursor: pointer;
+}
+
+.verified-users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.piechart_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 50vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .piechart_profile {
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
 
 
 /* Etcha-Sketch */ 
@@ -692,15 +760,5 @@ p {
 @media screen and (max-width: 1472px) {
   .pieChart {
     display: grid;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .piechart_profile {
-    height: 40vh;
-    width: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
   }
 }

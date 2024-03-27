@@ -86,9 +86,9 @@ import PieChartVerified from "../../components/PieChartVerified";
 
         return (
             <>
-            <div className="flex-col justify-center items-center mt-16">
-                <h1 className="sm:text-2xl md:text-3xl lg:text-4xl font-semibold justify-center items-center flex">{loading ? "Logging out" : "Welcome to your profile"}</h1>
-                <div className=" text-xl mt-8">
+            <div className="profilePage-container">
+                <h1 className="profilePage-header">{loading ? "Logging out" : "Welcome to your profile"}</h1>
+                <div>
                     {showUserDetails && user ? (
                     <Box
                     //style the dataGrid from Mui (overwrite the default styling)
@@ -133,8 +133,8 @@ import PieChartVerified from "../../components/PieChartVerified";
                         },
                     }}
                     >
-                        <div className="flex justify-center items-center ml-10 mr-10 mt-10">
-                            <DataGrid className="max-w-7xl"
+                        <div className="profilePage-dataGrid">
+                            <DataGrid
                                 rows={rows}
                                 columns={columns}
                                 getRowId={getRowId}
@@ -142,22 +142,23 @@ import PieChartVerified from "../../components/PieChartVerified";
                         </div>
                     </Box>
                     ) : (
-                        <p className="mt-4 flex justify-center items-center">Click below to see user details 🚀</p>
+                        <p className="dataGrid-text">Click below to see user details 🚀</p>
                     )}
                 </div>
 
-                <div className="flex justify-center items-center">
-                <button className="border-2 mt-8 p-2 w-48 bg-orange-700 hover:bg-orange-900 rounded" 
-                onClick={toggleUserDetails}
-                >{buttonText}</button>
+                <div className="profilePage-btn-container">
+                    <button className="profilePage-btn" 
+                        onClick={toggleUserDetails}
+                        >{buttonText}
+                    </button>
                 </div>
 
-                <Box m="20px">
-                    <h1 className="font-medium text-2xl flex justify-center items-center mt-16">Verified users</h1>
-                    <Box className="piechart_profile" height="50vh" width="50vh justify-center items-center">
+                <div className="verified-users">
+                    <h1 className="profilePage-header">Verified users</h1>
+                    <div className="piechart_profile">
                         <PieChartVerified />
-                    </Box>
-                </Box>
+                    </div>
+                </div>
             </div>
             </>
         )
