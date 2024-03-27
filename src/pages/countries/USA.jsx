@@ -27,21 +27,21 @@ export default function USAInfo() {
 
     return (
         <>
-            <h1 className='ml-4 text-2xl font-semibold'>USA</h1>
-            <button className='ml-4 mt-2 p-2 border-2 w-24 bg-sky-400 hover:bg-sky-500'
+            <h1>USA</h1>
+            <button className='login-btn_2'
             onClick={goBack}
             >Go back</button>
             <div className='flex'>
             {USAInfo.map((USA, index) => {
                 return ( 
-                    <div key={index} className='m-4'>
+                    <div key={index}>
                         <p>Name: {USA.name.common}</p>
                         <p>Official Name: {USA.name.official}</p>
                         <p>Continent: {USA.continents}</p>
                         <p>Population: {new Intl.NumberFormat('en-US').format(USA.population)}</p>
                         <p>Timezone: {USA.timezones}</p>
                         <p>Flag: {USA.flag}</p>
-                        <pre className='whitespace-pre-wrap break-word'>{JSON.stringify(USA, null, 2)}</pre>
+                        <pre>{JSON.stringify(USA, null, 2)}</pre>
                     </div>
                 )
             })}

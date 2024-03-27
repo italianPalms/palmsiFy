@@ -27,21 +27,21 @@ export default function GermanyInfo() {
 
     return (
         <>
-            <h1 className='ml-4 text-2xl font-semibold'>Germany</h1>
-            <button className='ml-4 mt-2 p-2 border-2 w-24 bg-sky-400 hover:bg-sky-500'
-            onClick={goBack}
+            <h1>Germany</h1>
+            <button className='login-btn_2'
+                onClick={goBack}
             >Go back</button>
-            <div className='flex'>
+            <div>
             {germanyInfo.map((germany, index) => {
                 return ( 
-                    <div key={index} className='m-4'>
+                    <div key={index}>
                         <p>Name: {germany.name.common}</p>
                         <p>Official Name: {germany.name.official}</p>
                         <p>Continent: {germany.continents}</p>
                         <p>Population: {new Intl.NumberFormat('en-US').format(germany.population)}</p>
                         <p>Timezone: {germany.timezones}</p>
                         <p>Flag: {germany.flag}</p>
-                        <pre className='whitespace-pre-wrap break-word'>{JSON.stringify(germany, null, 2)}</pre>
+                        <pre>{JSON.stringify(germany, null, 2)}</pre>
                 </div>
                 )
             })}

@@ -27,11 +27,11 @@ export default function NorwayInfo() {
 
     return (
         <>
-            <h1 className='ml-4 text-2xl font-semibold'>Norway</h1>
-            <button className='ml-4 mt-2 p-2 border-2 w-24 bg-sky-400 hover:bg-sky-500'
+            <h1>Norway</h1>
+            <button className='login-btn_2'
             onClick={goBack}
             >Go back</button>
-            <div className='flex'>
+            <div>
             {norwayInfo.map((norway, index) => {
                 return ( 
                     <div key={index} className='m-4'>
@@ -41,7 +41,7 @@ export default function NorwayInfo() {
                         <p>Population: {new Intl.NumberFormat('en-US').format(norway.population)}</p>
                         <p>Timezone: {norway.timezones}</p>
                         <p>Flag: {norway.flag}</p>
-                        <pre className='whitespace-pre-wrap break-word'>{JSON.stringify(norway, null, 2)}</pre>
+                        <pre>{JSON.stringify(norway, null, 2)}</pre>
                 </div>
                 )
             })}

@@ -27,21 +27,21 @@ export default function ItalyInfo() {
 
     return (
         <>
-            <h1 className='ml-4 text-2xl font-semibold'>Italy</h1>
-            <button className='ml-4 mt-2 p-2 border-2 w-24 bg-sky-400 hover:bg-sky-500'
+            <h1>Italy</h1>
+            <button className='login-btn_2'
             onClick={goBack}
             >Go back</button>
-            <div className='flex'>
+            <div>
             {italyInfo.map((italy, index) => {
                 return ( 
-                    <div key={index} className='m-4'>
+                    <div key={index}>
                         <p>Name: {italy.name.common}</p>
                         <p>Official Name: {italy.name.official}</p>
                         <p>Continent: {italy.continents}</p>
                         <p>Population: {new Intl.NumberFormat('en-US').format(italy.population)}</p>
                         <p>Timezone: {italy.timezones}</p>
                         <p>Flag: {italy.flag}</p>
-                        <pre className='whitespace-pre-wrap break-word'>{JSON.stringify(italy, null, 2)}</pre>
+                        <pre>{JSON.stringify(italy, null, 2)}</pre>
                 </div>
                 )
             })}
