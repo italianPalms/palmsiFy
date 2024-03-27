@@ -98,7 +98,7 @@ export default function ForgotPassword () {
             
                 {resetPasswordAttempted && passwordBorderColor ? <p className="required-field">New password is required</p> : ""}
 
-                <button className={`login_signup-btn ${buttonColor}`}
+                <button className={`pink-btn_medium ${buttonColor}`}
                 onClick={resetPassword}
                 >{buttonDisabled ? "Fill out required fields": "Reset password"}</button>
 

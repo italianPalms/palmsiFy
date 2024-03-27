@@ -65,6 +65,60 @@ p {
   font-size: 18px;
 }
 
+/* Buttons - small */
+.pink-btn_small {
+  padding: 12px;
+  margin-right: 8px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 140px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(244 114 182);
+  cursor: pointer;
+}
+
+.blue-btn_small {
+  padding: 12px;
+  margin-right: 8px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 140px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(14 165 233);
+  cursor: pointer;
+}
+
+/* Buttons - medium */
+.blue-btn_medium {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 200px;
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(14 165 233);
+  cursor: pointer;
+ }
+
+ .pink-btn_medium {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 200px;
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(244 114 182);
+  cursor: pointer;
+ }
+
 
 /* Stlying for SOMO logo's */
 .youtube-logo {
@@ -119,34 +173,6 @@ p {
 }
 
 /* Home Page */
-/* Login and signup button on the top of the home page */
-.login-btn_1, .signup-btn_1 {
-  padding: 12px;
-  margin-right: 8px;
-  border-radius: 10px;
-  border-width: 3px;
-  width: 140px;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: rgb(244 114 182);
-  cursor: pointer;
-}
-
-/* Login and signup button on the bottom of the home page */
-.login-btn_2, .signup-btn_2 {
-  padding: 12px;
-  margin-right: 8px;
-  border-radius: 10px;
-  border-width: 3px;
-  width: 140px;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: rgb(14 165 233);
-  cursor: pointer;
-}
-
 /* Includes the hero and buttons on the home page */
 .hero-homePage_btn {
   display: flex;
@@ -274,19 +300,6 @@ p {
   align-items: center;
   justify-content: center;
   margin-left: 20px;
- }
-
- .login_signup-btn {
-  padding: 10px;
-  border-radius: 10px;
-  border-width: 3px;
-  width: 200px;
-  margin-top: 10px;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: rgb(14 165 233);
-  cursor: pointer;
  }
 
  .login_signup-input {
@@ -572,21 +585,6 @@ p {
   display: flex; 
   justify-content: center;
   align-items: center;
-}
-
-.profilePage-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  border-radius: 10px;
-  border-width: 3px;
-  width: 200px;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: rgb(14 165 233);
-  cursor: pointer;
 }
 
 .verified-users {

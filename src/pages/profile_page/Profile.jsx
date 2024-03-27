@@ -146,7 +146,7 @@ import PieChartVerified from "../../components/PieChartVerified";
                 </div>
 
                 <div className="profilePage-btn-container">
-                    <button className="profilePage-btn" 
+                    <button className="blue-btn_medium" 
                         onClick={toggleUserDetails}
                         >{buttonText}
                     </button>

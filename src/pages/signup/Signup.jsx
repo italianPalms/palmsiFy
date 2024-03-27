@@ -131,7 +131,7 @@ export default function Signup() {
                 </input>
                 {signupAttempted && passwordBorderColor && <p className="required-field">Password is required</p>}
 
-                <button className={`login_signup-btn ${buttonColor}`}
+                <button className={`blue-btn_medium ${buttonColor}`}
                     onClick={onSignup}
                 >{buttonDisabled ? "Fill out required fields" : "Signup"}</button>
 

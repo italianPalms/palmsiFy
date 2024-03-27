@@ -115,7 +115,7 @@ export default function Login() {
                 </input>
                 {loginAttempted && passwordBorderColor && <p className="required-field">Password is required</p>}
 
-                <button type="submit" className={`login_signup-btn ${buttonColor}`}
+                <button type="submit" className={`pink-btn_medium ${buttonColor}`}
                 onClick={onLogin}
                 >{buttonDisabled ? "Fill out required fields" : "Login"}</button>
 

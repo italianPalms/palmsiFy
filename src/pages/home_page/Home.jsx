@@ -38,8 +38,8 @@ export default function Home() {
                     <h1 className="hero_title">
                     <span>Gear up!</span> Welcome to PalmsiFy
                     </h1>
-                    <button className="login-btn_1" onClick={login}>Login</button>
-                    <button className="signup-btn_1" onClick={signup}>Signup</button>
+                    <button className="pink-btn_small" onClick={login}>Login</button>
+                    <button className="pink-btn_small" onClick={signup}>Signup</button>
                 </div>
             </div>
 
@@ -68,10 +68,10 @@ export default function Home() {
                         </div>
 
                         <div>
-                            <button className="login-btn_2"
+                            <button className="blue-btn_small"
                             onClick={login}>Login</button>
 
-                            <button className="signup-btn_2"
+                            <button className="blue-btn_small"
                             onClick={signup}>Signup</button>
                         </div>
                     </div>
