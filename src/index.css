@@ -621,6 +621,72 @@ p {
   justify-content: center;
 }
 
+/* To do page */
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.todo-input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-label {
+  margin: 10px 0 10px 0;
+}
+
+.todo-input {
+  padding: 5px 10px 5px 10px;
+  margin: 10px 0 10px 0;
+  font-size: 18px;
+}
+
+.todo-error {
+  color: rgb(232, 87, 87);
+}
+
+.todo-list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-list-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.todo-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.todo-checkbox {
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+}
+
+.todo-text {
+  margin-right: 40px;
+  font-size: 18px;
+}
+
+.todo-delete-icon {
+  margin-left: auto;  
+}
+
 
 
 

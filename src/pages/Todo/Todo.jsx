@@ -88,69 +88,63 @@ export default function Todo() {
 
     return (
         <>
-        <div className="flex flex-col justify-center items-center mt-16">
-            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">To Do</h1>
-        </div>
-
-        <div className="flex flex-col justify-center items-center">
-            <label className="text-xl font-medium mt-3">Add your item</label>
-            <input className="p-1 text-black mt-2 w-48" 
-                type="text"
-                placeholder="Add item"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={onAddTodoKeypress}
-                ></input>
-            <button className="p-1 mt-4 bg-sky-400 w-48 hover:bg-sky-500 text-white rounded"
-            onClick={() => {
-                addTodo()
-            }}
-            >Add</button>
+        <div className="todo-container">
+            <h1>To Do</h1>
+      
+            <div className="todo-input-container">
+                <label className="todo-label">Add your item</label>
+                <input className="todo-input" 
+                    type="text"
+                    placeholder="Add item"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={onAddTodoKeypress}
+                    ></input>
+                <button className="blue-btn_small"
+                    onClick={() => {addTodo()}}>Add
+                </button>
             
-{/* TODO: Make sure that the red text goes away when the input is not empty */}
-            {addTodoAttempted || todo.lenght === 0 ? (
-                <p className="text-red-500 mt-4">Please add a todo item</p>
+                {/* TODO: Make sure that the red text goes away when the input is not empty */}
+                {addTodoAttempted || todo.lenght === 0 ? (
+                <p className="todo-error">Please add a todo item</p>
                 ) : null}
-        </div>
+            </div>
 
-        <div className="flex flex-col justify-center items-center mt-10">
-            <ul className="text-xl">
-                {getTodos.map((getTodo) => (
-                    <li className="flex justify-between items-center mt-1" key={`${getTodo.text}-${getTodo.id}`}>
-                        <div className="flex items-center">
-                        <input className="mr-2 w-4 h-4" type="checkbox" />
-                        {getTodo.text}
-                        </div>
-                    {/* <pre className="whitespace-pre-wrap ml-5"
-                    key={todo.id}>
-                        {JSON.stringify(todo, null, 2)}
-                    </pre> */}
-                    <DeleteOutlinedIcon className="ml-10 cursor-pointer"
-                    onClick={deleteTodo} />
-                    </li>
-                ))}
-                
-                {todo.map((addTodo) => (
-                    <li className="flex justify-between mt-1" key={`${addTodo.text}-${addTodo.id}`}>
-                        <div className="flex items-center">
-                        <input 
-                            className="mr-2 w-4 h-4"
-                            type="checkbox"
-                            checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
-                        {addTodo.text}
-                        </div>
-                        <DeleteOutlinedIcon className="ml-10 cursor-pointer"
-                    onClick={deleteTodo} />
-                    </li>
-                ))}
-            </ul>
-            
+            <div className="todo-list-container">
+                <ul className="todo-list-ul">
+                    {getTodos.map((getTodo) => (
+                        <li className="todo-li" key={`${getTodo.text}-${getTodo.id}`}>
+                            <div className="todo-item-container">
+                            <input className="todo-checkbox" type="checkbox" />
+                            <span className="todo-text">
+                            {getTodo.text}
+                            </span>
+                            </div>
+                            <DeleteOutlinedIcon className="todo-delete-icon"
+                            onClick={deleteTodo} />
+                        </li>
+                    ))}
+                    
+                    {todo.map((addTodo) => (
+                        <li className="todo-li" key={`${addTodo.text}-${addTodo.id}`}>
+                            <div className="">
+                            <input 
+                                className="todo-checkbox"
+                                type="checkbox"
+                                checked={todo.completed} onChange={(e) => handleToggleTodo(todo.id)} />
+                            {addTodo.text}
+                            </div>
+                            <DeleteOutlinedIcon className="todo-delete-icon" onClick={deleteTodo} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {/* TODO: Fix so the width of the footer is flexible with the sidebar */}
+            {/* <div>
+                <Footer />
+            </div> */}
         </div>
-    {/* TODO: Fix so the width of the footer is flexible with the sidebar */}
-                <div className="fixed bottom-0 w-full pr-72">
-                    <Footer className="justify-between" />
-                </div>
-        
         </>
     )
 }
