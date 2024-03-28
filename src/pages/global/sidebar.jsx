@@ -62,6 +62,13 @@ const Sidebar = ({ access_token }) => {
         fetchUsername();
     }, [])
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsCollapsed(window.innerWidth <=800);
+        };
+        window.addEventListener('resize', handleResize);
+    }, []);
+
     const logout = async () => {
         try {
             setLoading(true);

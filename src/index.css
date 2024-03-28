@@ -500,7 +500,6 @@ p {
   margin: 10px 0 5px 20px;
 }
 
-
 /* Topbar */
 .topbar {
   display: flex;
@@ -553,12 +552,6 @@ p {
 
 @media screen and (max-width: 900px) {
   .SOME-topbar {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .topbar-icons {
     display: none;
   }
 }
