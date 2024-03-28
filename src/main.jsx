@@ -27,10 +27,12 @@ import Germany from './pages/countries/germany';
 function App() {
 
 return (
-    <div className="flex">
+    <div className="app-container">
+      <Topbar />
+      <div >
+      <main className="sidebar-mainContent-container">
       <Sidebar />
-      <main className="content">
-        <Topbar />
+
         <Routes>
           <Route index element={<Home />} />
           <Route path = "/home" element={<Home />} />
@@ -111,6 +113,7 @@ return (
           <Route path="*" element= {<NoPage />} />
         </Routes>
         </main>
+        </div>
     </div>
   );
 }
