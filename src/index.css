@@ -628,6 +628,19 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
+}
+
+.country-btn {
+  margin: 3px;
+}
+
+/* country info page info page */
+.countryInfo-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
 /* To do page */

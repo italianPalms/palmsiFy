@@ -27,8 +27,9 @@ export default function USAInfo() {
 
     return (
         <>
+        <div className='countryInfo-container'>
             <h1>USA</h1>
-            <button className='login-btn_2'
+            <button className='blue-btn_small'
             onClick={goBack}
             >Go back</button>
             <div className='flex'>
@@ -46,6 +47,7 @@ export default function USAInfo() {
                 )
             })}
             </div>
+        </div>
         </>
     )
 }

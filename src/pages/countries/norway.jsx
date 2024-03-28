@@ -27,8 +27,9 @@ export default function NorwayInfo() {
 
     return (
         <>
+        <div className='countryInfo-container'>
             <h1>Norway</h1>
-            <button className='login-btn_2'
+            <button className='blue-btn_small'
             onClick={goBack}
             >Go back</button>
             <div>
@@ -46,6 +47,7 @@ export default function NorwayInfo() {
                 )
             })}
             </div>
+        </div>
         </>
     )
 }

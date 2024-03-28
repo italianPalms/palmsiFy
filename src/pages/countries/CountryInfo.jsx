@@ -25,18 +25,22 @@ export default function CountryInfo() {
         <div className='countryPage-container'>
             <h1>Country Information</h1>
             <div className='country-btn-container'>
-                <button className='login-btn_1'
-                onClick={italy}
-                >Italy</button>
-                <button className='login-btn_1'
-                onClick={norway}
-                >Norway</button>
-                    <button className='login-btn_1'
-                onClick={USA}
-                >USA</button>
-                <button className='login-btn_1'
-                onClick={germany}
-                >Germany</button>
+                <div className='country-btn-top'>
+                    <button className='pink-btn_medium country-btn'
+                    onClick={italy}
+                    >Italy</button>
+                    <button className='pink-btn_medium country-btn'
+                    onClick={norway}
+                    >Norway</button>
+                </div>
+                <div>
+                    <button className='pink-btn_medium country-btn'
+                    onClick={USA}
+                    >USA</button>
+                    <button className='pink-btn_medium country-btn'
+                    onClick={germany}
+                    >Germany</button>
+                </div>
            </div>
         </div>
         </>
