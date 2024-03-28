@@ -530,6 +530,10 @@ p {
   outline: none;
 }
 
+.search-icon {
+  cursor: pointer;
+}
+
 .topbar-container {
   display: flex;
   align-items: center;
@@ -545,6 +549,18 @@ p {
   background-color: rgb(31 41 55);
   border: none;
   color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .SOME-topbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .topbar-icons {
+    display: none;
+  }
 }
 
 /* Makes the topbar and sidebar alig, as well as the main content */
@@ -688,11 +704,36 @@ p {
 }
 
 
+/* Etch a sketch page */
+.etch-a-sketch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
 
+.etch-a-sketch-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.etch-a-sketch-btn {
+  margin: 3px;
+}
 
+.etch-a-sketch-grid {
+  margin-top: 20px;
+}
 
-/* Etcha-Sketch */ 
+@media screen and (max-width: 885px) {
+  .etch-a-sketch-btn {
+    width: 150px;
+  }
+}
+
+/* Etcha-Sketch grid */ 
 #container {
   display: inline-block;
   margin-left: stretch;
@@ -711,6 +752,22 @@ p {
   box-sizing: border-box;
   display: inline-block;
 }
+
+@media screen and (max-width: 1090px) {
+  #container {
+    height: 600px;
+    width: 600px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 885px) {
+  #container {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+
 
 
 

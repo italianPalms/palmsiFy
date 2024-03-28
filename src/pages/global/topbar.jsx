@@ -109,13 +109,13 @@ const Topbar = ({ access_token }) => {
             {/* SOME logo's */}
             <div>
                 <a href="https://www.youtube.com">
-                    <img className='youtube-logo' src={Youtube} alt="youtube logo" />
+                    <img className='youtube-logo SOME-topbar' src={Youtube} alt="youtube logo" />
                 </a>
                 <a href="https://www.x.com">
-                    <img className='x-logo' src={X} alt="x logo"/>
+                    <img className='x-logo SOME-topbar' src={X} alt="x logo"/>
                 </a>
                 <a href="https://www.instagram.com">
-                    <img className='instagram-logo' src={Instagram} alt="instagram logo" />
+                    <img className='instagram-logo SOME-topbar' src={Instagram} alt="instagram logo" />
                 </a>
             </div>
         </div>

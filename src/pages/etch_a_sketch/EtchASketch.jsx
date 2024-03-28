@@ -105,28 +105,30 @@ function EtchASketch() {
     
     return (
         <>
-        <div className="flex flex-col justify-center items-center">
-            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl pb-4 mt-16">Etch-a-sketch</h1>
-            <div className="main">
-                <div className="btns p-2 font-medium flex justify-center">
-                        
-                    <button className="grid-size p-2"
-                    onClick={chooseSize}
-                    >Choose Size</button>
+        <div className="etch-a-sketch-container">
+            <h1>Etch-a-sketch</h1>
+            <div>
+                <div className="etch-a-sketch-btns">
+                    <div className='top-btns'>
+                        <button className="blue-btn_medium etch-a-sketch-btn"
+                        onClick={chooseSize}
+                        >Choose Size</button>
 
-                    <button className="clear-grid p-2"
-                    onClick={clearGrid}
-                    >Clear Grid</button>
+                        <button className="blue-btn_medium etch-a-sketch-btn"
+                        onClick={clearGrid}
+                        >Clear Grid</button>
+                    </div>
+                    <div className='bottom-btns'>
+                        <button className="blue-btn_medium etch-a-sketch-btn"
+                        onClick={handlePinkColor}
+                        >Pink Color</button>
 
-                    <button className="pink p-2"
-                    onClick={handlePinkColor}
-                    >Pink Color</button>
-
-                    <button className="rainbow p-2"
-                    onClick={handleRainbowColor}
-                    >Rainbow Color</button>
+                        <button className="blue-btn_medium etch-a-sketch-btn"
+                        onClick={handleRainbowColor}
+                        >Rainbow Color</button>
+                    </div>
                 </div>
-                <div id="container" className="mt-6"></div>
+                <div id="container" className="etch-a-sketch-grid"></div>
             </div>
         </div>
         </>
