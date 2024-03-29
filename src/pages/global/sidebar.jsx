@@ -17,6 +17,7 @@ import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import axios from 'axios';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
+import { ShoppingCartOutlined } from '@mui/icons-material';
 
 const Item = ({ title, onClick, to, icon, selected, setSelected}) => {
     return (
@@ -212,6 +213,15 @@ const Sidebar = ({ access_token }) => {
                         selected={selected}
                         setSelected={setSelected}
                         />
+
+                        <Item
+                        title="Shopping"
+                        to="/shopping"
+                        icon={<ShoppingCartOutlined />}
+                        selected={selected}
+                        setSelected={setSelected}
+                        />
+
                         <Item
                         title="Logout"
                         onClick={logout}

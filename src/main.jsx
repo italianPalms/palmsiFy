@@ -23,6 +23,7 @@ import Italy from './pages/countries/italy';
 import Norway from './pages/countries/norway';
 import USA from './pages/countries/USA';
 import Germany from './pages/countries/germany';
+import Shopping from './pages/shopping/Shopping';
 
 function App() {
 
@@ -106,6 +107,12 @@ return (
           <Route path = "/germany" element ={
             <Protected Login={Login}>
               <Germany />
+            </Protected>
+          } />
+
+          <Route path ="/shopping" element ={
+            <Protected Login={Login}>
+              <Shopping />
             </Protected>
           } />
 

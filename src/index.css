@@ -1079,3 +1079,12 @@ p {
   margin-top: 150px;
   color: #FF00FF;
 }
+
+/* Shoopping page */
+.shopping-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
