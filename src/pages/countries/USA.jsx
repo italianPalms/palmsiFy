@@ -32,7 +32,7 @@ export default function USAInfo() {
             <button className='blue-btn_small'
             onClick={goBack}
             >Go back</button>
-            <div className='flex'>
+            <div className=''>
             {USAInfo.map((USA, index) => {
                 return ( 
                     <div key={index}>
@@ -42,7 +42,7 @@ export default function USAInfo() {
                         <p>Population: {new Intl.NumberFormat('en-US').format(USA.population)}</p>
                         <p>Timezone: {USA.timezones}</p>
                         <p>Flag: {USA.flag}</p>
-                        <pre>{JSON.stringify(USA, null, 2)}</pre>
+                        <pre className='usa-jsonResponse'>{JSON.stringify(USA, null, 2)}</pre>
                     </div>
                 )
             })}

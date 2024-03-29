@@ -733,6 +733,13 @@ p {
   margin: 3px;
 }
 
+.usa-jsonResponse {
+  max-width: 100vw;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 0 20px;
+}
+
 /* country info page info page */
 .countryInfo-container {
   display: flex;
@@ -943,6 +950,13 @@ p {
   .movie-item {
     width: 50%;
   }
+}
+
+.movie-jsonResponse {
+  max-width: 100vw;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin: 0 20px;
 }
 
 

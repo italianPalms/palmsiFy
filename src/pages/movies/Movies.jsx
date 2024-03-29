@@ -45,11 +45,11 @@ export default function Movies() {
                     </div>
                     ))}
                 </div>
-                {/* <div className="movie-jsonResponse">
+                <div>
                 {movies.map((movie) => {
-                return <pre key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
+                return <pre className="movie-jsonResponse" key={movie.id}>{JSON.stringify(movie, null, 2)}</pre>
                 })}
-                </div> */}
+                </div>
             </div>
             {/* <Footer /> */}
         </div>
