@@ -26,7 +26,6 @@ export default function Home() {
     };
 
     return (
-        //TODO: Fix heading on small screens
         <>
         <div className="parallax">
             <div className="homePage-header">
