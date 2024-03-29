@@ -682,7 +682,6 @@ p {
   justify-content: center;
 }
 
-
 .dataGrid-text {
   display: flex;
   justify-content: center;
@@ -887,7 +886,7 @@ p {
   margin-top: 50px;
 }
 
-/* Move page */
+/* Movie page */
 .moviePage-container {
   margin-top: 50px;
 }
@@ -944,8 +943,6 @@ p {
   }
 }
 
-
-
 @media screen and (max-width: 1000px) {
   .movie-item {
     width: 50%;
@@ -960,11 +957,86 @@ p {
 }
 
 
-/* Pie Chart */
-
 /* All user page */
-@media screen and (max-width: 1472px) {
-  .pieChart {
+.allUsers-container {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.allUsers-dataGrid {
+  display: flex;
+  width: 100%;
+  padding: 0 70px 20px 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+.allUsers-header {
+  display: flex;
+  justify-content: center;
+}
+
+.allUsers-piechart {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.verified-header, .admin-header {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.verified-piechart, .admin-piechart {
+  height: 40vh; 
+  width: 40vw;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1380px) {
+  .allUsers-piechart {
     display: grid;
+  }
+  .allUsers-dataGrid {
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .allUsers-dataGrid {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .allUsers-dataGrid {
+    width: 750px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .allUsers-dataGrid {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .allUsers-dataGrid {
+    width: 650px;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .allUsers-dataGrid {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .allUsers-dataGrid {
+    width: 550px;
   }
 }

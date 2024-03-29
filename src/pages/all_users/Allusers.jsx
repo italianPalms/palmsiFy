@@ -80,76 +80,78 @@ export default function AllUsers() {
 
     return (
         <>
-        <div>
-            <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl flex justify-center items-center mt-16">See all registered users</h1>
-        </div>
-        <Box
-        //Style the data grind from Mui (overwrite the default styling)
-        sx={{
-            "& .MuiDataGrid-root": {
-                border: "none", 
-                color: "white",
-            }, 
-            "& .MuiDataGrid-cell": {
-                borderBottom: "none", 
-            }, 
-            "& .name-column--cell": {
-                color: "#4cceac",
-                display: "flex",
-                margin: "0 0 0 5px", 
-            }, 
-            "& .MuiDataGrid-columnHeaders": {
-                backgroundColor: "rgb(31 41 55)",
-                borderBottom: "none",
-                color: "#868dfb", 
-            },
-            "& .MuiDataGrid-virtualScroller": {
-                backgroundColor: "#1f2a40", 
-            }, 
-            "& .MuiDataGrid-footerContainer": {
-                borderTop: "none",
-                backgroundColor: "rgb(31 41 55)",
-            },
-            "& .MuiTablePagination-toolbar": {
-                color: "white", 
-            }, 
-            "& .MuiButtonBase-root": {
-                color: "white", 
-            }, 
-            "& .MuiSvgIcon-root": {
-                color: "white",
-            }, 
-            "& .MuiBox-root": {
-                border: "none",
-                borderTop: "none", 
-                borderBottom: "none", 
-            },
-        }}
-        >
-        <div className="flex justify-center items-center ml-10 mr-10 mt-16">
-        <DataGrid className="max-w-7xl"
-            rows={rows}
-            columns={columns}
-        />
-        </div>
-        </Box>
+        <div className="allUsers-container">
+            <h1 className="allUsers-header">See all registered users</h1>
+            <div className="allUsers-dataGrid-container">
+                <Box
+                //Style the data grind from Mui (overwrite the default styling)
+                sx={{
+                    "& .MuiDataGrid-root": {
+                        border: "none", 
+                        color: "white",
+                    }, 
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: "none", 
+                    }, 
+                    "& .name-column--cell": {
+                        color: "#4cceac",
+                        display: "flex",
+                        margin: "0 0 0 5px", 
+                    }, 
+                    "& .MuiDataGrid-columnHeaders": {
+                        backgroundColor: "rgb(31 41 55)",
+                        borderBottom: "none",
+                        color: "#868dfb", 
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        backgroundColor: "#1f2a40", 
+                    }, 
+                    "& .MuiDataGrid-footerContainer": {
+                        borderTop: "none",
+                        backgroundColor: "rgb(31 41 55)",
+                    },
+                    "& .MuiTablePagination-toolbar": {
+                        color: "white", 
+                    }, 
+                    "& .MuiButtonBase-root": {
+                        color: "white", 
+                    }, 
+                    "& .MuiSvgIcon-root": {
+                        color: "white",
+                    }, 
+                    "& .MuiBox-root": {
+                        border: "none",
+                        borderTop: "none", 
+                        borderBottom: "none", 
+                    },
+                }}
+                >
+                <div className="allUsers-dataGrid">
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                />
+                </div>
+                </Box>
+            </div>
 
-        {/*Pie chart for verified */}
-        <div className="pieChart flex justify-center items-center">
-        <Box m="20px">
-            <h1 className="font-medium text-2xl flex justify-center items-center mt-16">Verified users</h1>
-            <Box height="50vh" width="40vh">
-            <PieChartVerified />
-            </Box>
-        </Box>
+            <div className="allUsers-piechart">
+                {/*Pie chart for verified */}
+                <div>
+                    <h1 className="verified-header">Verified users</h1>
+                    <div className="verified-piechart">
+                        <PieChartVerified />
+                    </div>
+                </div>
 
-        {/* Pie chart for admin */}
-        <Box m="20px">
-            <h1 className="font-medium text-2xl flex justify-center items-center mt-16">Admin users</h1>
-            <Box height="50vh" width="40vh">
-                <PieChartAdmin />
-            </Box>
-        </Box>
+            {/* Pie chart for admin */}
+                <div>
+                    <h1 className="admin-header">Admin users</h1>
+                    <div className="admin-piechart">
+                        <PieChartAdmin />
+                    </div>
+                </div>
+            </div>
         </div>
         </>
     )   
