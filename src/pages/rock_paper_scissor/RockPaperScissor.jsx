@@ -84,7 +84,6 @@ export default function RockPaperScissor() {
             console.log('Player Score: ' + playerScore);
             console.log('Computer Score: ' + computerScore);
             console.log('Rounds played: ' + roundsPlayed);
-           
         }
 
         useEffect(() => {
@@ -112,50 +111,46 @@ export default function RockPaperScissor() {
 
     return (
         <>
-        <div className="flex flex-col items-center justify-center">
-            <div className="items-center justify-center flex mt-16">
-                <h1 className="font-semibold sm:text-2xl md:text-3xl lg:text-4xl">Welcome to Rock Paper Scissor</h1> 
+            <div className="result-container">
+                <p className="result">Round Result: {resultMsg}</p>
+                <p className="rounds">Rounds Played: {roundsPlayed}</p>
             </div>
-            <div className="flex justify-center items-center mt-12">
-            <p className="mr-5 border p-2 w-56 rounded-lg">Player Score: {playerScore}</p>
-            <p className="ml-5 border  p-2 w-56 rounded-lg">Computer Score: {computerScore}</p>
+        <div className="rps-container">
+                <h1 >Welcome to Rock Paper Scissor</h1> 
+            <div className="score-container">
+                <p className="player-score">Player Score: {playerScore}</p>
+                <p className="computer-score">Computer Score: {computerScore}</p>
             </div>  
             <div style={{ color: textColor}}>
-            {hiddenButtons ? <h2 className="flex justify-center items-center text-2xl font-bold mt-10">{gameResultMsg}</h2> : 
-            <div className="flex justify-center items-center mt-10">
-                <button 
-                    id='rock' 
-                    type="submit" 
-                    className={`border-2 p-2 w-28 mr-4 bg-sky-400 hover:bg-sky-500 ${hideButtons}`}
-                    onClick={playGame}
-                >Rock</button>
-                <button 
-                    id='paper' 
-                    type="submit" 
-                    className={`border-2 p-2 w-28 mr-4 bg-sky-400 hover:bg-sky-500 ${hideButtons}`}
-                    onClick={playGame}    
-                >Paper</button>
-                <button 
-                    id='scissors' 
-                    type="submit" 
-                    className={`border-2 p-2 w-28 mr-4 bg-sky-400 hover:bg-sky-500 ${hideButtons}`}
-                    onClick={playGame}    
-                >Scissors</button>
+                {hiddenButtons ? <h2>{gameResultMsg}</h2> : 
+                <div className="btn-container">
+                    <button 
+                        id='rock' 
+                        type="submit" 
+                        className={`blue-btn_small ${hideButtons}`}
+                        onClick={playGame}
+                    >Rock</button>
+                    <button 
+                        id='paper' 
+                        type="submit" 
+                        className={`blue-btn_small ${hideButtons}`}
+                        onClick={playGame}    
+                    >Paper</button>
+                    <button 
+                        id='scissors' 
+                        type="submit" 
+                        className={`blue-btn_small ${hideButtons}`}
+                        onClick={playGame}    
+                    >Scissors</button>
+                </div>
+                }
             </div>
-            }
-            </div>
-            <div className="flex justify-center items-center mt-10">
-                <p className="mr-5 border p-2 w-56 rounded-lg">You choose: {playerSelection}</p>
-                <p className="ml-5 border p-2 w-56 rounded-lg">Computer choose: {computerSelection}</p>
-            </div>
-            <div className="flex justify-center items-center mt-10 text-2xl">
-                <p className="mr-6">Result: {resultMsg}</p>
-            </div>
-            <div className="flex justify-center items-center mt-4">
-                <p>Rounds played: {roundsPlayed}</p>
+            <div className="choice-container">
+                <p className="your-choice">You choose: {playerSelection}</p>
+                <p className="computer-choice">Computer choose: {computerSelection}</p>
             </div>
 
-            {hiddenButtons ? <h2 className="flex justify-center items-center text-2xl mt-28 text-[#FF00FF]">Refresh the page to play another round</h2> : ""}
+            {hiddenButtons ? <h2 className="refreshMsg">Refresh the page to play another round</h2> : ""}
         </div>
         </>
     )

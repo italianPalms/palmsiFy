@@ -126,12 +126,12 @@ export default function AllUsers() {
                     },
                 }}
                 >
-                <div className="allUsers-dataGrid">
-                <DataGrid
-                    rows={rows}
-                    columns={columns}
-                />
-                </div>
+                    <div className="allUsers-dataGrid">
+                        <DataGrid
+                           rows={rows}
+                           columns={columns}
+                        />
+                    </div>
                 </Box>
             </div>
 
@@ -143,7 +143,6 @@ export default function AllUsers() {
                         <PieChartVerified />
                     </div>
                 </div>
-
             {/* Pie chart for admin */}
                 <div>
                     <h1 className="admin-header">Admin users</h1>

@@ -339,28 +339,32 @@ p {
 }
 
 /* Home Page - mobile */
-@media (max-width: 1024px) {
-  .home-img {
-    width: 250px;
+@media screen and (max-width: 1006px) {
+  .hero_title {
+    font-size: 100px;
   }
-
-  .home-btn-container {
+  .content-wrapper_homePage {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-container .img-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .team-img {
+    width: 300px;
+  }
+  .home-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .homePage-heading {
     display: flex;
-    flex-direction: column;
-  }
-  .login-btn {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-
-  .signup-btn {
-    margin-top: 5px;
-    margin-left: 0px;
-    margin-right: 5px;
-  }
-
-  .home-heading {
-    font-size: 43px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -956,7 +960,6 @@ p {
   margin: 0 20px;
 }
 
-
 /* All user page */
 .allUsers-container {
   display: grid;
@@ -1039,4 +1042,48 @@ p {
   .allUsers-dataGrid {
     width: 550px;
   }
+}
+
+/* Rovk paper scissor */
+.rps-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.score-container {
+  display: flex;
+}
+
+.player-score, .computer-score {
+  margin: 0 20px;
+}
+
+.btn-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.choice-container {
+  display: flex;
+}
+
+.your-choice, .computer-choice {
+  margin: 0 20px;
+}
+
+.result-container {
+  display: flex;
+}
+
+.result, .rounds {
+  margin: 20px 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.refreshMsg {
+  margin-top: 150px;
+  color: #FF00FF;
 }
