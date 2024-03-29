@@ -650,6 +650,7 @@ p {
   background-color: rgb(31 41 55);
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
