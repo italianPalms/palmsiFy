@@ -1,0 +1,214 @@
+{
+  "hash": "758009aa",
+  "configHash": "df972863",
+  "lockfileHash": "d389d2fe",
+  "browserHash": "8a68264d",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "bad49b9b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "42b159eb",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "c9fb6846",
+      "needsInterop": false
+    },
+    "web-vitals": {
+      "src": "../../node_modules/web-vitals/dist/web-vitals.js",
+      "file": "web-vitals.js",
+      "fileHash": "574c3895",
+      "needsInterop": false
+    },
+    "react-cookie": {
+      "src": "../../node_modules/react-cookie/es6/index.js",
+      "file": "react-cookie.js",
+      "fileHash": "709b5ab7",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "e3393acf",
+      "needsInterop": false
+    },
+    "@mui/x-data-grid": {
+      "src": "../../node_modules/@mui/x-data-grid/index.js",
+      "file": "@mui_x-data-grid.js",
+      "fileHash": "a5db5724",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "6633b207",
+      "needsInterop": false
+    },
+    "@mui/icons-material/VerifiedOutlined": {
+      "src": "../../node_modules/@mui/icons-material/VerifiedOutlined.js",
+      "file": "@mui_icons-material_VerifiedOutlined.js",
+      "fileHash": "9db9f769",
+      "needsInterop": true
+    },
+    "@mui/icons-material/ErrorOutlineOutlined": {
+      "src": "../../node_modules/@mui/icons-material/ErrorOutlineOutlined.js",
+      "file": "@mui_icons-material_ErrorOutlineOutlined.js",
+      "fileHash": "766c8b7e",
+      "needsInterop": true
+    },
+    "react-pro-sidebar": {
+      "src": "../../node_modules/react-pro-sidebar/dist/index.es.js",
+      "file": "react-pro-sidebar.js",
+      "fileHash": "d428e25a",
+      "needsInterop": false
+    },
+    "@mui/icons-material/HomeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/HomeOutlined.js",
+      "file": "@mui_icons-material_HomeOutlined.js",
+      "fileHash": "b25189d6",
+      "needsInterop": true
+    },
+    "@mui/icons-material/TheatersOutlined": {
+      "src": "../../node_modules/@mui/icons-material/TheatersOutlined.js",
+      "file": "@mui_icons-material_TheatersOutlined.js",
+      "fileHash": "4cdac830",
+      "needsInterop": true
+    },
+    "@mui/icons-material/SmartToyOutlined": {
+      "src": "../../node_modules/@mui/icons-material/SmartToyOutlined.js",
+      "file": "@mui_icons-material_SmartToyOutlined.js",
+      "fileHash": "2990a645",
+      "needsInterop": true
+    },
+    "@mui/icons-material/GamesOutlined": {
+      "src": "../../node_modules/@mui/icons-material/GamesOutlined.js",
+      "file": "@mui_icons-material_GamesOutlined.js",
+      "fileHash": "c058a5ed",
+      "needsInterop": true
+    },
+    "@mui/icons-material/FastfoodOutlined": {
+      "src": "../../node_modules/@mui/icons-material/FastfoodOutlined.js",
+      "file": "@mui_icons-material_FastfoodOutlined.js",
+      "fileHash": "26eb4e74",
+      "needsInterop": true
+    },
+    "@mui/icons-material/GroupAddOutlined": {
+      "src": "../../node_modules/@mui/icons-material/GroupAddOutlined.js",
+      "file": "@mui_icons-material_GroupAddOutlined.js",
+      "fileHash": "a06a6eda",
+      "needsInterop": true
+    },
+    "@mui/icons-material/MenuOutlined": {
+      "src": "../../node_modules/@mui/icons-material/MenuOutlined.js",
+      "file": "@mui_icons-material_MenuOutlined.js",
+      "fileHash": "efd433af",
+      "needsInterop": true
+    },
+    "@mui/icons-material/LogoutOutlined": {
+      "src": "../../node_modules/@mui/icons-material/LogoutOutlined.js",
+      "file": "@mui_icons-material_LogoutOutlined.js",
+      "fileHash": "7c289b9f",
+      "needsInterop": true
+    },
+    "@mui/icons-material/CalendarMonthOutlined": {
+      "src": "../../node_modules/@mui/icons-material/CalendarMonthOutlined.js",
+      "file": "@mui_icons-material_CalendarMonthOutlined.js",
+      "fileHash": "9d0123b8",
+      "needsInterop": true
+    },
+    "@mui/icons-material/PublicOutlined": {
+      "src": "../../node_modules/@mui/icons-material/PublicOutlined.js",
+      "file": "@mui_icons-material_PublicOutlined.js",
+      "fileHash": "ea34d9af",
+      "needsInterop": true
+    },
+    "@mui/icons-material/LightModeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/LightModeOutlined.js",
+      "file": "@mui_icons-material_LightModeOutlined.js",
+      "fileHash": "8ac93ded",
+      "needsInterop": true
+    },
+    "@mui/icons-material/DarkModeOutlined": {
+      "src": "../../node_modules/@mui/icons-material/DarkModeOutlined.js",
+      "file": "@mui_icons-material_DarkModeOutlined.js",
+      "fileHash": "d3d2b525",
+      "needsInterop": true
+    },
+    "@mui/material/InputBase": {
+      "src": "../../node_modules/@mui/material/InputBase/index.js",
+      "file": "@mui_material_InputBase.js",
+      "fileHash": "9869bdb1",
+      "needsInterop": false
+    },
+    "@mui/icons-material/NotificationsNoneOutlined": {
+      "src": "../../node_modules/@mui/icons-material/NotificationsNoneOutlined.js",
+      "file": "@mui_icons-material_NotificationsNoneOutlined.js",
+      "fileHash": "bd992c29",
+      "needsInterop": true
+    },
+    "@mui/icons-material/SearchOutlined": {
+      "src": "../../node_modules/@mui/icons-material/SearchOutlined.js",
+      "file": "@mui_icons-material_SearchOutlined.js",
+      "fileHash": "26f3fd53",
+      "needsInterop": true
+    },
+    "@mui/icons-material/DeleteOutlined": {
+      "src": "../../node_modules/@mui/icons-material/DeleteOutlined.js",
+      "file": "@mui_icons-material_DeleteOutlined.js",
+      "fileHash": "c9e083ab",
+      "needsInterop": true
+    },
+    "@testing-library/user-event/dist/utils": {
+      "src": "../../node_modules/@testing-library/user-event/dist/utils/index.js",
+      "file": "@testing-library_user-event_dist_utils.js",
+      "fileHash": "566788f0",
+      "needsInterop": true
+    },
+    "@nivo/pie": {
+      "src": "../../node_modules/@nivo/pie/dist/nivo-pie.es.js",
+      "file": "@nivo_pie.js",
+      "fileHash": "b8326e1e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-DEECTGDX": {
+      "file": "chunk-DEECTGDX.js"
+    },
+    "chunk-JCH7RJEO": {
+      "file": "chunk-JCH7RJEO.js"
+    },
+    "chunk-U44LMCHM": {
+      "file": "chunk-U44LMCHM.js"
+    },
+    "chunk-Q2HI5XCZ": {
+      "file": "chunk-Q2HI5XCZ.js"
+    },
+    "chunk-AATUHXQL": {
+      "file": "chunk-AATUHXQL.js"
+    },
+    "chunk-KNUUBBVK": {
+      "file": "chunk-KNUUBBVK.js"
+    },
+    "chunk-FBRNPY62": {
+      "file": "chunk-FBRNPY62.js"
+    },
+    "chunk-GGKTEJMF": {
+      "file": "chunk-GGKTEJMF.js"
+    },
+    "chunk-UM3JHGVO": {
+      "file": "chunk-UM3JHGVO.js"
+    },
+    "chunk-CEQRFMJQ": {
+      "file": "chunk-CEQRFMJQ.js"
+    }
+  }
+}
