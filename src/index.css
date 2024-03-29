@@ -438,14 +438,6 @@ p {
   margin-top: 100px;
 }
 
-.investor-text {
-  margin: 0 450px 0 450px;
-}
-
-.about-text {
-  margin: 0 450px 0 450px;
-}
-
 /* Verify email page */
 .verifyEmail-container {
   display: flex;
