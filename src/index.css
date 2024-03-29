@@ -120,7 +120,7 @@ p {
  }
 
 
-/* Stlying for SOMO logo's */
+/* Stlying for SOME logo's */
 .youtube-logo {
   width: 90px;
   height: 20px;
@@ -434,6 +434,14 @@ p {
   margin-top: 100px;
 }
 
+.investor-text {
+  margin: 0 450px 0 450px;
+}
+
+.about-text {
+  margin: 0 450px 0 450px;
+}
+
 /* Verify email page */
 .verifyEmail-container {
   display: flex;
@@ -516,12 +524,11 @@ p {
 /* Makes the topbar and sidebar align, as well as the main content */
 .app-container {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
 }
 
 .sidebar-mainContent-container {
   display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -866,7 +873,7 @@ p {
 /* Calendar page */
 .calendar-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
@@ -936,15 +943,6 @@ p {
     width: 50%;
   }
 }
-
-
-
-
-/* .movie-jsonResponse {
-  max-width: 100vw;
-} */
-
-
 
 
 /* Pie Chart */

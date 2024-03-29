@@ -28,10 +28,9 @@ function App() {
 
 return (
     <div className="app-container">
-      <Topbar />
-      <div >
-      <main className="sidebar-mainContent-container">
       <Sidebar />
+      <main className="sidebar-mainContent-container">
+      <Topbar />
 
         <Routes>
           <Route index element={<Home />} />
@@ -113,7 +112,6 @@ return (
           <Route path="*" element= {<NoPage />} />
         </Routes>
         </main>
-        </div>
     </div>
   );
 }
