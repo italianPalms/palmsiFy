@@ -898,10 +898,11 @@ p {
   display: flex;
   flex-wrap: wrap;
   margin: 0 20px;
+  max-width: 3000px;
 }
 
 .movie-item {
-  width: 10%;
+  width: 20%;
   padding: 10px;
 }
 
@@ -912,25 +913,6 @@ p {
 .movie-item img {
   width: 100%;
   height: auto;
-
-}
-
-@media screen and (max-width: 3290px) {
-  .movie-item {
-    width: 11%;
-  }
-}
-
-@media screen and (max-width: 2540px) {
-  .movie-item {
-    width: 12%;
-  }
-}
-
-@media screen and (max-width: 1950px) {
-  .movie-item {
-    width: 16%;
-  }
 }
 
 @media screen and (max-width: 1550px) {
