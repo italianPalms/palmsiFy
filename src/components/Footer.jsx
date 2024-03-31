@@ -4,20 +4,22 @@ import airbot from "../img/airobot.png";
 import Youtube from "../img/yt_logo_rgb_dark.png";
 import X from "../img/logo-white.png"
 import Instagram from "../img/Instagram_Glyph_Gradient.png";
-import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export default function Footer() {
     const [isVisible, setIsVisible] = useState(false);
     
     useEffect(() => {
         function handleScroll() {
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.body.scrollHeight;
             const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            const documentHeight = document.body.scrollHeight - window.innerHeight;
 
-            setIsVisible(scrollPosition + windowHeight >= documentHeight);
+            setIsVisible(scrollPosition >= documentHeight);
         }
+
         window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };

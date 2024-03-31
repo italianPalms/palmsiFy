@@ -18,7 +18,7 @@ export default function About() {
                     </div>
                 </div>
                 {/* TODO: Fix footer */}
-            <Footer />
+            {/* <Footer /> */}
         </div>        
         </>
     )
