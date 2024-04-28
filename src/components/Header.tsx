@@ -1,9 +1,11 @@
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import logo from "../img/logo.png";
 import Youtube from "../img/yt_logo_rgb_dark.png";
 import X from "../img/logo-white.png";
 import Instagram from "../img/Instagram_Glyph_Gradient.png";
-export default function Header() {
+
+const Header = () => {
 
     const navigate = useNavigate();
 
@@ -12,19 +14,19 @@ export default function Header() {
         navigate('/home');
     }
 
-    const about = () => {
-        console.log("About button clicked");
-        navigate('/about');
-    }
+    // const about = () => {
+    //     console.log("About button clicked");
+    //     navigate('/about');
+    // }
 
-    const forgotPassword = () => {
-        console.log("Forgot password button clicked");
-        navigate('/forgotPassword');
-    }
+    // const forgotPassword = () => {
+    //     console.log("Forgot password button clicked");
+    //     navigate('/forgotPassword');
+    // }
 
-    const investors = () => {
-        navigate('/investors');
-    }
+    // const investors = () => {
+    //     navigate('/investors');
+    // }
 
     return (
         <>
@@ -63,5 +65,5 @@ export default function Header() {
         </div>
         </>
     )
-
 }
+export default Header;

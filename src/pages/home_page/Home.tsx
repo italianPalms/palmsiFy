@@ -1,6 +1,6 @@
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
-// import airbot from "../img/airobot.png";
 import Parallax_bg from "../../img/bg.jpg";
 import Parallax_dust from "../../img/dust.webp";
 import Parallax_foreground_back from "../../img/foreground-back.webp";
@@ -8,21 +8,20 @@ import Parallax_foreground_front from "../../img/foreground-front.webp";
 import Parallax_jax from "../../img/jax.webp";
 import Parallax_luna from "../../img/luna.webp";
 import Parallax_manny from "../../img/manny.webp";
-// import Parallax_rays from "../../img/rays.webp";
 import Founder from "../../img/hunter-2_2x.webp";
 
 
-export default function Home() {
+const Home = () => {
     const navigate = useNavigate();
 
     const signup = () => {
         console.log("Home signup clicked");
-        navigate("/signup")
+        navigate("/signup");
     };
 
     const login = () => {
         console.log("Home login button clicked");
-        navigate("/login")
+        navigate("/login");
     };
 
     return (
@@ -77,5 +76,6 @@ export default function Home() {
             </div>
         </div>
         </>
-    )
-}
+    );
+};
+export default Home;
