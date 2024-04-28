@@ -23,7 +23,7 @@ const PieChartVerified = () => {
 
     const usersWithoutCircularReferences = JSON.parse(JSON.stringify(users));
 
-    const verifiedUsers = usersWithoutCircularReferences.filter(user => user.isVerified).length;
+    const verifiedUsers = usersWithoutCircularReferences.filter((user: { isVerified: boolean}) => user.isVerified).length;
     const unverifiedUsers = usersWithoutCircularReferences.length - verifiedUsers;
 
     const pieChartData = [
@@ -120,5 +120,4 @@ const PieChartVerified = () => {
     />
     )
 }
-
 export default PieChartVerified;

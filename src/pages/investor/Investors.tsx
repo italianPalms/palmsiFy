@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import hunter from "../../img/hunter-2_2x.webp";
 
-export default function Investors () {
+const Investors = () => {
     return (
         <>
         <div>
@@ -23,3 +23,5 @@ export default function Investors () {
         </>
     )
 }
+
+export default Investors;

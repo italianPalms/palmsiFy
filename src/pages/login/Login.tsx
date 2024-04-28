@@ -5,7 +5,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import airbot from "../../img/airobot.png";
 
-export default function Login() {
+const Login = () => {
     const [user, setUser] = useState({
         email: "", 
         password: "",
@@ -56,7 +56,7 @@ export default function Login() {
         }
     }
 
-    const onLoginKeypress = e => {
+    const onLoginKeypress: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
         if (e.keyCode === 13 && !buttonDisabled) {
             onLogin();
         }
@@ -127,3 +127,5 @@ export default function Login() {
         </>
     )
 }
+
+export default Login;

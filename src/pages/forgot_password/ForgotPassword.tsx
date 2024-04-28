@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import airbot from "../../img/airobot.png";
 
-export default function ForgotPassword () {
+const ForgotPassword = () => {
 
     const [buttonDisabled, setButtonDisabled] = useState(true);
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function ForgotPassword () {
         }
     }
 
-    const onResetKeyPress = e => {
+    const onResetKeyPress: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
         if (e.keyCode === 13 && !buttonDisabled) {
             resetPassword();
         }
@@ -110,3 +110,4 @@ export default function ForgotPassword () {
         </>
     )
 }
+export default ForgotPassword;

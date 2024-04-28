@@ -1,27 +1,35 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import PieChartVerified from '../../components/PieChartVerified';
 import PieChartAdmin from "../../components/PieChartAdmin";
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 
-export default function AllUsers() {
+interface User {
+    _id: string;
+    username: string;
+    email: string;
+    isVerified: boolean;
+    isAdmin: boolean;
+}
 
-    const [users, setUsers] = useState([]);
+const AllUsers = () => {
+
+    const [users, setUsers] = useState<User[]>([]);
     // Fetch all users from db
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/getAllUsers");
+                const response = await axios.get<User[]>("http://localhost:4000/getAllUsers");
                 const users = response.data;
                 console.log(users)
                 setUsers(users);
             } catch (error) {
                 console.log("Failed to fetch users", error);
             }
-        }
+        };
         fetchUsers();
     }, []);
 
@@ -29,7 +37,7 @@ export default function AllUsers() {
     const usersWithoutCircularReferences = JSON.parse(JSON.stringify(users));
 
     //Columns in the data grid from Mui
-    const columns = [
+    const columns: GridColDef[] = [
         {
             field: "username", 
             headerName: "Username",
@@ -45,19 +53,22 @@ export default function AllUsers() {
             field: "isVerified",
             headerName: "Is verified",
             flex: 1,
-            display: "justifyContent: start", 
-            renderCell: ({ row: {isVerified}}) => (
-                <Box className="flex justify-center items-start"
-                 width="50%"
-                 p="2px"
-                 display="flex"
-                 justifyContent="center"
-                 backgroundColor={isVerified === "True" ? "#4cceac" : "red"}
-                 borderRadius="4px"
+            // display: "justifyContent: start", 
+            renderCell: ({ value }) => (
+                <Box 
+                sx={{
+                    display: "flex", 
+                    justifyContent: "center", 
+                    alignItems: "center", 
+                    width: "50%", 
+                    padding: "2px", 
+                    backgroundColor: value ? "#4cceac" : "red", 
+                    borderRadius: "4px", 
+                }}
                  >
-                    {isVerified === "True" ? <VerifiedOutlinedIcon /> : <ErrorOutlineOutlinedIcon />}
+                    {value ? <VerifiedOutlinedIcon /> : <ErrorOutlineOutlinedIcon />}
                     <Typography color="#e0e0e0" sx={{ ml: "5px"}}>
-                        {isVerified}
+                        {value ? "True" : "False"}
                     </Typography>
                 </Box>
             )
@@ -70,12 +81,12 @@ export default function AllUsers() {
     ];
 
     //Rows in the data grid from Mui
-    const rows = usersWithoutCircularReferences.map((users, index) => ({
+    const rows = users.map(users => ({
         id: users._id, 
         username: users.username,
         email: users.email, 
-        isVerified: users.isVerified ? 'True' : 'False',
-        isAdmin: users.isAdmin ? 'True': 'False',
+        isVerified: users.isVerified,
+        isAdmin: users.isAdmin
     }));
 
     return (
@@ -155,3 +166,5 @@ export default function AllUsers() {
         </>
     )   
 }
+
+export default AllUsers;

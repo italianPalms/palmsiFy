@@ -14,19 +14,19 @@ const Header = () => {
         navigate('/home');
     }
 
-    // const about = () => {
-    //     console.log("About button clicked");
-    //     navigate('/about');
-    // }
+    const about = () => {
+        console.log("About button clicked");
+        navigate('/about');
+    }
 
-    // const forgotPassword = () => {
-    //     console.log("Forgot password button clicked");
-    //     navigate('/forgotPassword');
-    // }
+    const forgotPassword = () => {
+        console.log("Forgot password button clicked");
+        navigate('/forgotPassword');
+    }
 
-    // const investors = () => {
-    //     navigate('/investors');
-    // }
+    const investors = () => {
+        navigate('/investors');
+    }
 
     return (
         <>

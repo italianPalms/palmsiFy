@@ -25,7 +25,7 @@ import USA from './pages/countries/USA';
 import Germany from './pages/countries/germany';
 import Shopping from './pages/shopping/Shopping';
 
-function App() {
+const App =() => {
 
 return (
     <div className="app-container">

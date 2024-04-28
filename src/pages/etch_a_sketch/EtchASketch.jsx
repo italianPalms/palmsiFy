@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-function EtchASketch() {
+const EtchASketch = () => {
     const [size, setSize] = useState(20);
     console.log(size);
     const [, setPink] = useState(false);

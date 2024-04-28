@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import React from "react";
 import webDev from "../../img/webDev-img.webp";
 
-export default function About() {
+const About = () => {
     return (
         <>
         <div>
@@ -23,3 +23,4 @@ export default function About() {
         </>
     )
 }
+export default About;

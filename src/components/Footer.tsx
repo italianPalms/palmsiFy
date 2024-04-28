@@ -5,7 +5,7 @@ import Youtube from "../img/yt_logo_rgb_dark.png";
 import X from "../img/logo-white.png"
 import Instagram from "../img/Instagram_Glyph_Gradient.png";
 
-export default function Footer() {
+const Footer = () => {
     const [isVisible, setIsVisible] = useState(false);
     
     useEffect(() => {
@@ -56,3 +56,5 @@ export default function Footer() {
         </footer>
     )
 }
+
+export default Footer;

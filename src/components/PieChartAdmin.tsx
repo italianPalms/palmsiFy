@@ -21,7 +21,7 @@ const PieChartAdmin = () => {
 
     const usersWithoutCircularReferences = JSON.parse(JSON.stringify(users));
 
-    const adminUsers = usersWithoutCircularReferences.filter(user => user.isAdmin).length;
+    const adminUsers = usersWithoutCircularReferences.filter((user: { isAdmin: boolean}) => user.isAdmin).length;
     const unAdminUsers = usersWithoutCircularReferences.length - adminUsers;
 
     const pieChartData = [

@@ -2,7 +2,13 @@ const nodemailer = require('nodemailer');
 const User = require('../../backend/models/userModel');
 const bcryptjs = require('bcryptjs');
 
-const sendEmail = async({email, emailType, userId}) => {
+// interface SendEmailParams {
+//     email: string; 
+//     emailType: 'VERIFY' | 'RESET';
+//     userId: string;
+// }
+
+const sendEmail = async({ email, emailType, userId }) => {
     try {
         const hashedToken = await bcryptjs.hash(userId.toString(), 10)
 
@@ -44,6 +50,6 @@ const sendEmail = async({email, emailType, userId}) => {
         console.log('Email sending error', error)
         throw new Error(error.message);
     }
-} 
+};
 
 module.exports = sendEmail;

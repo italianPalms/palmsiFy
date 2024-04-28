@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import airbot from "../../img/airobot.png";
 
-export default function Signup() {
+const Signup = () => {
 
     const [user, setUser] = useState({
         email: "", 
@@ -57,7 +57,7 @@ export default function Signup() {
         }
     }
 
-    const onSingupKeypress = e => {
+    const onSingupKeypress: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
         if (e.keyCode === 13 && !buttonDisabled) {
             onSignup();
         }
@@ -143,3 +143,5 @@ export default function Signup() {
         </>
     )
 }
+
+export default Signup;
